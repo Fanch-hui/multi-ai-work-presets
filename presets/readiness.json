@@ -1,0 +1,92 @@
+{
+  "legal-intake": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "167f1d62f3c5bcef9ec2655ba8ca382a49c548c6e78f05c5bbe7a178238e5377",
+    "skillDigests": {
+      "matter-intake": "0c02cefeda13bd70e4cc84ff3da79dc2c178adb274250e703438a15158da0652",
+      "matter-briefing": "755e20933430237abd7a481dd2a26f433bc6fa0c3c175097813e378591de1fe9",
+      "chronology": "376cc044ccba713d8ab17ff7263a5201c552fdf4d018a3e9eb2952c58ed8f219"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "代表性模拟资料任务"
+    }
+  },
+  "legal-evidence": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "ef8e9a23253c3a1f9c6cbdc3669454b5caca261af5ad8773e6f0356b626a1940",
+    "skillDigests": {
+      "chronology": "376cc044ccba713d8ab17ff7263a5201c552fdf4d018a3e9eb2952c58ed8f219",
+      "tabular-review": "3e5b5b1704374f153522e80ebcdc4183b5552d3354324f45166dbad6bbd88185",
+      "matter-briefing": "755e20933430237abd7a481dd2a26f433bc6fa0c3c175097813e378591de1fe9"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "代表性模拟资料任务"
+    }
+  },
+  "student-course-tutor": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "8898ad0109a73f473ff1629812535ddbdb0939b1576f86f27acc10277b6b0494",
+    "skillDigests": {
+      "explain-first-interrogator": "4f2726d99528d6a1074d821dcfa82ca1a38d4e4a588baba5d903e4942260f612",
+      "progressive-hint-ladder": "ef0f018d2b9a088a3849a7de2beecbb29dc6e338d04624aabb7eec256ca89938",
+      "stuck-and-error-diagnosis-coach": "a64c2072e3b83521f6718e70a518bb77bc52abeee2bcc191379da7d2daa86ad5"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "代表性模拟资料任务"
+    }
+  },
+  "student-exam-coach": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "7d2f4317acf6dab0c0f0a9047decd07fa21a5d4989c2684b546e75de220381b0",
+    "skillDigests": {
+      "retrieval-practice-generator": "86466f5442e2af821aeb66bffbadf4f8d0d7b13b6aeb6e2e267e7d235342a583",
+      "spaced-practice-scheduler": "28287d676d7be9b7d15f107a7655c6fbaf75a0817b93f2ca7561da81dfd69d56",
+      "confidence-calibration-check": "2743727237e0731d287a0fce32e5d1bb3d958404c681be1bc4baf4c1ae6beddf"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "代表性模拟资料任务"
+    }
+  },
+  "student-resume-advisor": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "0eb6551e8478eea609dabf08611bd89103c21746cca8279fcf488d0554435f7d",
+    "skillDigests": {
+      "resume-skill": "ebf3e70e1a226aa3a5c77ef0a0525ed6685ad9886ea2a0c89847c1986951e903",
+      "resume-tailor": "eabde8b22b1219dcc11ae922d1a1fce057f324b79167135880ee0eb427e3ae5b",
+      "cover-letter-generator": "ca35b204099c97c16edf0ae71dcd2f44036c34437dc908ecd5ddd603629cc1c5"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "代表性模拟资料任务"
+    }
+  }
+}

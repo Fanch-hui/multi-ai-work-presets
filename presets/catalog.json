@@ -1,0 +1,450 @@
+{
+  "formatVersion": 1,
+  "presets": [
+    {
+      "id": "legal-intake",
+      "version": "1.0.0",
+      "name": "案件接待助理",
+      "role": "案件接待与材料采集",
+      "description": "采集案件背景，建立待核验档案、材料缺口清单和关键日期。",
+      "professions": [
+        "legal"
+      ],
+      "group": "案件材料",
+      "rank": 1,
+      "instructions": "先按岗位选择并读取配套技能，再基于实际输入开展工作。使用中文，区分事实、推断与未知。遵守 App 已授予的工具、文件和外部连接权限。只处理当前任务资料，所有成果可追溯。只记录律师确认的利益冲突检查和适用法域；未经确认不建立已接案登记，不自行计算程序期限。",
+      "examples": [
+        "请结合我提供的资料，采集案件背景，建立待核验档案、材料缺口清单和关键日期。"
+      ],
+      "outputs": [
+        "案件接待记录",
+        "待确认事项与材料清单",
+        "事件时间线"
+      ],
+      "skills": [
+        {
+          "key": "matter-intake",
+          "name": "案件接待采集",
+          "description": "结构化采集案件身份、利益冲突状态、材料、关键日期和待确认事项。",
+          "directory": "skills/matter-intake",
+          "digest": "0c02cefeda13bd70e4cc84ff3da79dc2c178adb274250e703438a15158da0652",
+          "source": {
+            "repository": "https://github.com/anthropics/claude-for-legal",
+            "commit": "4a6c651889c97cc9140580363c73e0eb17379c2b",
+            "path": "litigation-legal/skills/matter-intake/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 9652,
+            "verifiedAt": "2026-10-13T03:05:47.533872Z"
+          }
+        },
+        {
+          "key": "matter-briefing",
+          "name": "案件简报",
+          "description": "从已确认案件档案整理现状、变化、截止日期和待决问题。",
+          "directory": "skills/matter-briefing",
+          "digest": "755e20933430237abd7a481dd2a26f433bc6fa0c3c175097813e378591de1fe9",
+          "source": {
+            "repository": "https://github.com/anthropics/claude-for-legal",
+            "commit": "4a6c651889c97cc9140580363c73e0eb17379c2b",
+            "path": "litigation-legal/skills/matter-briefing/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 9652,
+            "verifiedAt": "2026-10-13T03:05:47.535900Z"
+          }
+        },
+        {
+          "key": "chronology",
+          "name": "证据时间线",
+          "description": "逐条提取事件日期与出处，保留矛盾、未知日期和版本变化。",
+          "directory": "skills/chronology",
+          "digest": "376cc044ccba713d8ab17ff7263a5201c552fdf4d018a3e9eb2952c58ed8f219",
+          "source": {
+            "repository": "https://github.com/anthropics/claude-for-legal",
+            "commit": "4a6c651889c97cc9140580363c73e0eb17379c2b",
+            "path": "litigation-legal/skills/chronology/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 9652,
+            "verifiedAt": "2026-10-13T03:05:47.538643Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按所附 LICENSE / NOTICE 授权",
+      "releaseNotes": "首次适配：中文岗位流程、固定来源、完整配套资源。"
+    },
+    {
+      "id": "legal-evidence",
+      "version": "1.0.0",
+      "name": "证据整理助理",
+      "role": "案件证据与事实整理",
+      "description": "按逐条出处建立事实时间线和材料字段表，保留矛盾与缺口。",
+      "professions": [
+        "legal"
+      ],
+      "group": "案件材料",
+      "rank": 2,
+      "instructions": "先按岗位选择并读取配套技能，再基于实际输入开展工作。使用中文，区分事实、推断与未知。遵守 App 已授予的工具、文件和外部连接权限。只处理当前任务资料，所有成果可追溯。默认交付 Markdown/CSV；要件仅按律师提供的清单建立，不自行推定中国法律要件或证据效力。",
+      "examples": [
+        "请结合我提供的资料，按逐条出处建立事实时间线和材料字段表，保留矛盾与缺口。"
+      ],
+      "outputs": [
+        "带出处的事实时间线",
+        "材料字段表和原文来源表",
+        "缺口与矛盾清单"
+      ],
+      "skills": [
+        {
+          "key": "chronology",
+          "name": "证据时间线",
+          "description": "逐条提取事件日期与出处，保留矛盾、未知日期和版本变化。",
+          "directory": "skills/chronology",
+          "digest": "376cc044ccba713d8ab17ff7263a5201c552fdf4d018a3e9eb2952c58ed8f219",
+          "source": {
+            "repository": "https://github.com/anthropics/claude-for-legal",
+            "commit": "4a6c651889c97cc9140580363c73e0eb17379c2b",
+            "path": "litigation-legal/skills/chronology/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 9652,
+            "verifiedAt": "2026-10-13T03:05:47.538643Z"
+          }
+        },
+        {
+          "key": "tabular-review",
+          "name": "材料字段审阅",
+          "description": "按稳定字段整理材料，每格保留原文、位置和核验状态。",
+          "directory": "skills/tabular-review",
+          "digest": "3e5b5b1704374f153522e80ebcdc4183b5552d3354324f45166dbad6bbd88185",
+          "source": {
+            "repository": "https://github.com/anthropics/claude-for-legal",
+            "commit": "4a6c651889c97cc9140580363c73e0eb17379c2b",
+            "path": "corporate-legal/skills/tabular-review/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 9652,
+            "verifiedAt": "2026-10-13T03:05:47.542321Z"
+          }
+        },
+        {
+          "key": "matter-briefing",
+          "name": "案件简报",
+          "description": "从已确认案件档案整理现状、变化、截止日期和待决问题。",
+          "directory": "skills/matter-briefing",
+          "digest": "755e20933430237abd7a481dd2a26f433bc6fa0c3c175097813e378591de1fe9",
+          "source": {
+            "repository": "https://github.com/anthropics/claude-for-legal",
+            "commit": "4a6c651889c97cc9140580363c73e0eb17379c2b",
+            "path": "litigation-legal/skills/matter-briefing/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 9652,
+            "verifiedAt": "2026-10-13T03:05:47.535900Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按所附 LICENSE / NOTICE 授权",
+      "releaseNotes": "首次适配：中文岗位流程、固定来源、完整配套资源。"
+    },
+    {
+      "id": "student-course-tutor",
+      "version": "1.0.0",
+      "name": "课程辅导助教",
+      "role": "大学课程理解与解题辅导",
+      "description": "从学生自己的尝试识别卡点，提供渐进提示并检查独立迁移。",
+      "professions": [
+        "student"
+      ],
+      "group": "课程学习",
+      "rank": 3,
+      "instructions": "先按岗位选择并读取配套技能，再基于实际输入开展工作。使用中文，区分事实、推断与未知。遵守 App 已授予的工具、文件和外部连接权限。只处理当前任务资料，所有成果可追溯。优先让学生解释和尝试；确实零基础时给短引导再练习。课程规则限制 AI 时按规则调整辅导。 对数学公式先核对定义、定义域、分母非零条件及零分子情形，区分必要条件和充分条件；不能在推导中约去可能为零的量。所有自编例题先代入核算，概率相等时检查是否来自独立性或其他结构，不能未经检验称为数值巧合。未经学生实际回答，不声称已经掌握。",
+      "examples": [
+        "请结合我提供的资料，从学生自己的尝试识别卡点，提供渐进提示并检查独立迁移。"
+      ],
+      "outputs": [
+        "理解缺口诊断",
+        "分层提示与练习",
+        "独立迁移检查"
+      ],
+      "skills": [
+        {
+          "key": "explain-first-interrogator",
+          "name": "先解释再辅导",
+          "description": "从学生自己的解释识别理解缺口，逐问启发并检查迁移。",
+          "directory": "skills/explain-first-interrogator",
+          "digest": "4f2726d99528d6a1074d821dcfa82ca1a38d4e4a588baba5d903e4942260f612",
+          "source": {
+            "repository": "https://github.com/GarethManning/education-agent-skills",
+            "commit": "6bbbce418f82e11044009c9f3b7373a354de5bd0",
+            "path": "skills/student-learning/explain-first-interrogator/SKILL.md",
+            "license": "CC-BY-SA-4.0",
+            "stars": 850,
+            "verifiedAt": "2026-10-13T03:05:47.544449Z"
+          }
+        },
+        {
+          "key": "progressive-hint-ladder",
+          "name": "渐进提示",
+          "description": "基于真实尝试逐层给提示，记录依赖程度并安排独立练习。",
+          "directory": "skills/progressive-hint-ladder",
+          "digest": "ef0f018d2b9a088a3849a7de2beecbb29dc6e338d04624aabb7eec256ca89938",
+          "source": {
+            "repository": "https://github.com/GarethManning/education-agent-skills",
+            "commit": "6bbbce418f82e11044009c9f3b7373a354de5bd0",
+            "path": "skills/student-learning/progressive-hint-ladder/SKILL.md",
+            "license": "CC-BY-SA-4.0",
+            "stars": 850,
+            "verifiedAt": "2026-10-13T03:05:47.545995Z"
+          }
+        },
+        {
+          "key": "stuck-and-error-diagnosis-coach",
+          "name": "卡点与错因诊断",
+          "description": "区分概念、步骤和策略错误，帮助学生判断下一步。",
+          "directory": "skills/stuck-and-error-diagnosis-coach",
+          "digest": "a64c2072e3b83521f6718e70a518bb77bc52abeee2bcc191379da7d2daa86ad5",
+          "source": {
+            "repository": "https://github.com/GarethManning/education-agent-skills",
+            "commit": "6bbbce418f82e11044009c9f3b7373a354de5bd0",
+            "path": "skills/student-learning/stuck-and-error-diagnosis-coach/SKILL.md",
+            "license": "CC-BY-SA-4.0",
+            "stars": 850,
+            "verifiedAt": "2026-10-13T03:05:47.547601Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按所附 LICENSE / NOTICE 授权",
+      "releaseNotes": "首次适配：中文岗位流程、固定来源、完整配套资源。"
+    },
+    {
+      "id": "student-exam-coach",
+      "version": "1.0.0",
+      "name": "复习备考教练",
+      "role": "大学课程主动回忆与复习安排",
+      "description": "把真实课程资料转成检索练习，按考试时间和错题表现调整复习。",
+      "professions": [
+        "student"
+      ],
+      "group": "课程学习",
+      "rank": 4,
+      "instructions": "先按岗位选择并读取配套技能，再基于实际输入开展工作。使用中文，区分事实、推断与未知。遵守 App 已授予的工具、文件和外部连接权限。只处理当前任务资料，所有成果可追溯。先确定课程资料、考试日期和每日时间；记忆方法不作为分数保证，不生成没有课程依据的题目。",
+      "examples": [
+        "请结合我提供的资料，把真实课程资料转成检索练习，按考试时间和错题表现调整复习。"
+      ],
+      "outputs": [
+        "题目与答案分开的回忆练习",
+        "间隔复习计划",
+        "错题与信心校准记录"
+      ],
+      "skills": [
+        {
+          "key": "retrieval-practice-generator",
+          "name": "检索练习生成",
+          "description": "围绕课程资料制作主动回忆题，答案与题目分开。",
+          "directory": "skills/retrieval-practice-generator",
+          "digest": "86466f5442e2af821aeb66bffbadf4f8d0d7b13b6aeb6e2e267e7d235342a583",
+          "source": {
+            "repository": "https://github.com/GarethManning/education-agent-skills",
+            "commit": "6bbbce418f82e11044009c9f3b7373a354de5bd0",
+            "path": "skills/memory-learning-science/retrieval-practice-generator/SKILL.md",
+            "license": "CC-BY-SA-4.0",
+            "stars": 850,
+            "verifiedAt": "2026-10-13T03:05:47.549297Z"
+          }
+        },
+        {
+          "key": "spaced-practice-scheduler",
+          "name": "间隔复习安排",
+          "description": "按考试时间、可用时间和掌握情况安排间隔练习。",
+          "directory": "skills/spaced-practice-scheduler",
+          "digest": "28287d676d7be9b7d15f107a7655c6fbaf75a0817b93f2ca7561da81dfd69d56",
+          "source": {
+            "repository": "https://github.com/GarethManning/education-agent-skills",
+            "commit": "6bbbce418f82e11044009c9f3b7373a354de5bd0",
+            "path": "skills/memory-learning-science/spaced-practice-scheduler/SKILL.md",
+            "license": "CC-BY-SA-4.0",
+            "stars": 850,
+            "verifiedAt": "2026-10-13T03:05:47.551310Z"
+          }
+        },
+        {
+          "key": "confidence-calibration-check",
+          "name": "信心校准",
+          "description": "记录作答前信心与实际表现，定位错觉和需要复习的内容。",
+          "directory": "skills/confidence-calibration-check",
+          "digest": "2743727237e0731d287a0fce32e5d1bb3d958404c681be1bc4baf4c1ae6beddf",
+          "source": {
+            "repository": "https://github.com/GarethManning/education-agent-skills",
+            "commit": "6bbbce418f82e11044009c9f3b7373a354de5bd0",
+            "path": "skills/student-learning/confidence-calibration-check/SKILL.md",
+            "license": "CC-BY-SA-4.0",
+            "stars": 850,
+            "verifiedAt": "2026-10-13T03:05:47.552955Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按所附 LICENSE / NOTICE 授权",
+      "releaseNotes": "首次适配：中文岗位流程、固定来源、完整配套资源。"
+    },
+    {
+      "id": "student-resume-advisor",
+      "version": "1.0.0",
+      "name": "实习简历顾问",
+      "role": "实习简历与岗位申请辅导",
+      "description": "采集真实课程项目与实习经历，生成简历并围绕目标岗位调整表达。",
+      "professions": [
+        "student"
+      ],
+      "group": "实习求职",
+      "rank": 5,
+      "instructions": "先按岗位选择并读取配套技能，再基于实际输入开展工作。使用中文，区分事实、推断与未知。遵守 App 已授予的工具、文件和外部连接权限。只处理当前任务资料，所有成果可追溯。中国校招默认教育和项目优先；每个数字须有用户事实来源。履历不编造。外发申请由用户授权的工具处理，HTML 为默认排版交付。",
+      "examples": [
+        "请结合我提供的资料，采集真实课程项目与实习经历，生成简历并围绕目标岗位调整表达。"
+      ],
+      "outputs": [
+        "结构化简历资料",
+        "可编辑 HTML 简历",
+        "逐项定制记录与申请信"
+      ],
+      "skills": [
+        {
+          "key": "resume-skill",
+          "name": "简历采集与排版",
+          "description": "逐问采集真实经历，保存结构化数据并生成可编辑 HTML 简历。",
+          "directory": "skills/resume-skill",
+          "digest": "ebf3e70e1a226aa3a5c77ef0a0525ed6685ad9886ea2a0c89847c1986951e903",
+          "source": {
+            "repository": "https://github.com/yanliudesign/offer-toolkit-skill",
+            "commit": "f66c4b75dd68da409197ffc06c9807209037ce41",
+            "path": "resume-skill/SKILL.md",
+            "license": "MIT",
+            "stars": 527,
+            "verifiedAt": "2026-10-13T03:05:47.561335Z"
+          }
+        },
+        {
+          "key": "resume-tailor",
+          "name": "岗位简历定制",
+          "description": "依据岗位要求调整真实经历的顺序与表达，保留逐项修改记录。",
+          "directory": "skills/resume-tailor",
+          "digest": "eabde8b22b1219dcc11ae922d1a1fce057f324b79167135880ee0eb427e3ae5b",
+          "source": {
+            "repository": "https://github.com/Paramchoudhary/ResumeSkills",
+            "commit": "74ae19e7c62b0516d1c298328e5544976c12da5d",
+            "path": "skills/resume-tailor/SKILL.md",
+            "license": "MIT",
+            "stars": 2674,
+            "verifiedAt": "2026-10-13T03:05:47.564188Z"
+          }
+        },
+        {
+          "key": "cover-letter-generator",
+          "name": "申请信撰写",
+          "description": "根据真实经历和岗位描述生成申请信与可展开的面试谈话要点。",
+          "directory": "skills/cover-letter-generator",
+          "digest": "ca35b204099c97c16edf0ae71dcd2f44036c34437dc908ecd5ddd603629cc1c5",
+          "source": {
+            "repository": "https://github.com/Paramchoudhary/ResumeSkills",
+            "commit": "74ae19e7c62b0516d1c298328e5544976c12da5d",
+            "path": "skills/cover-letter-generator/SKILL.md",
+            "license": "MIT",
+            "stars": 2674,
+            "verifiedAt": "2026-10-13T03:05:47.565494Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按所附 LICENSE / NOTICE 授权",
+      "releaseNotes": "首次适配：中文岗位流程、固定来源、完整配套资源。"
+    }
+  ]
+}

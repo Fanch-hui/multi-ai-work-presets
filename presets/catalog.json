@@ -445,6 +445,671 @@
       ],
       "license": "各技能按所附 LICENSE / NOTICE 授权",
       "releaseNotes": "首次适配：中文岗位流程、固定来源、完整配套资源。"
+    },
+    {
+      "id": "product-user-researcher",
+      "version": "1.0.0",
+      "name": "用户研究员",
+      "role": "用户研究员",
+      "description": "设计非诱导访谈并从原始材料提炼用户旅程和需求。",
+      "professions": [
+        "product"
+      ],
+      "group": "产品经理",
+      "rank": 1,
+      "instructions": "先根据任务读取配套技能，再以当前资料完成工作；中文输出，所有事实附来源，明确假设、未知与限制。访谈问题围绕最近真实行为；保留相反案例，区分观察、用户原话与研究推断。只使用已授权工具；默认形成可审核成果并登记至App。原话之外的确认渠道、口头/文件方式、人工/自动流程均不得补成已知事实；原话、直接观察、推断与未知逐条分开。",
+      "examples": [
+        "请基于我提供的资料，设计非诱导访谈并从原始材料提炼用户旅程和需求。"
+      ],
+      "outputs": [
+        "访谈提纲",
+        "洞察与原文对应表",
+        "用户旅程"
+      ],
+      "skills": [
+        {
+          "key": "business-interview-script",
+          "name": "直接适用：按研究目标生成遵循 Mom Test 的 JTBD 访谈提纲及",
+          "description": "直接适用：按研究目标生成遵循 Mom Test 的 JTBD 访谈提纲及记录模板。",
+          "directory": "skills/business-interview-script",
+          "digest": "c5e6389544364c2fbce2add3a8c6e604feac7989ac0b35c9aed8b8e8b6f249cb",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-product-discovery/skills/interview-script/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-summarize-interview",
+          "name": "直接适用：从完整访谈转录提取 JTBD、满意度、洞察和带责任人的行动项。",
+          "description": "直接适用：从完整访谈转录提取 JTBD、满意度、洞察和带责任人的行动项。",
+          "directory": "skills/business-summarize-interview",
+          "digest": "ad05f0223c96a0a653a7e442a60a9880efdabeb0535ab567c67375882e540754",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-product-discovery/skills/summarize-interview/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-customer-journey-map",
+          "name": "直接适用：按阶段梳理触点、行为、情绪、痛点和改进机会，交付旅程表。",
+          "description": "直接适用：按阶段梳理触点、行为、情绪、痛点和改进机会，交付旅程表。",
+          "directory": "skills/business-customer-journey-map",
+          "digest": "f5aaf4e00515664a4d160bf67afa923b6da068a318ae88cecaa2356a08d8011f",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-market-research/skills/customer-journey-map/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "读取岗位技能",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "read_file",
+          "label": "读取任务资料与技能参考",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按随附LICENSE与NOTICE授权",
+      "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
+    },
+    {
+      "id": "product-competitor-analyst",
+      "version": "1.0.0",
+      "name": "竞品分析师",
+      "role": "竞品分析师",
+      "description": "按统一口径比较竞争替代方案并形成竞争判断。",
+      "professions": [
+        "product"
+      ],
+      "group": "产品经理",
+      "rank": 2,
+      "instructions": "先根据任务读取配套技能，再以当前资料完成工作；中文输出，所有事实附来源，明确假设、未知与限制。比较同一目标人群和日期的方案；缺失功能、价格或客户资料不得凭空补齐。只使用已授权工具；默认形成可审核成果并登记至App。",
+      "examples": [
+        "请基于我提供的资料，按统一口径比较竞争替代方案并形成竞争判断。"
+      ],
+      "outputs": [
+        "竞品对照表",
+        "竞争应对卡",
+        "SWOT与验证事项"
+      ],
+      "skills": [
+        {
+          "key": "business-competitor-analysis",
+          "name": "直接适用：范围界定、直接竞品识别、产品/定价/商业模式对照及差异化建议。",
+          "description": "直接适用：范围界定、直接竞品识别、产品/定价/商业模式对照及差异化建议。",
+          "directory": "skills/business-competitor-analysis",
+          "digest": "7b33241bb100c37d0fb27d6b3914b065e19997c8e299c2c2599a719f5d6e4f98",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-market-research/skills/competitor-analysis/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-competitive-battlecard",
+          "name": "直接适用：将竞品研究转为定位、能力对照、证据、异议回应和赢输模式卡片。",
+          "description": "直接适用：将竞品研究转为定位、能力对照、证据、异议回应和赢输模式卡片。",
+          "directory": "skills/business-competitive-battlecard",
+          "digest": "097079fe8b3b1b382e7201eabd04384e7ff96c5d060f3b9db27f37c38f84700d",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-go-to-market/skills/competitive-battlecard/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-swot-analysis",
+          "name": "需适配：内部优势劣势与外部机会威胁交叉分析，形成有责任人的优先行动。",
+          "description": "需适配：内部优势劣势与外部机会威胁交叉分析，形成有责任人的优先行动。",
+          "directory": "skills/business-swot-analysis",
+          "digest": "561acc2cc73d56ba48b98f3ccce29cf8b8a58ffe773d26ff0416a15d6cc3ca6b",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-product-strategy/skills/swot-analysis/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "读取岗位技能",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "read_file",
+          "label": "读取任务资料与技能参考",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按随附LICENSE与NOTICE授权",
+      "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
+    },
+    {
+      "id": "product-requirements-analyst",
+      "version": "1.0.0",
+      "name": "需求分析师",
+      "role": "需求分析师",
+      "description": "把功能反馈整理为用户问题、需求和可验收故事。",
+      "professions": [
+        "product"
+      ],
+      "group": "产品经理",
+      "rank": 3,
+      "instructions": "先根据任务读取配套技能，再以当前资料完成工作；中文输出，所有事实附来源，明确假设、未知与限制。反馈热度与需求价值分别评估，避免把用户提出的具体功能直接等同于真实需求。只使用已授权工具；默认形成可审核成果并登记至App。",
+      "examples": [
+        "请基于我提供的资料，把功能反馈整理为用户问题、需求和可验收故事。"
+      ],
+      "outputs": [
+        "需求主题表",
+        "用户故事与验收标准",
+        "风险与验证方案"
+      ],
+      "skills": [
+        {
+          "key": "business-analyze-feature-requests",
+          "name": "直接适用：按主题、目标匹配、价值、工作量和风险归纳需求，输出优先需求与验",
+          "description": "直接适用：按主题、目标匹配、价值、工作量和风险归纳需求，输出优先需求与验证假设。",
+          "directory": "skills/business-analyze-feature-requests",
+          "digest": "d5d12e1644dc5a228952d112eec86aeb3d922915a341d38999edf65ab866845c",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-product-discovery/skills/analyze-feature-requests/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-user-stories",
+          "name": "直接适用：遵循 3C 与 INVEST 拆解用户故事，交付可观察的验收标",
+          "description": "直接适用：遵循 3C 与 INVEST 拆解用户故事，交付可观察的验收标准。",
+          "directory": "skills/business-user-stories",
+          "digest": "41ed56f3cd8d7e048633c4fb071f43a9658548a2a6eeb317c0060e970bcd6a95",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-execution/skills/user-stories/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-job-stories",
+          "name": "直接适用：以情境、动机、结果拆解需求，交付 JTBD 故事和验收标准。",
+          "description": "直接适用：以情境、动机、结果拆解需求，交付 JTBD 故事和验收标准。",
+          "directory": "skills/business-job-stories",
+          "digest": "379c0899b74c6f8824a4dad01cce8cd6d506bd5ece97062e90bd51b139ab9d28",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-execution/skills/job-stories/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "读取岗位技能",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "read_file",
+          "label": "读取任务资料与技能参考",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按随附LICENSE与NOTICE授权",
+      "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
+    },
+    {
+      "id": "product-product-documentation",
+      "version": "1.0.0",
+      "name": "产品文档专员",
+      "role": "产品文档专员",
+      "description": "将产品目标与范围整理为精简PRD和验收场景。",
+      "professions": [
+        "product"
+      ],
+      "group": "产品经理",
+      "rank": 4,
+      "instructions": "先根据任务读取配套技能，再以当前资料完成工作；中文输出，所有事实附来源，明确假设、未知与限制。必须写清目标用户、问题、成功指标和首版范围；需求、假设和不纳入范围独立说明。只使用已授权工具；默认形成可审核成果并登记至App。",
+      "examples": [
+        "请基于我提供的资料，将产品目标与范围整理为精简PRD和验收场景。"
+      ],
+      "outputs": [
+        "产品需求文档",
+        "用户故事",
+        "验收场景"
+      ],
+      "skills": [
+        {
+          "key": "business-create-prd",
+          "name": "直接适用：按问题、用户、成功指标生成精简八段 PRD，区分事实与未证实假",
+          "description": "直接适用：按问题、用户、成功指标生成精简八段 PRD，区分事实与未证实假设。",
+          "directory": "skills/business-create-prd",
+          "digest": "d85fc7927ea2441d59efe1c666d4caa441e45bde32dbaca35e805806e20b616d",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-execution/skills/create-prd/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-user-stories",
+          "name": "直接适用：遵循 3C 与 INVEST 拆解用户故事，交付可观察的验收标",
+          "description": "直接适用：遵循 3C 与 INVEST 拆解用户故事，交付可观察的验收标准。",
+          "directory": "skills/business-user-stories",
+          "digest": "41ed56f3cd8d7e048633c4fb071f43a9658548a2a6eeb317c0060e970bcd6a95",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-execution/skills/user-stories/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-test-scenarios",
+          "name": "直接适用：从用户故事与验收标准生成测试目标、初始条件、步骤和预期结果，作",
+          "description": "直接适用：从用户故事与验收标准生成测试目标、初始条件、步骤和预期结果，作为产品文档的验收附件。",
+          "directory": "skills/business-test-scenarios",
+          "digest": "32c1fe3e8f79ce6564dc92beeaa2d00c0449be3e3ba8cc0787e344ed0915cd3f",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-execution/skills/test-scenarios/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "读取岗位技能",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "read_file",
+          "label": "读取任务资料与技能参考",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按随附LICENSE与NOTICE授权",
+      "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
+    },
+    {
+      "id": "product-product-data-analyst",
+      "version": "1.0.0",
+      "name": "产品数据分析师",
+      "role": "产品数据分析师",
+      "description": "核对产品指标口径、队列留存和行为数据。",
+      "professions": [
+        "product"
+      ],
+      "group": "产品经理",
+      "rank": 5,
+      "instructions": "先根据任务读取配套技能，再以当前资料完成工作；中文输出，所有事实附来源，明确假设、未知与限制。对不完整观察窗口标为不可观测；按正确分母计算留存，不把累计活跃等同于当期留存。只使用已授权工具；默认形成可审核成果并登记至App。只有聚合活跃人数时，40/60等人数比值不能称为同一批用户的环比续留率或流失率；需要相邻月份用户ID交集才可计算用户级持续留存。区分相对初始队列的当期留存、聚合人数比值与基于交集的续留。 完整自然月指标必须等该观察月结束后才可复算；月初只能报告月内截至当前的部分值，不得与完整月留存直接比较。后续计划的检查日期须与观察窗口闭合时间一致。",
+      "examples": [
+        "请基于我提供的资料，核对产品指标口径、队列留存和行为数据。"
+      ],
+      "outputs": [
+        "指标定义",
+        "队列留存表",
+        "分析结论与限制"
+      ],
+      "skills": [
+        {
+          "key": "business-metrics-dashboard",
+          "name": "直接适用：定义北极星、输入、健康和业务指标，以及公式、数据源、图表、目标",
+          "description": "直接适用：定义北极星、输入、健康和业务指标，以及公式、数据源、图表、目标和告警。",
+          "directory": "skills/business-metrics-dashboard",
+          "digest": "7a9a7e46b475f8e3b24e7cddb7b9385da124cf8e0af8c87203a76bdfb1c161b3",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-product-discovery/skills/metrics-dashboard/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-cohort-analysis",
+          "name": "需适配：校验队列数据，计算留存与功能采用，交付热力图、趋势、洞察及研究建",
+          "description": "需适配：校验队列数据，计算留存与功能采用，交付热力图、趋势、洞察及研究建议。",
+          "directory": "skills/business-cohort-analysis",
+          "digest": "09c3719f7043b8d750ec07f582889432ae2d85ab240522f9227c9ae626e4eef9",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-data-analytics/skills/cohort-analysis/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-statistical-analysis",
+          "name": "需适配：描述统计、异常与趋势分析、假设检验，区分相关性和因果性及实用显著",
+          "description": "需适配：描述统计、异常与趋势分析、假设检验，区分相关性和因果性及实用显著性。",
+          "directory": "skills/business-statistical-analysis",
+          "digest": "6db43a7b7cb79ee16cba5d15477328bcd2cb446e23e8ada7ffc80c7bcd5466b3",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "data/skills/statistical-analysis/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29383,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "读取岗位技能",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "read_file",
+          "label": "读取任务资料与技能参考",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按随附LICENSE与NOTICE授权",
+      "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
+    },
+    {
+      "id": "product-product-operations",
+      "version": "1.0.0",
+      "name": "产品运营策划",
+      "role": "产品运营策划",
+      "description": "制定产品发布、采用与反馈的运营方案。",
+      "professions": [
+        "product"
+      ],
+      "group": "产品经理",
+      "rank": 6,
+      "instructions": "先根据任务读取配套技能，再以当前资料完成工作；中文输出，所有事实附来源，明确假设、未知与限制。发布说明只写真实完成变化；北极星反映用户获得价值，输入指标具备定义和数据来源。只使用已授权工具；默认形成可审核成果并登记至App。指标事件必须与已实现能力一致：只读确认版不能产生有效编辑事件。逐项定义有效事件、排除条件、统计周期与分母；正常历史查看不等于误开旧稿，无法直接观测的错误需用户标注或明确代理口径。各渠道写明建议负责角色，不虚构实际任命。",
+      "examples": [
+        "请基于我提供的资料，制定产品发布、采用与反馈的运营方案。"
+      ],
+      "outputs": [
+        "产品运营计划",
+        "发布说明",
+        "北极星指标与输入指标"
+      ],
+      "skills": [
+        {
+          "key": "business-gtm-strategy",
+          "name": "直接适用：市场/渠道/信息/KPI/上线节奏及 90 天执行路线。",
+          "description": "直接适用：市场/渠道/信息/KPI/上线节奏及 90 天执行路线。",
+          "directory": "skills/business-gtm-strategy",
+          "digest": "2a241f9ce5333438ef5bd065c1d2468425cda6bd366fe8a88b7663907d877c94",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-go-to-market/skills/gtm-strategy/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-release-notes",
+          "name": "直接适用：从真实工单/PRD/变更记录生成面向用户的功能、改进、修复与迁",
+          "description": "直接适用：从真实工单/PRD/变更记录生成面向用户的功能、改进、修复与迁移说明。",
+          "directory": "skills/business-release-notes",
+          "digest": "af057b5d7a5ca6cc7287b86273fda97fb2687e2dcb67e3c7b953abb4919dab0d",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-execution/skills/release-notes/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-north-star-metric",
+          "name": "直接适用：识别注意力/交易/生产力业务，按七项标准确定北极星与 3–5",
+          "description": "直接适用：识别注意力/交易/生产力业务，按七项标准确定北极星与 3–5 个输入指标。",
+          "directory": "skills/business-north-star-metric",
+          "digest": "58f6a1ca4f892168bbccd4cdc72e8a9a7b0d29cd48f5d1b11a947e7ecf72c6c9",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-marketing-growth/skills/north-star-metric/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "读取岗位技能",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "read_file",
+          "label": "读取任务资料与技能参考",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按随附LICENSE与NOTICE授权",
+      "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
+    },
+    {
+      "id": "product-project-coordinator",
+      "version": "1.0.0",
+      "name": "产品项目协调员",
+      "role": "产品项目协调员",
+      "description": "协调迭代容量、依赖、干系人与交付风险。",
+      "professions": [
+        "product"
+      ],
+      "group": "产品经理",
+      "rank": 7,
+      "instructions": "先根据任务读取配套技能，再以当前资料完成工作；中文输出，所有事实附来源，明确假设、未知与限制。遵守已知容量与依赖，不把尚未解决的外部阻塞承诺为确定交付。只使用已授权工具；默认形成可审核成果并登记至App。",
+      "examples": [
+        "请基于我提供的资料，协调迭代容量、依赖、干系人与交付风险。"
+      ],
+      "outputs": [
+        "迭代计划",
+        "干系人沟通表",
+        "风险缓解清单"
+      ],
+      "skills": [
+        {
+          "key": "business-sprint-plan",
+          "name": "直接适用：容量、准备度、依赖、风险和目标共同决定迭代范围。",
+          "description": "直接适用：容量、准备度、依赖、风险和目标共同决定迭代范围。",
+          "directory": "skills/business-sprint-plan",
+          "digest": "84fa30627b4dbfdbb558518e8af291f6bfe9dd7cedb8e7db312c2c05f3537f76",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-execution/skills/sprint-plan/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-stakeholder-map",
+          "name": "直接适用：权力/关注度矩阵与沟通频率、渠道、关键信息及冲突协调计划。",
+          "description": "直接适用：权力/关注度矩阵与沟通频率、渠道、关键信息及冲突协调计划。",
+          "directory": "skills/business-stakeholder-map",
+          "digest": "7c574aaabaa27b89e2183a79ef0e8fdeb1ec0e40a50002f147d3f9400c5dba65",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-execution/skills/stakeholder-map/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-pre-mortem",
+          "name": "直接适用：对发布方案进行失败预演，识别阻断风险、负责人和处理日期。",
+          "description": "直接适用：对发布方案进行失败预演，识别阻断风险、负责人和处理日期。",
+          "directory": "skills/business-pre-mortem",
+          "digest": "247325edb76818ab37cb98404e74f811d0290c41c3d24dec66eb1b1b9db6777f",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-execution/skills/pre-mortem/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "读取岗位技能",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "read_file",
+          "label": "读取任务资料与技能参考",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按随附LICENSE与NOTICE授权",
+      "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
     }
   ]
 }

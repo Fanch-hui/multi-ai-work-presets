@@ -88,5 +88,131 @@
       "model": "qmodel_38max",
       "scenario": "代表性模拟资料任务"
     }
+  },
+  "product-user-researcher": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "07871d720d2c4f4f524f32067ffac64aae57e300cf0104cafc3b9a480426fa26",
+    "skillDigests": {
+      "business-interview-script": "c5e6389544364c2fbce2add3a8c6e604feac7989ac0b35c9aed8b8e8b6f249cb",
+      "business-summarize-interview": "ad05f0223c96a0a653a7e442a60a9880efdabeb0535ab567c67375882e540754",
+      "business-customer-journey-map": "f5aaf4e00515664a4d160bf67afa923b6da068a318ae88cecaa2356a08d8011f"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "文档共享用户研究"
+    }
+  },
+  "product-competitor-analyst": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "ccc2a566764a32496964a86b870c04fc9d7ea456acccfee2e261c8f7a1f69acb",
+    "skillDigests": {
+      "business-competitor-analysis": "7b33241bb100c37d0fb27d6b3914b065e19997c8e299c2c2599a719f5d6e4f98",
+      "business-competitive-battlecard": "097079fe8b3b1b382e7201eabd04384e7ff96c5d060f3b9db27f37c38f84700d",
+      "business-swot-analysis": "561acc2cc73d56ba48b98f3ccce29cf8b8a58ffe773d26ff0416a15d6cc3ca6b"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "文档产品竞品对照"
+    }
+  },
+  "product-requirements-analyst": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "f23c771d9c0f9ae5a98feaebcce7b6a7126fabd3feda3dc349f1b845f9708bfa",
+    "skillDigests": {
+      "business-analyze-feature-requests": "d5d12e1644dc5a228952d112eec86aeb3d922915a341d38999edf65ab866845c",
+      "business-user-stories": "41ed56f3cd8d7e048633c4fb071f43a9658548a2a6eeb317c0060e970bcd6a95",
+      "business-job-stories": "379c0899b74c6f8824a4dad01cce8cd6d506bd5ece97062e90bd51b139ab9d28"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "版本反馈需求分析"
+    }
+  },
+  "product-product-documentation": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "e5d6f9c31de5806961b3e2c881885f7642bd57fd67a360571eb6df1cf893a46f",
+    "skillDigests": {
+      "business-create-prd": "d85fc7927ea2441d59efe1c666d4caa441e45bde32dbaca35e805806e20b616d",
+      "business-user-stories": "41ed56f3cd8d7e048633c4fb071f43a9658548a2a6eeb317c0060e970bcd6a95",
+      "business-test-scenarios": "32c1fe3e8f79ce6564dc92beeaa2d00c0449be3e3ba8cc0787e344ed0915cd3f"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "精简PRD"
+    }
+  },
+  "product-product-data-analyst": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "50b3fcb76eae1ea1b80b15efddc7cfade2a383c28b88c43d6797a2d1bd31ca84",
+    "skillDigests": {
+      "business-metrics-dashboard": "7a9a7e46b475f8e3b24e7cddb7b9385da124cf8e0af8c87203a76bdfb1c161b3",
+      "business-cohort-analysis": "09c3719f7043b8d750ec07f582889432ae2d85ab240522f9227c9ae626e4eef9",
+      "business-statistical-analysis": "6db43a7b7cb79ee16cba5d15477328bcd2cb446e23e8ada7ffc80c7bcd5466b3"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "队列留存口径"
+    }
+  },
+  "product-product-operations": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "0890a811741445a96cf59afedf067ffd8ecfeaf70e73420b6feb1385e43a3792",
+    "skillDigests": {
+      "business-gtm-strategy": "2a241f9ce5333438ef5bd065c1d2468425cda6bd366fe8a88b7663907d877c94",
+      "business-release-notes": "af057b5d7a5ca6cc7287b86273fda97fb2687e2dcb67e3c7b953abb4919dab0d",
+      "business-north-star-metric": "58f6a1ca4f892168bbccd4cdc72e8a9a7b0d29cd48f5d1b11a947e7ecf72c6c9"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "发布与采用计划"
+    }
+  },
+  "product-project-coordinator": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "7ac427ce01ad17fb461b64767c0ab5cf051d5acd48cb80e8e7e47fd1619b694e",
+    "skillDigests": {
+      "business-sprint-plan": "84fa30627b4dbfdbb558518e8af291f6bfe9dd7cedb8e7db312c2c05f3537f76",
+      "business-stakeholder-map": "7c574aaabaa27b89e2183a79ef0e8fdeb1ec0e40a50002f147d3f9400c5dba65",
+      "business-pre-mortem": "247325edb76818ab37cb98404e74f811d0290c41c3d24dec66eb1b1b9db6777f"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "迭代容量与依赖"
+    }
   }
 }

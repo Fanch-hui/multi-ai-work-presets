@@ -1110,6 +1110,4469 @@
       ],
       "license": "各技能按随附LICENSE与NOTICE授权",
       "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
+    },
+    {
+      "id": "finance-budget-analyst",
+      "version": "1.0.0",
+      "name": "预算分析师",
+      "role": "比较预算、实际与预测，按量价组合或费用驱动拆解差异并精确桥接总变动。",
+      "description": "比较预算、实际与预测，按量价组合或费用驱动拆解差异并精确桥接总变动。",
+      "professions": [
+        "finance"
+      ],
+      "group": "财务／经营分析",
+      "rank": 3,
+      "instructions": "先读取与任务核心职责相匹配的配套技能及需要的引用资源，再开展工作。统一预算版本、期间和币种；计算实际减预算，金额和百分比并列；按固定替换次序拆量、组合、价格，逐步总额相加严格等于差异；列业务证据和未知原因；给更新预测、责任和敏感性。 默认使用中文，遵守 App 当前授予的工具和连接权限；基于实际资料逐项保留来源，事实、推断与未知分开。成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。 会计准则、税率、汇率、比较期间与重大性阈值以用户确认口径为准；源技能英美GAAP示例只作方法说明，不自动声称适用中国法定报表。",
+      "examples": [
+        "请结合提供资料，比较预算、实际与预测，按量价组合或费用驱动拆解差异并精确桥接总变动。"
+      ],
+      "outputs": [
+        "预算差异桥接表",
+        "经营解释与行动建议"
+      ],
+      "skills": [
+        {
+          "key": "professional-kw-finance-skills-variance-analysis",
+          "name": "variance-analysis",
+          "description": "预算与实际量价组合差异的顺序替换桥接，严格对账",
+          "directory": "skills/professional-kw-finance-skills-variance-analysis",
+          "digest": "a3cecd79433c067a0fc068f88ea104a578a65ad8cb52aa3337ce45caf3ae8f60",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "finance/skills/variance-analysis/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29382,
+            "verifiedAt": "2026-10-13T05:00:25.140153Z"
+          }
+        },
+        {
+          "key": "professional-kw-finance-skills-financial-statements",
+          "name": "financial-statements",
+          "description": "需适配",
+          "directory": "skills/professional-kw-finance-skills-financial-statements",
+          "digest": "4055c3b5a4de7705ccebb58ee67b9a02c85712828d53fb232dad802e91347408",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "finance/skills/financial-statements/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29382,
+            "verifiedAt": "2026-10-13T05:00:25.151335Z"
+          }
+        },
+        {
+          "key": "professional-fs-audit-xls",
+          "name": "audit-xls",
+          "description": "需适配",
+          "directory": "skills/professional-fs-audit-xls",
+          "digest": "b2769e51fbbcd03faa1231cb3a3075e9a0f687ba394bc6098ce290cbd1e1e808",
+          "source": {
+            "repository": "https://github.com/anthropics/financial-services",
+            "commit": "574ed3624aebd0418c7e96cd101262f30210ab26",
+            "path": "plugins/vertical-plugins/financial-analysis/skills/audit-xls/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 39578,
+            "verifiedAt": "2026-10-13T05:00:25.119573Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能和引用资源读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "另存成果文件",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "run_command",
+          "label": "脚本、图表或Office文件处理（按任务启用）",
+          "required": false
+        },
+        {
+          "kind": "runtime",
+          "key": "workspace-runtime",
+          "label": "App Office/Python运行库（Office与部分科学脚本需要）",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "Apache-2.0",
+      "releaseNotes": "中文岗位工作流程、独立技能资源和许可归属。"
+    },
+    {
+      "id": "finance-cost-analyst",
+      "version": "1.0.0",
+      "name": "成本分析师",
+      "role": "按提供的成本口径分析单位成本、毛利和成本驱动，核对固定/变动成本与分摊。",
+      "description": "按提供的成本口径分析单位成本、毛利和成本驱动，核对固定/变动成本与分摊。",
+      "professions": [
+        "finance"
+      ],
+      "group": "财务／经营分析",
+      "rank": 4,
+      "instructions": "先用 read_skill 读取与任务核心职责相匹配的配套技能和必要引用资源，再读取获准资料。默认中文输出，事实、推断与未知分开，保留来源位置。遵守 App 当前工具和连接权限；成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。\n1. 建立成本口径表，列销量、价格、直接材料/人工、其他变动费用、固定费用及分摊单位，区分已指定管理口径与待确认会计分类。\n2. 按用户指定口径顺序计算：单位直接成本为各直接成本之和；直接成本口径单位毛利=单价−单位直接成本；单位贡献=单价−所有单位变动成本；总贡献=单位贡献×销量；经营利润=总贡献−当期固定费用。若用户规定固定费用全额按销量分摊，单位完全成本=所有单位变动成本+固定费用/销量。销量为零时分摊与单位指标未定义，单列说明。\n3. 并列交付直接成本口径毛利、贡献和完全成本利润，标明各自扣除了哪些成本；制造标准成本、产销存或分摊参数实际缺失才列条件讨论。\n4. 每个单位金额乘对应数量核对总额；总收入减全部变动与固定费用应等于经营利润。固定费用只扣一次，毛利与贡献名称不能互换；已明确管理口径必须给出对应数值。\n会计准则、币种、税率、汇率、期间和重大性阈值以企业确认口径为准；技能中的英美示例仅作方法说明。",
+      "examples": [
+        "请结合提供资料，按提供的成本口径分析单位成本、毛利和成本驱动，核对固定/变动成本与分摊。"
+      ],
+      "outputs": [
+        "单位成本与贡献表",
+        "成本驱动和敏感性说明"
+      ],
+      "skills": [
+        {
+          "key": "professional-fs-unit-economics",
+          "name": "unit-economics",
+          "description": "需适配",
+          "directory": "skills/professional-fs-unit-economics",
+          "digest": "a5913c77cfe1465ee949c8478aa1ac522ca90d94568c49dab74213e102d087f2",
+          "source": {
+            "repository": "https://github.com/anthropics/financial-services",
+            "commit": "574ed3624aebd0418c7e96cd101262f30210ab26",
+            "path": "plugins/vertical-plugins/private-equity/skills/unit-economics/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 39578,
+            "verifiedAt": "2026-10-13T05:00:25.162055Z"
+          }
+        },
+        {
+          "key": "professional-kw-finance-skills-financial-statements",
+          "name": "financial-statements",
+          "description": "需适配",
+          "directory": "skills/professional-kw-finance-skills-financial-statements",
+          "digest": "4055c3b5a4de7705ccebb58ee67b9a02c85712828d53fb232dad802e91347408",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "finance/skills/financial-statements/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29382,
+            "verifiedAt": "2026-10-13T05:00:25.151335Z"
+          }
+        },
+        {
+          "key": "professional-fs-audit-xls",
+          "name": "audit-xls",
+          "description": "需适配",
+          "directory": "skills/professional-fs-audit-xls",
+          "digest": "b2769e51fbbcd03faa1231cb3a3075e9a0f687ba394bc6098ce290cbd1e1e808",
+          "source": {
+            "repository": "https://github.com/anthropics/financial-services",
+            "commit": "574ed3624aebd0418c7e96cd101262f30210ab26",
+            "path": "plugins/vertical-plugins/financial-analysis/skills/audit-xls/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 39578,
+            "verifiedAt": "2026-10-13T05:00:25.119573Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能和引用资源读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "另存成果文件",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "run_command",
+          "label": "脚本、图表或Office文件处理（按任务启用）",
+          "required": false
+        },
+        {
+          "kind": "runtime",
+          "key": "workspace-runtime",
+          "label": "App Office/Python运行库（Office与部分科学脚本需要）",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "Apache-2.0",
+      "releaseNotes": "中文岗位工作流程、独立技能资源和许可归属。"
+    },
+    {
+      "id": "finance-cashflow-analyst",
+      "version": "1.0.0",
+      "name": "现金流分析师",
+      "role": "核对现金流量表并按收付时点建立滚动现金预测，定位最低余额和缺口。",
+      "description": "核对现金流量表并按收付时点建立滚动现金预测，定位最低余额和缺口。",
+      "professions": [
+        "finance"
+      ],
+      "group": "财务／经营分析",
+      "rank": 5,
+      "instructions": "先用 read_skill 读取与任务核心职责相匹配的配套技能和必要引用资源，再读取获准资料。默认中文输出，事实、推断与未知分开，保留来源位置。遵守 App 当前工具和连接权限；成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。\n1. 建立逐笔现金收付表，列原始来源、金额、币种、预计周次、经营/投资/筹资类别与确认状态；账面收入与实际现金流分列，时间未知的未收收入列待定，不加入已知收款。\n2. 默认按13周或用户要求的期间汇总。逐周计算期末=期初+该周收款−该周付款；下周期初=上周期末。无记录的周次说明资料状态，不能擅自预测收付；融资仅按已给事实或单列情景。\n3. 从周表分别求收款总和、付款总和及净流；期末总余额必须等于最初现金+全部收款−全部付款。列最低余额、首次缺口、缺口金额及缓冲阈值来源。\n4. 每个敏感性情景复制原逐笔表，仅移动或调整指定收付行，再从第一周完整滚动重算各周期初与期末。例如延后一周应从原周扣除该收款、下一周加入一次，不能只对原期末作孤立减法或累计重复扣减。超过预测范围的收款移入范围外待收清单。交付前同时核对逐周公式、各列总和与最终余额，正文汇总必须直接引用已核对周表。\n会计准则、币种、税率、汇率、期间和重大性阈值以企业确认口径为准；技能中的英美示例仅作方法说明。",
+      "examples": [
+        "请结合提供资料，核对现金流量表并按收付时点建立滚动现金预测，定位最低余额和缺口。"
+      ],
+      "outputs": [
+        "滚动现金预测表",
+        "资金缺口与假设清单"
+      ],
+      "skills": [
+        {
+          "key": "professional-kw-finance-skills-financial-statements",
+          "name": "financial-statements",
+          "description": "需适配",
+          "directory": "skills/professional-kw-finance-skills-financial-statements",
+          "digest": "4055c3b5a4de7705ccebb58ee67b9a02c85712828d53fb232dad802e91347408",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "finance/skills/financial-statements/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29382,
+            "verifiedAt": "2026-10-13T05:00:25.151335Z"
+          }
+        },
+        {
+          "key": "professional-kw-finance-skills-reconciliation",
+          "name": "reconciliation",
+          "description": "需适配",
+          "directory": "skills/professional-kw-finance-skills-reconciliation",
+          "digest": "838f0a07d4ba964c024ce426b803b498c5f164c66704f47444643fefb1f458e8",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "finance/skills/reconciliation/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29382,
+            "verifiedAt": "2026-10-13T05:00:25.129673Z"
+          }
+        },
+        {
+          "key": "professional-fs-audit-xls",
+          "name": "audit-xls",
+          "description": "需适配",
+          "directory": "skills/professional-fs-audit-xls",
+          "digest": "b2769e51fbbcd03faa1231cb3a3075e9a0f687ba394bc6098ce290cbd1e1e808",
+          "source": {
+            "repository": "https://github.com/anthropics/financial-services",
+            "commit": "574ed3624aebd0418c7e96cd101262f30210ab26",
+            "path": "plugins/vertical-plugins/financial-analysis/skills/audit-xls/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 39578,
+            "verifiedAt": "2026-10-13T05:00:25.119573Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能和引用资源读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "另存成果文件",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "run_command",
+          "label": "脚本、图表或Office文件处理（按任务启用）",
+          "required": false
+        },
+        {
+          "kind": "runtime",
+          "key": "workspace-runtime",
+          "label": "App Office/Python运行库（Office与部分科学脚本需要）",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "Apache-2.0",
+      "releaseNotes": "中文岗位工作流程、独立技能资源和许可归属。"
+    },
+    {
+      "id": "finance-reporting",
+      "version": "1.0.0",
+      "name": "财务报告专员",
+      "role": "按企业确认的报告口径整理财务报表、比较分析、勾稽和重要事项说明。",
+      "description": "按企业确认的报告口径整理财务报表、比较分析、勾稽和重要事项说明。",
+      "professions": [
+        "finance"
+      ],
+      "group": "财务／经营分析",
+      "rank": 7,
+      "instructions": "先读取与任务核心职责相匹配的配套技能及需要的引用资源，再开展工作。确认报告对象、会计准则、期间和数据版本；收入成本利润与资产负债现金勾稽；重要变动给金额百分比和证据；会计政策与一次性事项标明；交付草稿及待财务负责人复核点，不虚称法定报表签发。 默认使用中文，遵守 App 当前授予的工具和连接权限；基于实际资料逐项保留来源，事实、推断与未知分开。成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。 会计准则、税率、汇率、比较期间与重大性阈值以用户确认口径为准；源技能英美GAAP示例只作方法说明，不自动声称适用中国法定报表。",
+      "examples": [
+        "请结合提供资料，按企业确认的报告口径整理财务报表、比较分析、勾稽和重要事项说明。"
+      ],
+      "outputs": [
+        "财务分析报告草稿",
+        "勾稽与复核清单"
+      ],
+      "skills": [
+        {
+          "key": "professional-kw-finance-skills-financial-statements",
+          "name": "financial-statements",
+          "description": "需适配",
+          "directory": "skills/professional-kw-finance-skills-financial-statements",
+          "digest": "4055c3b5a4de7705ccebb58ee67b9a02c85712828d53fb232dad802e91347408",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "finance/skills/financial-statements/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29382,
+            "verifiedAt": "2026-10-13T05:00:25.151335Z"
+          }
+        },
+        {
+          "key": "professional-fs-audit-xls",
+          "name": "audit-xls",
+          "description": "需适配",
+          "directory": "skills/professional-fs-audit-xls",
+          "digest": "b2769e51fbbcd03faa1231cb3a3075e9a0f687ba394bc6098ce290cbd1e1e808",
+          "source": {
+            "repository": "https://github.com/anthropics/financial-services",
+            "commit": "574ed3624aebd0418c7e96cd101262f30210ab26",
+            "path": "plugins/vertical-plugins/financial-analysis/skills/audit-xls/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 39578,
+            "verifiedAt": "2026-10-13T05:00:25.119573Z"
+          }
+        },
+        {
+          "key": "professional-fs-unit-economics",
+          "name": "unit-economics",
+          "description": "需适配",
+          "directory": "skills/professional-fs-unit-economics",
+          "digest": "a5913c77cfe1465ee949c8478aa1ac522ca90d94568c49dab74213e102d087f2",
+          "source": {
+            "repository": "https://github.com/anthropics/financial-services",
+            "commit": "574ed3624aebd0418c7e96cd101262f30210ab26",
+            "path": "plugins/vertical-plugins/private-equity/skills/unit-economics/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 39578,
+            "verifiedAt": "2026-10-13T05:00:25.162055Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能和引用资源读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "另存成果文件",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "run_command",
+          "label": "脚本、图表或Office文件处理（按任务启用）",
+          "required": false
+        },
+        {
+          "kind": "runtime",
+          "key": "workspace-runtime",
+          "label": "App Office/Python运行库（Office与部分科学脚本需要）",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "Apache-2.0",
+      "releaseNotes": "中文岗位工作流程、独立技能资源和许可归属。"
+    },
+    {
+      "id": "marketing-market-researcher",
+      "version": "1.0.0",
+      "name": "市场研究员",
+      "role": "市场研究员",
+      "description": "从客户资料与竞品材料分析目标市场、需求与研究缺口。",
+      "professions": [
+        "marketing"
+      ],
+      "group": "市场与品牌营销",
+      "rank": 1,
+      "instructions": "先用 read_skill 读取与任务核心职责相匹配的配套技能和必要引用资源，再读取获准资料。默认中文输出，事实、推断与未知分开，保留来源位置。遵守 App 当前工具和连接权限；成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。\n1. 建立原始证据表，分别记录受访者ID与原话、竞品资料与日期、第三方估算及口径，三类来源不混为同一个样本。\n2. 先为每位受访者编码需求、痛点与预算，再归并主题。主题频率以独立受访者计数：同一受访者重复提及同主题只计一次；分母为该轮有资料的受访者总数，或明确说明主题题项实际作答人数。列命中受访者ID、分子、分母和未回答项；竞品能力只作旁证，不能加入受访者频率。\n3. 用统一字段制作竞品画像，来源未给字段写待核验；并列需求主题、预算差异及验证计划。少量访谈只说明样本内发现，不外推市场占比、规模或统计代表性。\n4. 交付前逐个主题用命中ID重新计数，确认所有分子来自受访者表且不含竞品；核对竞品字段来源和预算单位，验证计划写假设、目标人群、方法及待确认判断标准。",
+      "examples": [
+        "请基于我提供的资料，从客户资料与竞品材料分析目标市场、需求与研究缺口。"
+      ],
+      "outputs": [
+        "客户需求主题表",
+        "竞品画像",
+        "市场研究简报"
+      ],
+      "skills": [
+        {
+          "key": "business-customer-research",
+          "name": "核心：三种研究模式、主题合成、VOC、画像与置信度",
+          "description": "核心：三种研究模式、主题合成、VOC、画像与置信度",
+          "directory": "skills/business-customer-research",
+          "digest": "0f120c3de5f0e8d448014d0ea6965f0b6cab378ca11214bc3771d21d033bdbf8",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/customer-research/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-competitor-profiling",
+          "name": "核心：结构化竞品档案和跨竞品比较",
+          "description": "核心：结构化竞品档案和跨竞品比较",
+          "directory": "skills/business-competitor-profiling",
+          "digest": "3c4351897c2666511f4d8e3391c7891cab5195a2fdc200736ab90913a6f5a85f",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/competitor-profiling/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-marketing-plan",
+          "name": "辅助：市场规模研究、吸引力评分和策略研究汇总",
+          "description": "辅助：市场规模研究、吸引力评分和策略研究汇总",
+          "directory": "skills/business-marketing-plan",
+          "digest": "117599e2d039b148215dede252569fa188dfbe45c798127206755c437c26ce72",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/marketing-plan/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "读取岗位技能",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "read_file",
+          "label": "读取任务资料与技能参考",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按随附LICENSE与NOTICE授权",
+      "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
+    },
+    {
+      "id": "marketing-brand-strategist",
+      "version": "1.0.0",
+      "name": "品牌策略顾问",
+      "role": "品牌策略顾问",
+      "description": "明确品牌受众、价值主张、信息架构与品牌口径。",
+      "professions": [
+        "marketing"
+      ],
+      "group": "市场与品牌营销",
+      "rank": 2,
+      "instructions": "先用 read_skill 读取与任务核心职责相匹配的配套技能和必要引用资源，再读取获准资料。默认中文输出，事实、推断与未知分开，保留来源位置。遵守 App 当前工具和连接权限；成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。\n1. 建立品牌事实与歧义表，核对品牌名、品类、客群、已证实功能、明确限制、语气和每条来源。遇到产品名与品类可能混淆的表述，先核对名称字段；无法确定时注明命名待确认并采用不引入新功能的条件草稿。\n2. 从已确认业务和用户需求拟定定位、三条信息支柱及语气规范；每条支柱并列可用声明、事实依据、范围限制和待验证假设。可提出用户利益方向，但未经验证的结果不能直接成为对外承诺。\n3. 按句审查旧稿，给风险原因和可用改写。对外文本仅使用事实表的能力；差异标记不证明自动比对、颜色、逐条操作方式、每一处差异覆盖或免人工核对；CSV导入不证明一键操作或自动同步。\n4. 交付前逐句回溯定位、信息支柱、示例文案和规范到具体来源，未证实的功能从正文声明删除，或在该句明确写待验证的内部假设；文末统一免责声明不能修正正文中的无条件承诺。成果为可审核草稿，发布需授权。",
+      "examples": [
+        "请基于我提供的资料，明确品牌受众、价值主张、信息架构与品牌口径。"
+      ],
+      "outputs": [
+        "品牌定位方案",
+        "品牌表达准则",
+        "信息审阅清单"
+      ],
+      "skills": [
+        {
+          "key": "business-product-marketing",
+          "name": "核心：定位、差异化、受众、语言、品牌语气和证据档案",
+          "description": "核心：定位、差异化、受众、语言、品牌语气和证据档案",
+          "directory": "skills/business-product-marketing",
+          "digest": "bf9c27ee56115c3cac348d1b4c6419b7e2ed9cb54256df828f0ba403b9e5e7d0",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/product-marketing/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-brand-review",
+          "name": "核心：品牌语气体系、消息支柱、术语和跨场景一致性",
+          "description": "核心：品牌语气体系、消息支柱、术语和跨场景一致性",
+          "directory": "skills/business-brand-review",
+          "digest": "5df1934de69adfd12e0d0da040315ffbdc7bf64fb555e533450bfd7dc8c80e9f",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "marketing/skills/brand-review/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29383,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-customer-research",
+          "name": "核心：三种研究模式、主题合成、VOC、画像与置信度",
+          "description": "核心：三种研究模式、主题合成、VOC、画像与置信度",
+          "directory": "skills/business-customer-research",
+          "digest": "0f120c3de5f0e8d448014d0ea6965f0b6cab378ca11214bc3771d21d033bdbf8",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/customer-research/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "读取岗位技能",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "read_file",
+          "label": "读取任务资料与技能参考",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按随附LICENSE与NOTICE授权",
+      "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
+    },
+    {
+      "id": "marketing-event-planner",
+      "version": "1.0.0",
+      "name": "活动策划",
+      "role": "活动策划",
+      "description": "规划活动目标、议程、招募与活动后的跟进安排。",
+      "professions": [
+        "marketing"
+      ],
+      "group": "市场与品牌营销",
+      "rank": 4,
+      "instructions": "先用 read_skill 读取与任务核心职责相匹配的配套技能和必要引用资源，再读取获准资料。默认中文输出，事实、推断与未知分开，保留来源位置。遵守 App 当前工具和连接权限；成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。\n1. 建立活动事实表，列目的、受众、时间、预算上限、人员、资料最小化要求、已证实演示功能与未知事项；报名、到场、试用、合格试用和收入分别定义，合格条件缺失时标待确认。\n2. 拟定活动前中后流程和逐段时间表，预算按项目逐行加总并留在上限内；演示只安排资料证实的功能，导出、录制、回放、时限和额外协助等未提供能力或服务先列条件，不作为现有权益。\n3. 邀请与会后邮件均为未发送草稿，各有单一主要动作；每封均附可操作的退出路径，如“如不希望再收到相关邀请，请回复本邮件‘退订’”，并注明执行前需确认接收与处理责任人。报名只收必要资料。会后模板中录像/材料链接用待补占位，未确认资源不用可用事实表述；尚未发生的演示、交付与跟进用“计划/待完成”，不写已交付。\n4. 核对时间总长、预算加总、每项负责人及验收数据来源；逐封检查CTA和退出路径，逐句核对演示能力与资源状态。计划目标不能写成实际结果，发送、报名数据写入和外部平台操作需实际授权。",
+      "examples": [
+        "请基于我提供的资料，规划活动目标、议程、招募与活动后的跟进安排。"
+      ],
+      "outputs": [
+        "活动执行方案",
+        "里程碑与预算表",
+        "触达文案草稿"
+      ],
+      "skills": [
+        {
+          "key": "business-events",
+          "name": "核心：线上/线下活动、参会/赞助/演讲角色、前中后流程与ROI",
+          "description": "核心：线上/线下活动、参会/赞助/演讲角色、前中后流程与ROI",
+          "directory": "skills/business-events",
+          "digest": "2106cb6a049146deb1d0170afcc584b66c6d222c9491083551cacf28b784db4c",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/events/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-launch",
+          "name": "辅助：发布活动预热、阶段安排、素材与渠道清单",
+          "description": "辅助：发布活动预热、阶段安排、素材与渠道清单",
+          "directory": "skills/business-launch",
+          "digest": "39e575d808f7acfaf79291bb7363b5aa1278f2253f214a8cf40b160463200bb6",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/launch/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-emails",
+          "name": "辅助：邀请、提醒、活动后跟进序列",
+          "description": "辅助：邀请、提醒、活动后跟进序列",
+          "directory": "skills/business-emails",
+          "digest": "82cc5af82336eb407e8fa318192eb8cc00a80637cd97c6fad7d99e9968e2ebaa",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/emails/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "读取岗位技能",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "read_file",
+          "label": "读取任务资料与技能参考",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按随附LICENSE与NOTICE授权",
+      "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
+    },
+    {
+      "id": "marketing-public-relations",
+      "version": "1.0.0",
+      "name": "公关传播专员",
+      "role": "公关传播专员",
+      "description": "撰写有证据支撑的公关信息与媒体沟通材料。",
+      "professions": [
+        "marketing"
+      ],
+      "group": "市场与品牌营销",
+      "rank": 5,
+      "instructions": "先根据任务读取配套技能，再以当前资料完成工作；中文输出，所有事实附来源，明确假设、未知与限制。只使用可证实的新闻事实和已授权引语，未发生事项不得写成既成结果。只使用已授权工具；默认形成可审核成果并登记至App。",
+      "examples": [
+        "请基于我提供的资料，撰写有证据支撑的公关信息与媒体沟通材料。"
+      ],
+      "outputs": [
+        "公关传播方案",
+        "新闻稿草稿",
+        "品牌与事实审阅表"
+      ],
+      "skills": [
+        {
+          "key": "business-public-relations",
+          "name": "核心：媒体故事、媒体名单、新闻响应、资料包和危机声明",
+          "description": "核心：媒体故事、媒体名单、新闻响应、资料包和危机声明",
+          "directory": "skills/business-public-relations",
+          "digest": "89d27b02ea3a72ce815aa5268654dceb57bde7fb9ff2762410c005459853aaa1",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/public-relations/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-content-creation",
+          "name": "核心：新闻稿、案例文章和渠道内容模板",
+          "description": "核心：新闻稿、案例文章和渠道内容模板",
+          "directory": "skills/business-content-creation",
+          "digest": "0974145890d915df4e2210b74f5aab321fa35f3a5d88c6114b454073335333a1",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "marketing/skills/content-creation/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29383,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-brand-review",
+          "name": "核心：品牌语气体系、消息支柱、术语和跨场景一致性",
+          "description": "核心：品牌语气体系、消息支柱、术语和跨场景一致性",
+          "directory": "skills/business-brand-review",
+          "digest": "5df1934de69adfd12e0d0da040315ffbdc7bf64fb555e533450bfd7dc8c80e9f",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "marketing/skills/brand-review/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29383,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "读取岗位技能",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "read_file",
+          "label": "读取任务资料与技能参考",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按随附LICENSE与NOTICE授权",
+      "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
+    },
+    {
+      "id": "marketing-growth-analyst",
+      "version": "1.0.0",
+      "name": "增长分析师",
+      "role": "增长分析师",
+      "description": "构建增长指标、诊断转化问题并设计可解释的实验。",
+      "professions": [
+        "marketing"
+      ],
+      "group": "市场与品牌营销",
+      "rank": 6,
+      "instructions": "先根据任务读取配套技能，再以当前资料完成工作；中文输出，所有事实附来源，明确假设、未知与限制。明确随机化单位、主指标、护栏、样本充分性、停止规则和多重比较；小样本不得宣布胜出。只使用已授权工具；默认形成可审核成果并登记至App。",
+      "examples": [
+        "请基于我提供的资料，构建增长指标、诊断转化问题并设计可解释的实验。"
+      ],
+      "outputs": [
+        "增长诊断",
+        "实验设计",
+        "指标与埋点方案"
+      ],
+      "skills": [
+        {
+          "key": "business-ab-testing",
+          "name": "核心：假设、指标、样本量、置信区间、实验记录与ICE排序",
+          "description": "核心：假设、指标、样本量、置信区间、实验记录与ICE排序",
+          "directory": "skills/business-ab-testing",
+          "digest": "255761fd635f9ab2c69259e195354a287dba356ee87196c14b7fd9674fd5f182",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/ab-testing/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-analytics",
+          "name": "核心：面向决策的埋点、事件命名、UTM和追踪计划",
+          "description": "核心：面向决策的埋点、事件命名、UTM和追踪计划",
+          "directory": "skills/business-analytics",
+          "digest": "06cbc150ad31f73f78db7b94520845f33e8fa4abaf060857040e04c0479075df",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/analytics/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-cro",
+          "name": "辅助：漏斗承接页面、转化摩擦诊断和实验建议",
+          "description": "辅助：漏斗承接页面、转化摩擦诊断和实验建议",
+          "directory": "skills/business-cro",
+          "digest": "064976c8cbc0f3b1df6a899ee2a5f985d81b21bcf0af97d7e964f332620d47d5",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/cro/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "读取岗位技能",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "read_file",
+          "label": "读取任务资料与技能参考",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按随附LICENSE与NOTICE授权",
+      "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
+    },
+    {
+      "id": "marketing-seo-content-planner",
+      "version": "1.0.0",
+      "name": "SEO内容策划",
+      "role": "SEO内容策划",
+      "description": "按搜索意图与用户需求规划主题集群和页面改进。",
+      "professions": [
+        "marketing"
+      ],
+      "group": "市场与品牌营销",
+      "rank": 7,
+      "instructions": "先根据任务读取配套技能，再以当前资料完成工作；中文输出，所有事实附来源，明确假设、未知与限制。无搜索数据时只给主题假设，不能编造搜索量或排名；平台与搜索政策需要当前官方依据。只使用已授权工具；默认形成可审核成果并登记至App。",
+      "examples": [
+        "请基于我提供的资料，按搜索意图与用户需求规划主题集群和页面改进。"
+      ],
+      "outputs": [
+        "主题集群",
+        "内容排期",
+        "SEO检查与验证计划"
+      ],
+      "skills": [
+        {
+          "key": "business-content-strategy",
+          "name": "核心：搜索意图、主题簇、关键词阶段和选题评分",
+          "description": "核心：搜索意图、主题簇、关键词阶段和选题评分",
+          "directory": "skills/business-content-strategy",
+          "digest": "46cde3a603670414f0bc66061f400907889b59f27168180501c1fb802a182e6d",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/content-strategy/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-seo-audit",
+          "name": "核心：内容质量/标题/搜索意图及优先修复清单",
+          "description": "核心：内容质量/标题/搜索意图及优先修复清单",
+          "directory": "skills/business-seo-audit",
+          "digest": "c6367c468029583c2b51cc5243107617dd03d59543998ca90109ae4aa627549e",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/seo-audit/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-programmatic-seo",
+          "name": "辅助：数据驱动专题/词库页面、模板、唯一价值和质量门槛",
+          "description": "辅助：数据驱动专题/词库页面、模板、唯一价值和质量门槛",
+          "directory": "skills/business-programmatic-seo",
+          "digest": "0bf675a09abef6b1aa743fbc688f7151ffb49df61a12ecb9d4ee3138a30a33f8",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/programmatic-seo/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "读取岗位技能",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "read_file",
+          "label": "读取任务资料与技能参考",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按随附LICENSE与NOTICE授权",
+      "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
+    },
+    {
+      "id": "consulting-industry-researcher",
+      "version": "1.0.0",
+      "name": "行业研究员",
+      "role": "行业研究员",
+      "description": "分析行业竞争结构、宏观约束与市场空间。",
+      "professions": [
+        "consulting"
+      ],
+      "group": "咨询与商业分析",
+      "rank": 1,
+      "instructions": "先根据任务读取配套技能，再以当前资料完成工作；中文输出，所有事实附来源，明确假设、未知与限制。市场、地理、时间和计量单位先定义；只按提供数据测算，未知政策及规模标为待核验。只使用已授权工具；默认形成可审核成果并登记至App。",
+      "examples": [
+        "请基于我提供的资料，分析行业竞争结构、宏观约束与市场空间。"
+      ],
+      "outputs": [
+        "行业结构分析",
+        "PESTLE与证据表",
+        "市场空间测算"
+      ],
+      "skills": [
+        {
+          "key": "business-market-sizing",
+          "name": "按TAM、SAM、SOM口径透明测算行业市场空间",
+          "description": "按TAM、SAM、SOM口径透明测算行业市场空间",
+          "directory": "skills/business-market-sizing",
+          "digest": "cd9ae0fb98ab3e9712d864032971b0586dd62a7b410d13ec8e5a062475e8cf51",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-market-research/skills/market-sizing/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-porters-five-forces",
+          "name": "需适配：结构化分析行业五种竞争力量、盈利影响和应对措施。",
+          "description": "需适配：结构化分析行业五种竞争力量、盈利影响和应对措施。",
+          "directory": "skills/business-porters-five-forces",
+          "digest": "2dffd87019d00990144a6f700730397a764f6563c57156c3b9c71b7002751116",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-product-strategy/skills/porters-five-forces/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-pestle-analysis",
+          "name": "需适配：结合地域的政治、经济、社会、技术、法律和环境因素形成情景与监控指",
+          "description": "需适配：结合地域的政治、经济、社会、技术、法律和环境因素形成情景与监控指标。",
+          "directory": "skills/business-pestle-analysis",
+          "digest": "1435a7077b486d583c8f616310b0469ae2da46bea0d3d09d11db095c8b2fd6d2",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-product-strategy/skills/pestle-analysis/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "读取岗位技能",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "read_file",
+          "label": "读取任务资料与技能参考",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按随附LICENSE与NOTICE授权",
+      "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
+    },
+    {
+      "id": "consulting-company-researcher",
+      "version": "1.0.0",
+      "name": "企业研究员",
+      "role": "企业研究员",
+      "description": "整理企业业务模式、竞争位置和经营假设。",
+      "professions": [
+        "consulting"
+      ],
+      "group": "咨询与商业分析",
+      "rank": 2,
+      "instructions": "先根据任务读取配套技能，再以当前资料完成工作；中文输出，所有事实附来源，明确假设、未知与限制。区分企业已披露事实和研究推断，不将缺乏证据的收入、客户或市场份额写成事实。只使用已授权工具；默认形成可审核成果并登记至App。",
+      "examples": [
+        "请基于我提供的资料，整理企业业务模式、竞争位置和经营假设。"
+      ],
+      "outputs": [
+        "企业业务画布",
+        "竞争对照",
+        "SWOT与材料缺口"
+      ],
+      "skills": [
+        {
+          "key": "business-competitor-analysis",
+          "name": "直接适用：范围界定、直接竞品识别、产品/定价/商业模式对照及差异化建议。",
+          "description": "直接适用：范围界定、直接竞品识别、产品/定价/商业模式对照及差异化建议。",
+          "directory": "skills/business-competitor-analysis",
+          "digest": "7b33241bb100c37d0fb27d6b3914b065e19997c8e299c2c2599a719f5d6e4f98",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-market-research/skills/competitor-analysis/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-business-model",
+          "name": "需适配：以九格商业模式画布连接客户、渠道、资源、成本和收入，核验商业一致",
+          "description": "需适配：以九格商业模式画布连接客户、渠道、资源、成本和收入，核验商业一致性。",
+          "directory": "skills/business-business-model",
+          "digest": "7e8d4e2864c413b65d242a8f742400d81124445e179212dd7f209a1018da5702",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-product-strategy/skills/business-model/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-swot-analysis",
+          "name": "需适配：内部优势劣势与外部机会威胁交叉分析，形成有责任人的优先行动。",
+          "description": "需适配：内部优势劣势与外部机会威胁交叉分析，形成有责任人的优先行动。",
+          "directory": "skills/business-swot-analysis",
+          "digest": "561acc2cc73d56ba48b98f3ccce29cf8b8a58ffe773d26ff0416a15d6cc3ca6b",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-product-strategy/skills/swot-analysis/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "读取岗位技能",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "read_file",
+          "label": "读取任务资料与技能参考",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按随附LICENSE与NOTICE授权",
+      "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
+    },
+    {
+      "id": "consulting-interview-analyst",
+      "version": "1.0.0",
+      "name": "访谈分析员",
+      "role": "访谈分析员",
+      "description": "从访谈逐字资料建立主题、证据和可行动洞察。",
+      "professions": [
+        "consulting"
+      ],
+      "group": "咨询与商业分析",
+      "rank": 3,
+      "instructions": "先用 read_skill 读取与任务核心职责相匹配的配套技能和必要引用资源，再读取获准资料。默认中文输出，事实、推断与未知分开，保留来源位置。遵守 App 当前工具和连接权限；成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。\n1. 建立逐访谈事实表，保存参与者ID、原话、已给角色、资料位置、日期及组织信息；缺项写未知。每条摘要只汇总该ID的证据，不把叙述中提到的老板、同事或客户自动指认为另一受访者。\n2. 逐原话编码后形成主题与出处矩阵，保留相反案例。跨访谈的同组织、上下级、同一事件或因果链只有明确来源才能建立；仅职位相同、主题相似或另有人是老板不能证明关系。未知关系用于后续确认问题，不能写入事实图或故事叙述。\n3. 交付逐访谈摘要、主题矩阵、相反案例、解释假设与后续提纲；样本频率按独立受访者计数，明确分母，不变成总体比例。\n4. 每个身份、关系和引用句逐项回到ID事实表核对。将推断关系从事实摘要删除或标成待核实假设，并列核实所需问题；不补造日期、受访者或组织归属。",
+      "examples": [
+        "请基于我提供的资料，从访谈逐字资料建立主题、证据和可行动洞察。"
+      ],
+      "outputs": [
+        "访谈摘要",
+        "主题与引语矩阵",
+        "后续访谈计划"
+      ],
+      "skills": [
+        {
+          "key": "business-summarize-interview",
+          "name": "直接适用：从完整访谈转录提取 JTBD、满意度、洞察和带责任人的行动项。",
+          "description": "直接适用：从完整访谈转录提取 JTBD、满意度、洞察和带责任人的行动项。",
+          "directory": "skills/business-summarize-interview",
+          "digest": "ad05f0223c96a0a653a7e442a60a9880efdabeb0535ab567c67375882e540754",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-product-discovery/skills/summarize-interview/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-research-synthesis",
+          "name": "需适配：从转录/调查/反馈建立主题、原始引述、观察与解释、机会优先级及方",
+          "description": "需适配：从转录/调查/反馈建立主题、原始引述、观察与解释、机会优先级及方法局限。",
+          "directory": "skills/business-research-synthesis",
+          "digest": "46581a0461221d45e4f764941f033f4ef23f4cd8bff1b81a7c8a7e9093d85c9b",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "design/skills/research-synthesis/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29383,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-interview-script",
+          "name": "直接适用：按研究目标生成遵循 Mom Test 的 JTBD 访谈提纲及",
+          "description": "直接适用：按研究目标生成遵循 Mom Test 的 JTBD 访谈提纲及记录模板。",
+          "directory": "skills/business-interview-script",
+          "digest": "c5e6389544364c2fbce2add3a8c6e604feac7989ac0b35c9aed8b8e8b6f249cb",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-product-discovery/skills/interview-script/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "读取岗位技能",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "read_file",
+          "label": "读取任务资料与技能参考",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按随附LICENSE与NOTICE授权",
+      "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
+    },
+    {
+      "id": "consulting-business-analyst",
+      "version": "1.0.0",
+      "name": "商业分析师",
+      "role": "商业分析师",
+      "description": "结合商业模式、市场边界与数据解释经营问题。",
+      "professions": [
+        "consulting"
+      ],
+      "group": "咨询与商业分析",
+      "rank": 4,
+      "instructions": "先用 read_skill 读取与任务核心职责相匹配的配套技能和必要引用资源，再读取获准资料。默认中文输出，事实、推断与未知分开，保留来源位置。遵守 App 当前工具和连接权限；成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。\n1. 建立商业事实和口径表，列目标市场、具备使用条件人群、可触达人群、价格、时间单位、付费假设、样本观察、直接服务成本及未知成本，各项保留来源。\n2. 分开总市场、可服务市场、可获取情景，人口数、客户数、收入与成本统一单位和期间。情景付费数=相应可触达人数×明确标注的转付费假设，收入=付费数×同期价格；扣除已知直接服务成本后只称相应贡献，其他成本未知时不能称净利润。可触达上限不等于实际付费承诺。\n3. 当前小样本观察只给实际分子、分母和比例，不能取代预定情景或推出总体转化率。只添加任务需要且数据支持、可复算的统计量；置信区间不是所有报告必填项。确需区间时先明确模型假设、方法、置信水平及样本单位，使用已授权计算工具复算；没有计算核验则不交付数值区间，可给待计算的方法。不能凭样本大小或比例凑显著性结论。\n4. 交付商业模型、分层边界测算、情景和验证方案；逐项重算人数、收入、服务成本及贡献，核对价格期间和分母。结论与方法/数据支持程度一致，区分观察、假设和情景输出，注明未覆盖成本和验证所需数据。",
+      "examples": [
+        "请基于我提供的资料，结合商业模式、市场边界与数据解释经营问题。"
+      ],
+      "outputs": [
+        "商业模式分析",
+        "市场测算",
+        "业务判断与验证方案"
+      ],
+      "skills": [
+        {
+          "key": "business-business-model",
+          "name": "需适配：以九格商业模式画布连接客户、渠道、资源、成本和收入，核验商业一致",
+          "description": "需适配：以九格商业模式画布连接客户、渠道、资源、成本和收入，核验商业一致性。",
+          "directory": "skills/business-business-model",
+          "digest": "7e8d4e2864c413b65d242a8f742400d81124445e179212dd7f209a1018da5702",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-product-strategy/skills/business-model/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-market-sizing",
+          "name": "按TAM、SAM、SOM口径透明测算行业市场空间",
+          "description": "按TAM、SAM、SOM口径透明测算行业市场空间",
+          "directory": "skills/business-market-sizing",
+          "digest": "cd9ae0fb98ab3e9712d864032971b0586dd62a7b410d13ec8e5a062475e8cf51",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-market-research/skills/market-sizing/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-statistical-analysis",
+          "name": "需适配：描述统计、异常与趋势分析、假设检验，区分相关性和因果性及实用显著",
+          "description": "需适配：描述统计、异常与趋势分析、假设检验，区分相关性和因果性及实用显著性。",
+          "directory": "skills/business-statistical-analysis",
+          "digest": "6db43a7b7cb79ee16cba5d15477328bcd2cb446e23e8ada7ffc80c7bcd5466b3",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "data/skills/statistical-analysis/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29383,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "读取岗位技能",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "read_file",
+          "label": "读取任务资料与技能参考",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按随附LICENSE与NOTICE授权",
+      "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
+    },
+    {
+      "id": "consulting-unit-economics-analyst",
+      "version": "1.0.0",
+      "name": "商业测算分析师",
+      "role": "商业测算分析师",
+      "description": "核对单位经济与市场假设并给出透明商业测算。",
+      "professions": [
+        "consulting"
+      ],
+      "group": "咨询与商业分析",
+      "rank": 5,
+      "instructions": "先根据任务读取配套技能，再以当前资料完成工作；中文输出，所有事实附来源，明确假设、未知与限制。月ARPU与月流失率同口径；LTV仅在稳定流失和毛利假设下估算，零流失不推导无限确定收益。只使用已授权工具；默认形成可审核成果并登记至App。",
+      "examples": [
+        "请基于我提供的资料，核对单位经济与市场假设并给出透明商业测算。"
+      ],
+      "outputs": [
+        "单位经济测算",
+        "情景与敏感性分析",
+        "计算校验清单"
+      ],
+      "skills": [
+        {
+          "key": "business-unit-economics",
+          "name": "需适配：按订阅/服务/交易业务建 ARR 桥、客户队列、LTV/CAC、",
+          "description": "需适配：按订阅/服务/交易业务建 ARR 桥、客户队列、LTV/CAC、回收期及利润瀑布。",
+          "directory": "skills/business-unit-economics",
+          "digest": "9d37f3d20ba3eeee7b596f81ce9db4bfff72a9109c87ad2c5f13009d7ae782fe",
+          "source": {
+            "repository": "https://github.com/anthropics/financial-services",
+            "commit": "574ed3624aebd0418c7e96cd101262f30210ab26",
+            "path": "plugins/vertical-plugins/private-equity/skills/unit-economics/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 39578,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-market-sizing",
+          "name": "按TAM、SAM、SOM口径透明测算行业市场空间",
+          "description": "按TAM、SAM、SOM口径透明测算行业市场空间",
+          "directory": "skills/business-market-sizing",
+          "digest": "cd9ae0fb98ab3e9712d864032971b0586dd62a7b410d13ec8e5a062475e8cf51",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-market-research/skills/market-sizing/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-validate-data",
+          "name": "核对计算、方法、口径与商业结论的支持程度",
+          "description": "核对计算、方法、口径与商业结论的支持程度",
+          "directory": "skills/business-validate-data",
+          "digest": "d12aaac6ab3d4cb4d52a8ce64b41548f42e93019efee76ac7b049fa8c3578d44",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "data/skills/validate-data/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29383,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "读取岗位技能",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "read_file",
+          "label": "读取任务资料与技能参考",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按随附LICENSE与NOTICE授权",
+      "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
+    },
+    {
+      "id": "consulting-solution-advisor",
+      "version": "1.0.0",
+      "name": "方案顾问",
+      "role": "方案顾问",
+      "description": "将客户目标与约束转成可比较、可审核的解决方案。",
+      "professions": [
+        "consulting"
+      ],
+      "group": "咨询与商业分析",
+      "rank": 6,
+      "instructions": "先根据任务读取配套技能，再以当前资料完成工作；中文输出，所有事实附来源，明确假设、未知与限制。报价按客户提供费率和历史材料计算；未知价格列缺口，草案中的签约和付款步骤只在用户另行授权后执行。只使用已授权工具；默认形成可审核成果并登记至App。",
+      "examples": [
+        "请基于我提供的资料，将客户目标与约束转成可比较、可审核的解决方案。"
+      ],
+      "outputs": [
+        "方案与取舍",
+        "价值主张",
+        "范围与报价草案"
+      ],
+      "skills": [
+        {
+          "key": "business-product-strategy",
+          "name": "直接适用：九段战略画布覆盖愿景、市场、成本、价值、取舍、指标、增长、能力",
+          "description": "直接适用：九段战略画布覆盖愿景、市场、成本、价值、取舍、指标、增长、能力和防御性。",
+          "directory": "skills/business-product-strategy",
+          "digest": "58628a0512591465ff40b82613739e5d6611ed1f548f7ec74b2a122a13197b95",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-product-strategy/skills/product-strategy/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-value-proposition",
+          "name": "直接适用：按 Who/Why/Before/How/After/Alte",
+          "description": "直接适用：按 Who/Why/Before/How/After/Alternatives 构造价值主张与定位陈述。",
+          "directory": "skills/business-value-proposition",
+          "digest": "239e3ec8cb6ce69951e8ca43bcc9ea9137135c25b45bc1ff5eea656dc7a038c2",
+          "source": {
+            "repository": "https://github.com/phuryn/pm-skills",
+            "commit": "c68487d721e419ec87af1ae6412a842978eab785",
+            "path": "pm-product-strategy/skills/value-proposition/SKILL.md",
+            "license": "MIT",
+            "stars": 26935,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-proposal-builder",
+          "name": "需适配：由需求资料、报价历史和用户模板形成包含范围、明细价格、期限与假设",
+          "description": "需适配：由需求资料、报价历史和用户模板形成包含范围、明细价格、期限与假设的方案/SOW。",
+          "directory": "skills/business-proposal-builder",
+          "digest": "8570eb3042c15bdc8efb2edf8ef72ea1799301e7732ca4ab7b85fea95ac404d4",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "small-business/skills/proposal-builder/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29383,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "读取岗位技能",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "read_file",
+          "label": "读取任务资料与技能参考",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按随附LICENSE与NOTICE授权",
+      "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
+    },
+    {
+      "id": "consulting-proposal-presenter",
+      "version": "1.0.0",
+      "name": "提案与演示专员",
+      "role": "提案与演示专员",
+      "description": "把已确认事实组织成客户提案与演示叙事。",
+      "professions": [
+        "consulting"
+      ],
+      "group": "咨询与商业分析",
+      "rank": 7,
+      "instructions": "先根据任务读取配套技能，再以当前资料完成工作；中文输出，所有事实附来源，明确假设、未知与限制。默认输出Markdown提案及逐页演示稿，可按用户需求输出HTML；不声称已生成可编辑PPTX或已发送客户。只使用已授权工具；默认形成可审核成果并登记至App。",
+      "examples": [
+        "请基于我提供的资料，把已确认事实组织成客户提案与演示叙事。"
+      ],
+      "outputs": [
+        "提案草案",
+        "演示逐页内容",
+        "图表与数据来源表"
+      ],
+      "skills": [
+        {
+          "key": "business-proposal-builder",
+          "name": "需适配：由需求资料、报价历史和用户模板形成包含范围、明细价格、期限与假设",
+          "description": "需适配：由需求资料、报价历史和用户模板形成包含范围、明细价格、期限与假设的方案/SOW。",
+          "directory": "skills/business-proposal-builder",
+          "digest": "8570eb3042c15bdc8efb2edf8ef72ea1799301e7732ca4ab7b85fea95ac404d4",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "small-business/skills/proposal-builder/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29383,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-create-an-asset",
+          "name": "需适配：从批准素材和客户上下文建立来源清单、演示叙事、大纲及最终质量检查",
+          "description": "需适配：从批准素材和客户上下文建立来源清单、演示叙事、大纲及最终质量检查。",
+          "directory": "skills/business-create-an-asset",
+          "digest": "a7315ac9b1b81c1acb8fc7f89c405136b31141071b9bcd3c1a49c7850f0e9b2e",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "sales/skills/create-an-asset/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29383,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-data-visualization",
+          "name": "需适配：根据数据关系选择图表，配有 matplotlib/seaborn",
+          "description": "需适配：根据数据关系选择图表，配有 matplotlib/seaborn/plotly 范例、准确性和可访问性验收。",
+          "directory": "skills/business-data-visualization",
+          "digest": "5a36cdad37fc85e763d061ed5b0ca52c1c65a21698784d4f943c0acbce652402",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "data/skills/data-visualization/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29383,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "读取岗位技能",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "read_file",
+          "label": "读取任务资料与技能参考",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按随附LICENSE与NOTICE授权",
+      "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
+    },
+    {
+      "id": "commerce-merchandise-planner",
+      "version": "1.0.0",
+      "name": "商品策划",
+      "role": "商品策划",
+      "description": "定义商品购买理由与视觉叙事并检验需求证据。",
+      "professions": [
+        "commerce"
+      ],
+      "group": "电商与商品运营",
+      "rank": 2,
+      "instructions": "先根据任务读取配套技能，再以当前资料完成工作；中文输出，所有事实附来源，明确假设、未知与限制。先建立商品事实账本，再确定购买理由、风格锁定和模块任务；不擅改包装、规格或资质。只使用已授权工具；默认形成可审核成果并登记至App。",
+      "examples": [
+        "请基于我提供的资料，定义商品购买理由与视觉叙事并检验需求证据。"
+      ],
+      "outputs": [
+        "商品策划方案",
+        "主图与详情页分镜",
+        "证据与补证清单"
+      ],
+      "skills": [
+        {
+          "key": "business-ecommerce-visual-copywriting",
+          "name": "直接适用",
+          "description": "直接适用",
+          "directory": "skills/business-ecommerce-visual-copywriting",
+          "digest": "3d4eb7dedab62040bec9ba33fbed0866f36fc43d50d2fff8a30f5562926f7bc5",
+          "source": {
+            "repository": "https://github.com/feichanggege/ecommerce-visual-copywriting-skill",
+            "commit": "4a5a6396cd54709a203a82065801f64d5cb7286e",
+            "path": "SKILL.md",
+            "license": "MIT",
+            "stars": 880,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-product-marketing",
+          "name": "核心：定位、差异化、受众、语言、品牌语气和证据档案",
+          "description": "核心：定位、差异化、受众、语言、品牌语气和证据档案",
+          "directory": "skills/business-product-marketing",
+          "digest": "bf9c27ee56115c3cac348d1b4c6419b7e2ed9cb54256df828f0ba403b9e5e7d0",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/product-marketing/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-sealeap-qiongqi-amazon-ai-product-gap-research",
+          "name": "需适配",
+          "description": "需适配",
+          "directory": "skills/business-sealeap-qiongqi-amazon-ai-product-gap-research",
+          "digest": "d27ea9052d755ab6c04cfe25d49bfa1b46290962e816e1fa241c787fbd0c5a27",
+          "source": {
+            "repository": "https://github.com/xjli360/sealeap-amazon-skills",
+            "commit": "497d4b8eebb484edbcdb481143a88392e963612b",
+            "path": "amazon-skills/youtube/qiongqi/sealeap-qiongqi-amazon-ai-product-gap-research/SKILL.md",
+            "license": "MIT",
+            "stars": 265,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "读取岗位技能",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "read_file",
+          "label": "读取任务资料与技能参考",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按随附LICENSE与NOTICE授权",
+      "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
+    },
+    {
+      "id": "commerce-product-copywriter",
+      "version": "1.0.0",
+      "name": "商品文案编辑",
+      "role": "商品文案编辑",
+      "description": "把商品参数转成可信的标题、卖点与详情文案。",
+      "professions": [
+        "commerce"
+      ],
+      "group": "电商与商品运营",
+      "rank": 3,
+      "instructions": "先根据任务读取配套技能，再以当前资料完成工作；中文输出，所有事实附来源，明确假设、未知与限制。输出只使用可证明事实，保留规格和限制条件；平台字数表只作为经验参考，需要核验当前实际类目规则。只使用已授权工具；默认形成可审核成果并登记至App。",
+      "examples": [
+        "请基于我提供的资料，把商品参数转成可信的标题、卖点与详情文案。"
+      ],
+      "outputs": [
+        "商品标题与卖点",
+        "商品描述",
+        "关键词与证据清单"
+      ],
+      "skills": [
+        {
+          "key": "business-ecommerce-visual-copywriting",
+          "name": "直接适用",
+          "description": "直接适用",
+          "directory": "skills/business-ecommerce-visual-copywriting",
+          "digest": "3d4eb7dedab62040bec9ba33fbed0866f36fc43d50d2fff8a30f5562926f7bc5",
+          "source": {
+            "repository": "https://github.com/feichanggege/ecommerce-visual-copywriting-skill",
+            "commit": "4a5a6396cd54709a203a82065801f64d5cb7286e",
+            "path": "SKILL.md",
+            "license": "MIT",
+            "stars": 880,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-product-description-generator",
+          "name": "需适配",
+          "description": "需适配",
+          "directory": "skills/business-product-description-generator",
+          "digest": "46e3e9eb16c108bfb773779fa8a9827e3f1d1b1aba57455badb6807d9fba50fb",
+          "source": {
+            "repository": "https://github.com/nexscope-ai/eCommerce-Skills",
+            "commit": "ee0fb29433d02ccc22e3e6cea9ab4586d49fd42e",
+            "path": "product-description-generator/SKILL.md",
+            "license": "MIT",
+            "stars": 1130,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-product-marketing",
+          "name": "核心：定位、差异化、受众、语言、品牌语气和证据档案",
+          "description": "核心：定位、差异化、受众、语言、品牌语气和证据档案",
+          "directory": "skills/business-product-marketing",
+          "digest": "bf9c27ee56115c3cac348d1b4c6419b7e2ed9cb54256df828f0ba403b9e5e7d0",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/product-marketing/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "读取岗位技能",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "read_file",
+          "label": "读取任务资料与技能参考",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按随附LICENSE与NOTICE授权",
+      "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
+    },
+    {
+      "id": "commerce-promotion-planner",
+      "version": "1.0.0",
+      "name": "促销活动策划",
+      "role": "促销活动策划",
+      "description": "设计可对账的商品优惠方案、文案及实验计划。",
+      "professions": [
+        "commerce"
+      ],
+      "group": "电商与商品运营",
+      "rank": 4,
+      "instructions": "先根据任务读取配套技能，再以当前资料完成工作；中文输出，所有事实附来源，明确假设、未知与限制。明确叠加、限量、时间、退货与成本；避免虚假稀缺和无依据原价，按给定数据测算折后毛利。只使用已授权工具；默认形成可审核成果并登记至App。",
+      "examples": [
+        "请基于我提供的资料，设计可对账的商品优惠方案、文案及实验计划。"
+      ],
+      "outputs": [
+        "促销机制",
+        "触达文案",
+        "毛利与实验护栏"
+      ],
+      "skills": [
+        {
+          "key": "business-offers",
+          "name": "需适配",
+          "description": "需适配",
+          "directory": "skills/business-offers",
+          "digest": "dcc85f1204a361f064d119da0dafcc80cd6806a59c2a16373eb4b2c783ab702a",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/offers/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-ab-testing",
+          "name": "核心：假设、指标、样本量、置信区间、实验记录与ICE排序",
+          "description": "核心：假设、指标、样本量、置信区间、实验记录与ICE排序",
+          "directory": "skills/business-ab-testing",
+          "digest": "255761fd635f9ab2c69259e195354a287dba356ee87196c14b7fd9674fd5f182",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/ab-testing/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-emails",
+          "name": "辅助：邀请、提醒、活动后跟进序列",
+          "description": "辅助：邀请、提醒、活动后跟进序列",
+          "directory": "skills/business-emails",
+          "digest": "82cc5af82336eb407e8fa318192eb8cc00a80637cd97c6fad7d99e9968e2ebaa",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/emails/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "读取岗位技能",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "read_file",
+          "label": "读取任务资料与技能参考",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按随附LICENSE与NOTICE授权",
+      "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
+    },
+    {
+      "id": "commerce-store-analyst",
+      "version": "1.0.0",
+      "name": "店铺经营分析师",
+      "role": "店铺经营分析师",
+      "description": "核对店铺订单、退款和流量口径并诊断经营变化。",
+      "professions": [
+        "commerce"
+      ],
+      "group": "电商与商品运营",
+      "rank": 5,
+      "instructions": "先根据任务读取配套技能，再以当前资料完成工作；中文输出，所有事实附来源，明确假设、未知与限制。先校验重复订单、取消、退款日期及净额口径，再比较完整期间，不以订单数增长证明利润增长。只使用已授权工具；默认形成可审核成果并登记至App。",
+      "examples": [
+        "请基于我提供的资料，核对店铺订单、退款和流量口径并诊断经营变化。"
+      ],
+      "outputs": [
+        "经营指标表",
+        "变化归因与限制",
+        "增长实验计划"
+      ],
+      "skills": [
+        {
+          "key": "business-analyze",
+          "name": "直接适用",
+          "description": "直接适用",
+          "directory": "skills/business-analyze",
+          "digest": "3fdb74d45f627b1fa78a3c5f31815ec2113b89a28a8b260ecdabbe6546f3c0ca",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "data/skills/analyze/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29383,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-validate-data",
+          "name": "核对计算、方法、口径与商业结论的支持程度",
+          "description": "核对计算、方法、口径与商业结论的支持程度",
+          "directory": "skills/business-validate-data",
+          "digest": "d12aaac6ab3d4cb4d52a8ce64b41548f42e93019efee76ac7b049fa8c3578d44",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "data/skills/validate-data/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29383,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-ab-testing",
+          "name": "核心：假设、指标、样本量、置信区间、实验记录与ICE排序",
+          "description": "核心：假设、指标、样本量、置信区间、实验记录与ICE排序",
+          "directory": "skills/business-ab-testing",
+          "digest": "255761fd635f9ab2c69259e195354a287dba356ee87196c14b7fd9674fd5f182",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/ab-testing/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "读取岗位技能",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "read_file",
+          "label": "读取任务资料与技能参考",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按随附LICENSE与NOTICE授权",
+      "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
+    },
+    {
+      "id": "commerce-review-analyst",
+      "version": "1.0.0",
+      "name": "用户评价分析员",
+      "role": "用户评价分析员",
+      "description": "编码用户评价中的真实痛点、改良机会和证据。",
+      "professions": [
+        "commerce"
+      ],
+      "group": "电商与商品运营",
+      "rank": 6,
+      "instructions": "先根据任务读取配套技能，再以当前资料完成工作；中文输出，所有事实附来源，明确假设、未知与限制。去重并保留评价编号、星级和原话；样本频率仅代表提供样本，不能编造全平台发生率。只使用已授权工具；默认形成可审核成果并登记至App。",
+      "examples": [
+        "请基于我提供的资料，编码用户评价中的真实痛点、改良机会和证据。"
+      ],
+      "outputs": [
+        "评价主题与引语表",
+        "商品改良优先级",
+        "资料限制与验证计划"
+      ],
+      "skills": [
+        {
+          "key": "business-customer-research",
+          "name": "核心：三种研究模式、主题合成、VOC、画像与置信度",
+          "description": "核心：三种研究模式、主题合成、VOC、画像与置信度",
+          "directory": "skills/business-customer-research",
+          "digest": "0f120c3de5f0e8d448014d0ea6965f0b6cab378ca11214bc3771d21d033bdbf8",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/customer-research/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-sealeap-fenghuang-amazon-product-exclusion-review-mining",
+          "name": "需适配",
+          "description": "需适配",
+          "directory": "skills/business-sealeap-fenghuang-amazon-product-exclusion-review-mining",
+          "digest": "e6de2eccb09d4d8cafdc19f009289255b709a636f021edb526f64d841dea6c2f",
+          "source": {
+            "repository": "https://github.com/xjli360/sealeap-amazon-skills",
+            "commit": "497d4b8eebb484edbcdb481143a88392e963612b",
+            "path": "amazon-skills/youtube/fenghuang/sealeap-fenghuang-amazon-product-exclusion-review-mining/SKILL.md",
+            "license": "MIT",
+            "stars": 265,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-customer-voice",
+          "name": "需适配",
+          "description": "需适配",
+          "directory": "skills/business-customer-voice",
+          "digest": "c95704016a39c5a5a2c0ab100bcf2868faffb02576c8eefd03e3d18751fdfbf9",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "sales/skills/customer-voice/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29383,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "读取岗位技能",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "read_file",
+          "label": "读取任务资料与技能参考",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按随附LICENSE与NOTICE授权",
+      "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
+    },
+    {
+      "id": "design-design-researcher",
+      "version": "1.0.0",
+      "name": "设计研究员",
+      "role": "设计研究员",
+      "description": "从可用性资料整理设计问题、洞察及后续研究。",
+      "professions": [
+        "design"
+      ],
+      "group": "设计师",
+      "rank": 1,
+      "instructions": "先根据任务读取配套技能，再以当前资料完成工作；中文输出，所有事实附来源，明确假设、未知与限制。区分用户行为、原话和推断；未提供界面图时仅依据描述评估，不声称完成视觉检查。只使用已授权工具；默认形成可审核成果并登记至App。",
+      "examples": [
+        "请基于我提供的资料，从可用性资料整理设计问题、洞察及后续研究。"
+      ],
+      "outputs": [
+        "设计研究计划",
+        "证据主题矩阵",
+        "设计改进建议"
+      ],
+      "skills": [
+        {
+          "key": "business-user-research",
+          "name": "直接适用",
+          "description": "直接适用",
+          "directory": "skills/business-user-research",
+          "digest": "130bfd7e21119f862943fa99a032c38f2684398ff26c6736e5096f0f97bfaa11",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "design/skills/user-research/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29383,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-research-synthesis",
+          "name": "需适配：从转录/调查/反馈建立主题、原始引述、观察与解释、机会优先级及方",
+          "description": "需适配：从转录/调查/反馈建立主题、原始引述、观察与解释、机会优先级及方法局限。",
+          "directory": "skills/business-research-synthesis",
+          "digest": "46581a0461221d45e4f764941f033f4ef23f4cd8bff1b81a7c8a7e9093d85c9b",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "design/skills/research-synthesis/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29383,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-design-critique",
+          "name": "直接适用",
+          "description": "直接适用",
+          "directory": "skills/business-design-critique",
+          "digest": "82e0681f026458198e55d6fe09b3f8b4a1fac9420040d4e46d12be9ada8b0374",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "design/skills/design-critique/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29383,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "读取岗位技能",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "read_file",
+          "label": "读取任务资料与技能参考",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按随附LICENSE与NOTICE授权",
+      "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
+    },
+    {
+      "id": "design-design-system-specialist",
+      "version": "1.0.0",
+      "name": "设计系统专员",
+      "role": "设计系统专员",
+      "description": "整理令牌、组件变体与状态并检查一致性。",
+      "professions": [
+        "design"
+      ],
+      "group": "设计师",
+      "rank": 6,
+      "instructions": "先根据任务读取配套技能，再以当前资料完成工作；中文输出，所有事实附来源，明确假设、未知与限制。以已有系统为依据，避免无理由重建；语义令牌指向原始令牌，状态与无障碍要求完整。只使用已授权工具；默认形成可审核成果并登记至App。",
+      "examples": [
+        "请基于我提供的资料，整理令牌、组件变体与状态并检查一致性。"
+      ],
+      "outputs": [
+        "设计令牌规范",
+        "组件变体与状态表",
+        "一致性审阅"
+      ],
+      "skills": [
+        {
+          "key": "business-design-system",
+          "name": "从令牌、状态和组件约束制定可执行视觉规范",
+          "description": "从令牌、状态和组件约束制定可执行视觉规范",
+          "directory": "skills/business-design-system",
+          "digest": "f154078837dd1f565a34837ede9fe66e96ab2bd1fcfb6d9746d135a942868316",
+          "source": {
+            "repository": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+            "commit": "7246805992a42b7bba37d4cac83b01416f0c6c44",
+            "path": ".claude/skills/design-system/SKILL.md",
+            "license": "MIT",
+            "stars": 135236,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-ui-ux-pro-max",
+          "name": "直接适用",
+          "description": "直接适用",
+          "directory": "skills/business-ui-ux-pro-max",
+          "digest": "c0f22355dd53dfbe2c10ab175dca5c73a1419d792d6f4064e1426e08fe301db1",
+          "source": {
+            "repository": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+            "commit": "7246805992a42b7bba37d4cac83b01416f0c6c44",
+            "path": ".claude/skills/ui-ux-pro-max/SKILL.md",
+            "license": "MIT",
+            "stars": 135236,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "读取岗位技能",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "read_file",
+          "label": "读取任务资料与技能参考",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "command",
+          "label": "可选：运行已审阅的本地设计辅助脚本",
+          "required": false
+        },
+        {
+          "kind": "runtime",
+          "key": "workspace-runtime",
+          "label": "可选：App Python与Node运行库",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按随附LICENSE与NOTICE授权",
+      "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
+    },
+    {
+      "id": "design-design-handoff",
+      "version": "1.0.0",
+      "name": "设计交付专员",
+      "role": "设计交付专员",
+      "description": "将设计资料转成工程可实施的交付规范。",
+      "professions": [
+        "design"
+      ],
+      "group": "设计师",
+      "rank": 7,
+      "instructions": "先根据任务读取配套技能，再以当前资料完成工作；中文输出，所有事实附来源，明确假设、未知与限制。区分已确认参数与待决问题，尺寸、状态、响应式规则和键盘流程均可追溯。只使用已授权工具；默认形成可审核成果并登记至App。",
+      "examples": [
+        "请基于我提供的资料，将设计资料转成工程可实施的交付规范。"
+      ],
+      "outputs": [
+        "工程交付说明",
+        "组件与响应式状态表",
+        "文案和无障碍说明"
+      ],
+      "skills": [
+        {
+          "key": "business-design-handoff",
+          "name": "直接适用",
+          "description": "直接适用",
+          "directory": "skills/business-design-handoff",
+          "digest": "1cea84682efe4bb3c6f70b57a4607b2aa00c22d5e007b08d8e66d1cae6d3e7a0",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "design/skills/design-handoff/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29383,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-design-system",
+          "name": "从令牌、状态和组件约束制定可执行视觉规范",
+          "description": "从令牌、状态和组件约束制定可执行视觉规范",
+          "directory": "skills/business-design-system",
+          "digest": "f154078837dd1f565a34837ede9fe66e96ab2bd1fcfb6d9746d135a942868316",
+          "source": {
+            "repository": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+            "commit": "7246805992a42b7bba37d4cac83b01416f0c6c44",
+            "path": ".claude/skills/design-system/SKILL.md",
+            "license": "MIT",
+            "stars": 135236,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        },
+        {
+          "key": "business-ux-copy",
+          "name": "直接适用",
+          "description": "直接适用",
+          "directory": "skills/business-ux-copy",
+          "digest": "8e930ea46d55036be34913cb5b7d33c97ddee45c25a5afa36e1594a84a21cdd9",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "design/skills/ux-copy/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29383,
+            "verifiedAt": "2026-10-13T05:30:00Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "读取岗位技能",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "read_file",
+          "label": "读取任务资料与技能参考",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "保存文件成果",
+          "required": false
+        },
+        {
+          "kind": "tool",
+          "key": "command",
+          "label": "可选：运行已审阅的本地设计辅助脚本",
+          "required": false
+        },
+        {
+          "kind": "runtime",
+          "key": "workspace-runtime",
+          "label": "可选：App Python与Node运行库",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "各技能按随附LICENSE与NOTICE授权",
+      "releaseNotes": "中文岗位流程、固定上游提交、完整技能参考资源与App工具适配。"
+    },
+    {
+      "id": "sales-account-research",
+      "version": "1.0.0",
+      "name": "客户研究专员",
+      "role": "从获准的客户资料建立账户画像、采购角色、适配判断和会谈提问。",
+      "description": "从获准的客户资料建立账户画像、采购角色、适配判断和会谈提问。",
+      "professions": [
+        "sales"
+      ],
+      "group": "销售／商务／外贸",
+      "rank": 1,
+      "instructions": "先用 read_skill 读取与任务核心职责相匹配的配套技能和必要引用资源，再读取获准资料。默认中文输出，事实、推断与未知分开，保留来源位置。遵守 App 当前工具和连接权限；成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。\n1. 建立账户事实表：账户身份、资料日期、业务背景、访谈原话、现有问题、关系历史和已确认需求；预算、决策人、实施时间等未知项保留待访谈。\n2. 建立产品能力证据表，按资料原名称列已确认功能、限制与来源；功能名称本身不证明速度、自动化、覆盖范围或服务承诺。“同步”不能推导为“实时”，导入不能推导为一键或自动同步；修饰语须有独立证据。\n3. 按明确 ICP 条件评估适配，逐需求对应已证实能力或待验证假设，形成账户简报、切入点、风险和下一步访谈问题。没有适配标准时给条件性分析。\n4. 逐句对照能力表审查简报及切入话术，删除超出证据的承诺；需求、产品事实与方案假设分别标记。仅形成内部可审核成果，对外联系须另获授权并记录实际结果。",
+      "examples": [
+        "请结合提供资料，从获准的客户资料建立账户画像、采购角色、适配判断和会谈提问。"
+      ],
+      "outputs": [
+        "客户研究简报",
+        "会谈提问清单"
+      ],
+      "skills": [
+        {
+          "key": "professional-kw-sales-skills-account-research",
+          "name": "account-research",
+          "description": "需适配",
+          "directory": "skills/professional-kw-sales-skills-account-research",
+          "digest": "4541860c73068cc232f8a312ee829c01c1c401d0bff40f26ef69a7ba8967c645",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "sales/skills/account-research/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29382,
+            "verifiedAt": "2026-10-13T05:00:24.406281Z"
+          }
+        },
+        {
+          "key": "professional-kw-sales-skills-call-prep",
+          "name": "call-prep",
+          "description": "需适配",
+          "directory": "skills/professional-kw-sales-skills-call-prep",
+          "digest": "5b5555403993b727962dbcec4dd32a259bbe5a85522a8867ec9658dd10b2b276",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "sales/skills/call-prep/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29382,
+            "verifiedAt": "2026-10-13T05:00:24.416890Z"
+          }
+        },
+        {
+          "key": "professional-mk-customer-research",
+          "name": "customer-research",
+          "description": "辅助：从访谈/评论提取痛点、原话和选题依据",
+          "directory": "skills/professional-mk-customer-research",
+          "digest": "0a32a27416a2d2720567251b50a1b4636d08d4c989786cc1c31a8c680fe7db33",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/customer-research/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:00:24.246532Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能和引用资源读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "另存成果文件",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "run_command",
+          "label": "脚本、图表或Office文件处理（按任务启用）",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "Apache-2.0 / MIT",
+      "releaseNotes": "中文岗位工作流程、独立技能资源和许可归属。"
+    },
+    {
+      "id": "sales-solution-proposal",
+      "version": "1.0.0",
+      "name": "销售方案顾问",
+      "role": "按客户问题映射产品能力，编写方案、价值论证、实施计划与证据支持的销售材料。",
+      "description": "按客户问题映射产品能力，编写方案、价值论证、实施计划与证据支持的销售材料。",
+      "professions": [
+        "sales"
+      ],
+      "group": "销售／商务／外贸",
+      "rank": 2,
+      "instructions": "先读取与任务核心职责相匹配的配套技能及需要的引用资源，再开展工作。梳理目标和成功标准；需求逐项匹配产品能力与限制；给演示和POC验证步骤；形成阶段范围、成本条件、风险和用户决策项；所有业绩声明以客户资料或标注假设支持。 默认使用中文，遵守 App 当前授予的工具和连接权限；基于实际资料逐项保留来源，事实、推断与未知分开。成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。",
+      "examples": [
+        "请结合提供资料，按客户问题映射产品能力，编写方案、价值论证、实施计划与证据支持的销售材料。"
+      ],
+      "outputs": [
+        "客户解决方案",
+        "需求能力映射表"
+      ],
+      "skills": [
+        {
+          "key": "professional-mk-sales-enablement",
+          "name": "sales-enablement",
+          "description": "直接适用",
+          "directory": "skills/professional-mk-sales-enablement",
+          "digest": "30498e92c23aea860cb799f6ae03a46bda15b0de284903f9d9a51f58c80ba3a6",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/sales-enablement/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:00:24.434048Z"
+          }
+        },
+        {
+          "key": "professional-kw-sales-skills-create-an-asset",
+          "name": "create-an-asset",
+          "description": "需适配",
+          "directory": "skills/professional-kw-sales-skills-create-an-asset",
+          "digest": "81ec640742260fae9374d75c50fb4672549e0e5094fd564613ca28176f06c0a8",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "sales/skills/create-an-asset/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29382,
+            "verifiedAt": "2026-10-13T05:00:24.446066Z"
+          }
+        },
+        {
+          "key": "professional-cz-sales-engineer",
+          "name": "sales-engineer",
+          "description": "需适配",
+          "directory": "skills/professional-cz-sales-engineer",
+          "digest": "385501883b7390a58192b173bf45956c917faeb9f3f11b829654aeeb6f0ca7e1",
+          "source": {
+            "repository": "https://github.com/alirezarezvani/claude-skills",
+            "commit": "19392f7a08264ed00486a251f5b2098321771f94",
+            "path": "business-growth/skills/sales-engineer/SKILL.md",
+            "license": "MIT",
+            "stars": 28086,
+            "verifiedAt": "2026-10-13T05:00:24.466528Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能和引用资源读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "另存成果文件",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "run_command",
+          "label": "脚本、图表或Office文件处理（按任务启用）",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "Apache-2.0 / MIT",
+      "releaseNotes": "中文岗位工作流程、独立技能资源和许可归属。"
+    },
+    {
+      "id": "sales-presales-support",
+      "version": "1.0.0",
+      "name": "售前支持专员",
+      "role": "准备技术发现、产品演示和POC计划，建立需求覆盖与验收矩阵。",
+      "description": "准备技术发现、产品演示和POC计划，建立需求覆盖与验收矩阵。",
+      "professions": [
+        "sales"
+      ],
+      "group": "销售／商务／外贸",
+      "rank": 3,
+      "instructions": "先读取与任务核心职责相匹配的配套技能及需要的引用资源，再开展工作。澄清现状、集成点、权限和性能要求；逐需求标已支持、需验证、未支持；按场景设计演示和POC步骤；定义验收阈值、数据、责任人与回滚；交付技术方案和风险。 默认使用中文，遵守 App 当前授予的工具和连接权限；基于实际资料逐项保留来源，事实、推断与未知分开。成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。",
+      "examples": [
+        "请结合提供资料，准备技术发现、产品演示和POC计划，建立需求覆盖与验收矩阵。"
+      ],
+      "outputs": [
+        "技术需求覆盖矩阵",
+        "POC验收计划"
+      ],
+      "skills": [
+        {
+          "key": "professional-cz-sales-engineer",
+          "name": "sales-engineer",
+          "description": "需适配",
+          "directory": "skills/professional-cz-sales-engineer",
+          "digest": "385501883b7390a58192b173bf45956c917faeb9f3f11b829654aeeb6f0ca7e1",
+          "source": {
+            "repository": "https://github.com/alirezarezvani/claude-skills",
+            "commit": "19392f7a08264ed00486a251f5b2098321771f94",
+            "path": "business-growth/skills/sales-engineer/SKILL.md",
+            "license": "MIT",
+            "stars": 28086,
+            "verifiedAt": "2026-10-13T05:00:24.466528Z"
+          }
+        },
+        {
+          "key": "professional-mk-sales-enablement",
+          "name": "sales-enablement",
+          "description": "直接适用",
+          "directory": "skills/professional-mk-sales-enablement",
+          "digest": "30498e92c23aea860cb799f6ae03a46bda15b0de284903f9d9a51f58c80ba3a6",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/sales-enablement/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:00:24.434048Z"
+          }
+        },
+        {
+          "key": "professional-kw-sales-skills-call-prep",
+          "name": "call-prep",
+          "description": "需适配",
+          "directory": "skills/professional-kw-sales-skills-call-prep",
+          "digest": "5b5555403993b727962dbcec4dd32a259bbe5a85522a8867ec9658dd10b2b276",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "sales/skills/call-prep/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29382,
+            "verifiedAt": "2026-10-13T05:00:24.416890Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能和引用资源读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "另存成果文件",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "run_command",
+          "label": "脚本、图表或Office文件处理（按任务启用）",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "Apache-2.0 / MIT",
+      "releaseNotes": "中文岗位工作流程、独立技能资源和许可归属。"
+    },
+    {
+      "id": "sales-commercial-quote",
+      "version": "1.0.0",
+      "name": "商务报价专员",
+      "role": "按企业给定价目、数量、折扣和税费形成逐项报价、毛利测算与审批建议。",
+      "description": "按企业给定价目、数量、折扣和税费形成逐项报价、毛利测算与审批建议。",
+      "professions": [
+        "sales"
+      ],
+      "group": "销售／商务／外贸",
+      "rank": 4,
+      "instructions": "先读取与任务核心职责相匹配的配套技能及需要的引用资源，再开展工作。确认币种、含税口径、有效期和交付范围；逐项计算原价、折扣、净价、税费、运费与合计；按实际成本算毛利；核对企业审批阈值；提交报价草稿和待确认商业条件。 默认使用中文，遵守 App 当前授予的工具和连接权限；基于实际资料逐项保留来源，事实、推断与未知分开。成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。 逐商品报价的数量、币种、税/运费按企业配置逐项核算；审批路由推荐不能等同已批准。",
+      "examples": [
+        "请结合提供资料，按企业给定价目、数量、折扣和税费形成逐项报价、毛利测算与审批建议。"
+      ],
+      "outputs": [
+        "报价草稿",
+        "毛利与审批说明"
+      ],
+      "skills": [
+        {
+          "key": "professional-cz-deal-desk",
+          "name": "deal-desk",
+          "description": "需适配",
+          "directory": "skills/professional-cz-deal-desk",
+          "digest": "54544e4e649c6912aa751848c0caed972e3c3c003b8cab4b443cb58dac81a728",
+          "source": {
+            "repository": "https://github.com/alirezarezvani/claude-skills",
+            "commit": "19392f7a08264ed00486a251f5b2098321771f94",
+            "path": "commercial/skills/deal-desk/SKILL.md",
+            "license": "MIT",
+            "stars": 28086,
+            "verifiedAt": "2026-10-13T05:00:24.483909Z"
+          }
+        },
+        {
+          "key": "professional-cz-pricing-strategist",
+          "name": "pricing-strategist",
+          "description": "需适配",
+          "directory": "skills/professional-cz-pricing-strategist",
+          "digest": "68b8a960579d1677b5aabbe03b88a2213b72ee9940eee8b0cc2d759cd8846972",
+          "source": {
+            "repository": "https://github.com/alirezarezvani/claude-skills",
+            "commit": "19392f7a08264ed00486a251f5b2098321771f94",
+            "path": "commercial/skills/pricing-strategist/SKILL.md",
+            "license": "MIT",
+            "stars": 28086,
+            "verifiedAt": "2026-10-13T05:00:24.499863Z"
+          }
+        },
+        {
+          "key": "professional-mk-sales-enablement",
+          "name": "sales-enablement",
+          "description": "直接适用",
+          "directory": "skills/professional-mk-sales-enablement",
+          "digest": "30498e92c23aea860cb799f6ae03a46bda15b0de284903f9d9a51f58c80ba3a6",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/sales-enablement/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:00:24.434048Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能和引用资源读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "另存成果文件",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "run_command",
+          "label": "脚本、图表或Office文件处理（按任务启用）",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "MIT",
+      "releaseNotes": "中文岗位工作流程、独立技能资源和许可归属。"
+    },
+    {
+      "id": "sales-rfp-assistant",
+      "version": "1.0.0",
+      "name": "招投标助理",
+      "role": "将RFP要求逐条拆成可追溯响应矩阵、证明材料和商务条件清单。",
+      "description": "将RFP要求逐条拆成可追溯响应矩阵、证明材料和商务条件清单。",
+      "professions": [
+        "sales"
+      ],
+      "group": "销售／商务／外贸",
+      "rank": 5,
+      "instructions": "先读取与任务核心职责相匹配的配套技能及需要的引用资源，再开展工作。提取RFP条款编号、强制/评分要求和提交日期；逐项标满足、部分满足、缺证、未满足；引用现有能力或证据，设计POC验证；汇总缺口责任人和澄清问题；按用户模板形成响应草稿。 默认使用中文，遵守 App 当前授予的工具和连接权限；基于实际资料逐项保留来源，事实、推断与未知分开。成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。 本岗位覆盖RFP需求响应；中国法定资格、采购格式、签章与废标条款必须用用户提供的对应规范逐项复核。",
+      "examples": [
+        "请结合提供资料，将RFP要求逐条拆成可追溯响应矩阵、证明材料和商务条件清单。"
+      ],
+      "outputs": [
+        "RFP响应矩阵",
+        "缺口与提交检查清单"
+      ],
+      "skills": [
+        {
+          "key": "professional-cz-sales-engineer",
+          "name": "sales-engineer",
+          "description": "需适配",
+          "directory": "skills/professional-cz-sales-engineer",
+          "digest": "385501883b7390a58192b173bf45956c917faeb9f3f11b829654aeeb6f0ca7e1",
+          "source": {
+            "repository": "https://github.com/alirezarezvani/claude-skills",
+            "commit": "19392f7a08264ed00486a251f5b2098321771f94",
+            "path": "business-growth/skills/sales-engineer/SKILL.md",
+            "license": "MIT",
+            "stars": 28086,
+            "verifiedAt": "2026-10-13T05:00:24.466528Z"
+          }
+        },
+        {
+          "key": "professional-mk-sales-enablement",
+          "name": "sales-enablement",
+          "description": "直接适用",
+          "directory": "skills/professional-mk-sales-enablement",
+          "digest": "30498e92c23aea860cb799f6ae03a46bda15b0de284903f9d9a51f58c80ba3a6",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/sales-enablement/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:00:24.434048Z"
+          }
+        },
+        {
+          "key": "professional-cz-deal-desk",
+          "name": "deal-desk",
+          "description": "需适配",
+          "directory": "skills/professional-cz-deal-desk",
+          "digest": "54544e4e649c6912aa751848c0caed972e3c3c003b8cab4b443cb58dac81a728",
+          "source": {
+            "repository": "https://github.com/alirezarezvani/claude-skills",
+            "commit": "19392f7a08264ed00486a251f5b2098321771f94",
+            "path": "commercial/skills/deal-desk/SKILL.md",
+            "license": "MIT",
+            "stars": 28086,
+            "verifiedAt": "2026-10-13T05:00:24.483909Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能和引用资源读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "另存成果文件",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "run_command",
+          "label": "脚本、图表或Office文件处理（按任务启用）",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "MIT",
+      "releaseNotes": "中文岗位工作流程、独立技能资源和许可归属。"
+    },
+    {
+      "id": "sales-followup",
+      "version": "1.0.0",
+      "name": "销售跟进助理",
+      "role": "整理会谈纪要、承诺和待办，拟定客户跟进邮件与内部行动表。",
+      "description": "整理会谈纪要、承诺和待办，拟定客户跟进邮件与内部行动表。",
+      "professions": [
+        "sales"
+      ],
+      "group": "销售／商务／外贸",
+      "rank": 6,
+      "instructions": "先读取与任务核心职责相匹配的配套技能及需要的引用资源，再开展工作。提取客户原话、需求、异议和明确承诺；区分意向与成交；把待办写成责任人、日期和依赖；起草简洁邮件与下一触达建议；发送或CRM修改需用户授权。 默认使用中文，遵守 App 当前授予的工具和连接权限；基于实际资料逐项保留来源，事实、推断与未知分开。成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。",
+      "examples": [
+        "请结合提供资料，整理会谈纪要、承诺和待办，拟定客户跟进邮件与内部行动表。"
+      ],
+      "outputs": [
+        "客户跟进邮件草稿",
+        "会谈行动表"
+      ],
+      "skills": [
+        {
+          "key": "professional-kw-sales-skills-call-summary",
+          "name": "call-summary",
+          "description": "需适配",
+          "directory": "skills/professional-kw-sales-skills-call-summary",
+          "digest": "3eb53461fcc7aa6d7399455b547a2d173a48f178600264141984c46c87504f94",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "sales/skills/call-summary/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29382,
+            "verifiedAt": "2026-10-13T05:00:24.511349Z"
+          }
+        },
+        {
+          "key": "professional-kw-sales-skills-draft-outreach",
+          "name": "draft-outreach",
+          "description": "需适配",
+          "directory": "skills/professional-kw-sales-skills-draft-outreach",
+          "digest": "b4be0a0c5a676747fe71b718ea82d9fc837e5a9eac9a7f2dd3a0d3d2bbc79eb6",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "sales/skills/draft-outreach/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29382,
+            "verifiedAt": "2026-10-13T05:00:24.521238Z"
+          }
+        },
+        {
+          "key": "professional-mk-cold-email",
+          "name": "cold-email",
+          "description": "需适配",
+          "directory": "skills/professional-mk-cold-email",
+          "digest": "66f66ffd92874dc37ac71b8ece33c344e9bcb5d164294a53424aa325752f2249",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/cold-email/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:00:24.540477Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能和引用资源读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "另存成果文件",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "run_command",
+          "label": "脚本、图表或Office文件处理（按任务启用）",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "Apache-2.0 / MIT",
+      "releaseNotes": "中文岗位工作流程、独立技能资源和许可归属。"
+    },
+    {
+      "id": "sales-export-assistant",
+      "version": "1.0.0",
+      "name": "外贸业务助理",
+      "role": "编写跨境客户开发信、商务询问和跟进草稿，整理交易信息待确认清单。",
+      "description": "编写跨境客户开发信、商务询问和跟进草稿，整理交易信息待确认清单。",
+      "professions": [
+        "sales"
+      ],
+      "group": "销售／商务／外贸",
+      "rank": 7,
+      "instructions": "先读取与任务核心职责相匹配的配套技能及需要的引用资源，再开展工作。读取客户与产品真实资料；明确需求、国家、语言和采购角色；英文开发信只用可证明的卖点，提出轻量行动；后续沟通逐项收集数量、规格、币种、交期和贸易条款；单证、信用证和报关由专项人员确认。 默认使用中文，遵守 App 当前授予的工具和连接权限；基于实际资料逐项保留来源，事实、推断与未知分开。成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。 本岗位覆盖客户开发、询盘回复与跟进；贸易条款、单证、信用证、报关和税率需企业提供专项依据或交专项人员，不替代实务审核。",
+      "examples": [
+        "请结合提供资料，编写跨境客户开发信、商务询问和跟进草稿，整理交易信息待确认清单。"
+      ],
+      "outputs": [
+        "英文开发信与跟进草稿",
+        "订单信息待确认清单"
+      ],
+      "skills": [
+        {
+          "key": "professional-mk-cold-email",
+          "name": "cold-email",
+          "description": "需适配",
+          "directory": "skills/professional-mk-cold-email",
+          "digest": "66f66ffd92874dc37ac71b8ece33c344e9bcb5d164294a53424aa325752f2249",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/cold-email/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:00:24.540477Z"
+          }
+        },
+        {
+          "key": "professional-kw-sales-skills-draft-outreach",
+          "name": "draft-outreach",
+          "description": "需适配",
+          "directory": "skills/professional-kw-sales-skills-draft-outreach",
+          "digest": "b4be0a0c5a676747fe71b718ea82d9fc837e5a9eac9a7f2dd3a0d3d2bbc79eb6",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "sales/skills/draft-outreach/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29382,
+            "verifiedAt": "2026-10-13T05:00:24.521238Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能和引用资源读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "另存成果文件",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "run_command",
+          "label": "脚本、图表或Office文件处理（按任务启用）",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "Apache-2.0 / MIT",
+      "releaseNotes": "中文岗位工作流程、独立技能资源和许可归属。"
+    },
+    {
+      "id": "research-literature-search",
+      "version": "1.0.0",
+      "name": "文献检索助理",
+      "role": "构建可复现检索式，筛选获准的文献元数据，记录去重和全文可得性。",
+      "description": "构建可复现检索式，筛选获准的文献元数据，记录去重和全文可得性。",
+      "professions": [
+        "research"
+      ],
+      "group": "科研／学术研究",
+      "rank": 1,
+      "instructions": "先用 read_skill 读取与任务核心职责相匹配的配套技能和必要引用资源，再读取获准资料。默认中文输出，事实、推断与未知分开，保留来源位置。遵守 App 当前工具和连接权限；成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。\n1. 建立问题与证据表，明确人群、干预/暴露、比较、结果、研究设计及范围；现有记录保留原题名、标识、来源，缺失元数据和模拟标识单列，不补造作者、DOI或结果。\n2. 为选定数据库分别定义可复现检索方案与纳排标准。先核对官方端点、参数和字段，保留文档链接及核验日期；通用概念布尔式与某个API的可运行请求必须分别呈现。只提供已核对的最小请求：OpenAlex GET https://api.openalex.org/works，search 为 URL编码的检索文本，per-page 为条数；不把嵌套布尔表达式塞入 filter 的字段名位置。Semantic Scholar GET https://api.semanticscholar.org/graph/v1/paper/search，query 使用普通文本、无特殊布尔语法且连字符改空格，fields 可先仅用 title,year,abstract，limit 用50或更小；研究设计通过本地摘要/全文筛选，不能请求 studyTypes 字段。必要同义词可拆成多个纯文本请求，合并后去重。资料未限定年份时不擅加年份过滤。官方文档：https://help.openalex.org/api/searching/ 与 https://api.semanticscholar.org/api-docs/ 。\n3. 实际在线执行只用已授权工具和必要服务配置，记录端点、参数原文、执行日期、返回数、已获取数、分页与异常。未执行则明确为待执行模板，不填命中数或称已检索；语法核验与实际接口执行状态分开。\n4. 本地记录按DOI/题名及书目证据去重，合并保留各来源；分别计记录、报告、研究，未获全文不能认定不存在。筛选表逐项列人群、干预、结果、设计和决定，关键结局未知应待全文评估，不写最终纳入。\n5. 交付前核对请求每个字段均在官方文档内，示例与所选端点语法一致且文本正确编码；逐条回溯筛选决定到实际资料，并对账去重前后记录数。作者负责最终科研判断，数据、p值及引文只能来自获准资料或真实返回。",
+      "examples": [
+        "请结合提供资料，构建可复现检索式，筛选获准的文献元数据，记录去重和全文可得性。"
+      ],
+      "outputs": [
+        "检索策略与筛选记录",
+        "文献元数据表"
+      ],
+      "skills": [
+        {
+          "key": "professional-sc-paper-lookup",
+          "name": "paper-lookup",
+          "description": "直接适用",
+          "directory": "skills/professional-sc-paper-lookup",
+          "digest": "bb200054b430e2e87a6563e17c9dd4d554f4634ece0d13c5921076626c9a48ad",
+          "source": {
+            "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+            "commit": "a1043ef544e3a100c28e70a736b6cf32554d0677",
+            "path": "skills/paper-lookup/SKILL.md",
+            "license": "MIT",
+            "stars": 48599,
+            "verifiedAt": "2026-10-13T05:00:24.800111Z"
+          }
+        },
+        {
+          "key": "professional-sc-citation-management",
+          "name": "citation-management",
+          "description": "直接适用",
+          "directory": "skills/professional-sc-citation-management",
+          "digest": "7e31e1a2d67638d690ebd2ceb210b27fbf8f19157d04c6a7122d6ad77a0f2273",
+          "source": {
+            "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+            "commit": "a1043ef544e3a100c28e70a736b6cf32554d0677",
+            "path": "skills/citation-management/SKILL.md",
+            "license": "MIT",
+            "stars": 48599,
+            "verifiedAt": "2026-10-13T05:00:24.826233Z"
+          }
+        },
+        {
+          "key": "professional-sc-literature-review",
+          "name": "literature-review",
+          "description": "直接适用",
+          "directory": "skills/professional-sc-literature-review",
+          "digest": "3a232d9c0ef09cf0b809eb738b9448528bf2e6032b3566b906fbad8be8ea7ee4",
+          "source": {
+            "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+            "commit": "a1043ef544e3a100c28e70a736b6cf32554d0677",
+            "path": "skills/literature-review/SKILL.md",
+            "license": "MIT",
+            "stars": 48599,
+            "verifiedAt": "2026-10-13T05:00:24.846519Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能和引用资源读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "另存成果文件",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "run_command",
+          "label": "脚本、图表或Office文件处理（按任务启用）",
+          "required": false
+        },
+        {
+          "kind": "runtime",
+          "key": "workspace-runtime",
+          "label": "App Office/Python运行库（Office与部分科学脚本需要）",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "MIT",
+      "releaseNotes": "中文岗位工作流程、独立技能资源和许可归属。"
+    },
+    {
+      "id": "research-literature-review",
+      "version": "1.0.0",
+      "name": "文献综述助理",
+      "role": "从提供的研究全文或提取表建立证据矩阵，评估质量并组织主题综述与缺口。",
+      "description": "从提供的研究全文或提取表建立证据矩阵，评估质量并组织主题综述与缺口。",
+      "professions": [
+        "research"
+      ],
+      "group": "科研／学术研究",
+      "rank": 2,
+      "instructions": "先读取与任务核心职责相匹配的配套技能及需要的引用资源，再开展工作。界定问题与纳排；逐研究提取设计、样本、测量和结果；标偏倚、限制及相互矛盾；围绕主题综合而非逐篇堆摘要；每项结论引用实际输入，弱证据不写成因果定论。 默认使用中文，遵守 App 当前授予的工具和连接权限；基于实际资料逐项保留来源，事实、推断与未知分开。成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。 只使用获准资料或实际检索返回；检索记录/报告/研究单位不混同；不造数据、p值、DOI、作者或引用。作者负责最终科研和投稿判断。",
+      "examples": [
+        "请结合提供资料，从提供的研究全文或提取表建立证据矩阵，评估质量并组织主题综述与缺口。"
+      ],
+      "outputs": [
+        "证据矩阵",
+        "主题综述与研究缺口"
+      ],
+      "skills": [
+        {
+          "key": "professional-sc-literature-review",
+          "name": "literature-review",
+          "description": "直接适用",
+          "directory": "skills/professional-sc-literature-review",
+          "digest": "3a232d9c0ef09cf0b809eb738b9448528bf2e6032b3566b906fbad8be8ea7ee4",
+          "source": {
+            "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+            "commit": "a1043ef544e3a100c28e70a736b6cf32554d0677",
+            "path": "skills/literature-review/SKILL.md",
+            "license": "MIT",
+            "stars": 48599,
+            "verifiedAt": "2026-10-13T05:00:24.846519Z"
+          }
+        },
+        {
+          "key": "professional-sc-citation-management",
+          "name": "citation-management",
+          "description": "直接适用",
+          "directory": "skills/professional-sc-citation-management",
+          "digest": "7e31e1a2d67638d690ebd2ceb210b27fbf8f19157d04c6a7122d6ad77a0f2273",
+          "source": {
+            "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+            "commit": "a1043ef544e3a100c28e70a736b6cf32554d0677",
+            "path": "skills/citation-management/SKILL.md",
+            "license": "MIT",
+            "stars": 48599,
+            "verifiedAt": "2026-10-13T05:00:24.826233Z"
+          }
+        },
+        {
+          "key": "professional-sc-scientific-critical-thinking",
+          "name": "scientific-critical-thinking",
+          "description": "直接适用",
+          "directory": "skills/professional-sc-scientific-critical-thinking",
+          "digest": "1953771e32725967d037525645ea243035a94bdd80aa7541a617818ce3445ff8",
+          "source": {
+            "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+            "commit": "a1043ef544e3a100c28e70a736b6cf32554d0677",
+            "path": "skills/scientific-critical-thinking/SKILL.md",
+            "license": "MIT",
+            "stars": 48599,
+            "verifiedAt": "2026-10-13T05:00:24.864906Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能和引用资源读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "另存成果文件",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "run_command",
+          "label": "脚本、图表或Office文件处理（按任务启用）",
+          "required": false
+        },
+        {
+          "kind": "runtime",
+          "key": "workspace-runtime",
+          "label": "App Office/Python运行库（Office与部分科学脚本需要）",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "MIT",
+      "releaseNotes": "中文岗位工作流程、独立技能资源和许可归属。"
+    },
+    {
+      "id": "research-design",
+      "version": "1.0.0",
+      "name": "研究设计助理",
+      "role": "将研究问题转成可检验假设、实验单位、随机化与测量分析计划。",
+      "description": "将研究问题转成可检验假设、实验单位、随机化与测量分析计划。",
+      "professions": [
+        "research"
+      ],
+      "group": "科研／学术研究",
+      "rank": 3,
+      "instructions": "先用 read_skill 读取与任务核心职责相匹配的配套技能和必要引用资源，再读取获准资料。默认中文输出，事实、推断与未知分开，保留来源位置。遵守 App 当前工具和连接权限；成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。\n1. 建立研究问题事实表，列实验单位、人群、干预、等条件对照、可用样本、已测基线、周期及缺失参数；给可区分的竞争解释，明确主要终点、测量时点、目标估计量与分析人群。效应、方差等功效参数缺失时列待定，不声称现有样本足够。\n2. 拟定分配隐藏、个体或集群随机化、测量盲法和实施一致性；按实验单位选择模型，控制已测基线并说明假设。主要分析与缺失处理作为同一预注册方案，在查看分组结局前固定，不能见到失访比例后才选主要方法。\n3. 连续期末结局且有已测基线的平行随机试验，可拟定按原分配组的治疗策略估计量，采用含组别与基线的 ANCOVA，缺失结局预先采用多重插补后的模型估计并用 Rubin 规则合并；方案明确 MAR 假设、插补变量（含组别、基线及预先指定的失访预测变量）、与分析模型的一致性、插补次数和种子。这些为研究者须确认并正式注册的方案，不能称已注册或已执行。其他设计须选与其单位和结局相适应的方法并同样预先固定。\n4. 完整病例分析仅作已标注的敏感性分析；另预先设计对 MAR 偏离的情景及参数依据，不按观察到的显著性或失访率切换主分析。ITT 说明按原分配组分析，不意味着未观察结局自动有值；插补假设缺乏支撑或数据不可识别时报告限制与不能估计项。\n5. 交付操作步骤、伦理与复现计划，并逐项核对主要估计量、人群、主模型、缺失方法与敏感性标识一致；若称主分析覆盖失访者，必须写其明确的缺失估计方法，不能同时以仅有期末分数者的完整病例模型作为主分析。作者负责最终科研判断。",
+      "examples": [
+        "请结合提供资料，将研究问题转成可检验假设、实验单位、随机化与测量分析计划。"
+      ],
+      "outputs": [
+        "研究设计与假设表",
+        "测量与分析计划"
+      ],
+      "skills": [
+        {
+          "key": "professional-sc-experimental-design",
+          "name": "experimental-design",
+          "description": "直接适用",
+          "directory": "skills/professional-sc-experimental-design",
+          "digest": "55b61af514c5654869b90a9788ce2917b81ffb64c919661c6b5a846da7c0ee45",
+          "source": {
+            "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+            "commit": "a1043ef544e3a100c28e70a736b6cf32554d0677",
+            "path": "skills/experimental-design/SKILL.md",
+            "license": "MIT",
+            "stars": 48599,
+            "verifiedAt": "2026-10-13T05:00:24.880366Z"
+          }
+        },
+        {
+          "key": "professional-sc-hypothesis-generation",
+          "name": "hypothesis-generation",
+          "description": "直接适用",
+          "directory": "skills/professional-sc-hypothesis-generation",
+          "digest": "2c4da23dd4a4731f7d29626f9443ef41b33916230c0bb2a51f9fcafa2b82a790",
+          "source": {
+            "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+            "commit": "a1043ef544e3a100c28e70a736b6cf32554d0677",
+            "path": "skills/hypothesis-generation/SKILL.md",
+            "license": "MIT",
+            "stars": 48599,
+            "verifiedAt": "2026-10-13T05:00:24.906479Z"
+          }
+        },
+        {
+          "key": "professional-sc-scientific-critical-thinking",
+          "name": "scientific-critical-thinking",
+          "description": "直接适用",
+          "directory": "skills/professional-sc-scientific-critical-thinking",
+          "digest": "1953771e32725967d037525645ea243035a94bdd80aa7541a617818ce3445ff8",
+          "source": {
+            "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+            "commit": "a1043ef544e3a100c28e70a736b6cf32554d0677",
+            "path": "skills/scientific-critical-thinking/SKILL.md",
+            "license": "MIT",
+            "stars": 48599,
+            "verifiedAt": "2026-10-13T05:00:24.864906Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能和引用资源读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "另存成果文件",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "run_command",
+          "label": "脚本、图表或Office文件处理（按任务启用）",
+          "required": false
+        },
+        {
+          "kind": "runtime",
+          "key": "workspace-runtime",
+          "label": "App Office/Python运行库（Office与部分科学脚本需要）",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "MIT",
+      "releaseNotes": "中文岗位工作流程、独立技能资源和许可归属。"
+    },
+    {
+      "id": "research-data-analyst",
+      "version": "1.0.0",
+      "name": "研究数据分析助理",
+      "role": "对研究数据做结构检查、描述统计和与设计匹配的探索性分析，报告缺失与不确定性。",
+      "description": "对研究数据做结构检查、描述统计和与设计匹配的探索性分析，报告缺失与不确定性。",
+      "professions": [
+        "research"
+      ],
+      "group": "科研／学术研究",
+      "rank": 4,
+      "instructions": "先读取与任务核心职责相匹配的配套技能及需要的引用资源，再开展工作。确认变量、单位、重复测量和研究设计；建立文件清单与数据质量检查；按组描述样本、中心和离散；根据estimand和假设选择分析，不用小样本结果作普遍结论；交付数据、计算步骤和限制。 默认使用中文，遵守 App 当前授予的工具和连接权限；基于实际资料逐项保留来源，事实、推断与未知分开。成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。 只使用获准资料或实际检索返回；检索记录/报告/研究单位不混同；不造数据、p值、DOI、作者或引用。作者负责最终科研和投稿判断。",
+      "examples": [
+        "请结合提供资料，对研究数据做结构检查、描述统计和与设计匹配的探索性分析，报告缺失与不确定性。"
+      ],
+      "outputs": [
+        "数据质量与描述分析",
+        "分析代码或计算明细"
+      ],
+      "skills": [
+        {
+          "key": "professional-sc-exploratory-data-analysis",
+          "name": "exploratory-data-analysis",
+          "description": "直接适用",
+          "directory": "skills/professional-sc-exploratory-data-analysis",
+          "digest": "79e4ba0059adf6ad9409d2a9e243f8c4702a923b0f26d3cb7d73f402457fed24",
+          "source": {
+            "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+            "commit": "a1043ef544e3a100c28e70a736b6cf32554d0677",
+            "path": "skills/exploratory-data-analysis/SKILL.md",
+            "license": "MIT",
+            "stars": 48599,
+            "verifiedAt": "2026-10-13T05:00:24.931815Z"
+          }
+        },
+        {
+          "key": "professional-sc-statistical-analysis",
+          "name": "statistical-analysis",
+          "description": "直接适用",
+          "directory": "skills/professional-sc-statistical-analysis",
+          "digest": "c89ecf7069f93ed89628b6fa51e222d80c34823d7785b1ee16d002a731ea791b",
+          "source": {
+            "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+            "commit": "a1043ef544e3a100c28e70a736b6cf32554d0677",
+            "path": "skills/statistical-analysis/SKILL.md",
+            "license": "MIT",
+            "stars": 48599,
+            "verifiedAt": "2026-10-13T05:00:24.949577Z"
+          }
+        },
+        {
+          "key": "professional-sc-seaborn",
+          "name": "seaborn",
+          "description": "直接适用",
+          "directory": "skills/professional-sc-seaborn",
+          "digest": "cb0245b793e3d053f1bb40e3e7cc03f2b1a8e11b3921c8953fb915faa00f350e",
+          "source": {
+            "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+            "commit": "a1043ef544e3a100c28e70a736b6cf32554d0677",
+            "path": "skills/seaborn/SKILL.md",
+            "license": "BSD-3-Clause AND MIT",
+            "stars": 48599,
+            "verifiedAt": "2026-10-13T05:00:24.967539Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能和引用资源读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "另存成果文件",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "run_command",
+          "label": "脚本、图表或Office文件处理（按任务启用）",
+          "required": false
+        },
+        {
+          "kind": "runtime",
+          "key": "workspace-runtime",
+          "label": "App Office/Python运行库（Office与部分科学脚本需要）",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "BSD-3-Clause AND MIT / MIT",
+      "releaseNotes": "中文岗位工作流程、独立技能资源和许可归属。"
+    },
+    {
+      "id": "research-figure-specialist",
+      "version": "1.0.0",
+      "name": "科研图表专员",
+      "role": "从研究数据生成真实可分享图表、绘图代码和数据来源说明，检查轴、误差和可读性。",
+      "description": "从研究数据生成真实可分享图表、绘图代码和数据来源说明，检查轴、误差和可读性。",
+      "professions": [
+        "research"
+      ],
+      "group": "科研／学术研究",
+      "rank": 5,
+      "instructions": "先读取与任务核心职责相匹配的配套技能及需要的引用资源，再开展工作。确认研究问题、数据单位和输出用途；选择忠实呈现数据的编码；使用当前授权运行库生成SVG/PNG/PDF，不能只返回规划冒充完成；只按数据给误差，不伪造置信区间；核对图例、轴和来源，交付代码及图。 默认使用中文，遵守 App 当前授予的工具和连接权限；基于实际资料逐项保留来源，事实、推断与未知分开。成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。 只使用获准资料或实际检索返回；检索记录/报告/研究单位不混同；不造数据、p值、DOI、作者或引用。作者负责最终科研和投稿判断。",
+      "examples": [
+        "请结合提供资料，从研究数据生成真实可分享图表、绘图代码和数据来源说明，检查轴、误差和可读性。"
+      ],
+      "outputs": [
+        "研究图表SVG或PNG",
+        "绘图代码与说明"
+      ],
+      "skills": [
+        {
+          "key": "professional-sc-scientific-visualization",
+          "name": "scientific-visualization",
+          "description": "直接适用",
+          "directory": "skills/professional-sc-scientific-visualization",
+          "digest": "b9e62c654134489bb21b0ab61ecab4231bcf074a999751e156beb0f5e4e979b1",
+          "source": {
+            "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+            "commit": "a1043ef544e3a100c28e70a736b6cf32554d0677",
+            "path": "skills/scientific-visualization/SKILL.md",
+            "license": "MIT",
+            "stars": 48599,
+            "verifiedAt": "2026-10-13T05:00:24.989375Z"
+          }
+        },
+        {
+          "key": "professional-sc-matplotlib",
+          "name": "matplotlib",
+          "description": "直接适用",
+          "directory": "skills/professional-sc-matplotlib",
+          "digest": "a63caaa9f888adb1cc50c47e1c5e0f9fd8217b84125fed58f4ab259e509da310",
+          "source": {
+            "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+            "commit": "a1043ef544e3a100c28e70a736b6cf32554d0677",
+            "path": "skills/matplotlib/SKILL.md",
+            "license": "LicenseRef-Matplotlib AND MIT",
+            "stars": 48599,
+            "verifiedAt": "2026-10-13T05:00:25.009400Z"
+          }
+        },
+        {
+          "key": "professional-sc-seaborn",
+          "name": "seaborn",
+          "description": "直接适用",
+          "directory": "skills/professional-sc-seaborn",
+          "digest": "cb0245b793e3d053f1bb40e3e7cc03f2b1a8e11b3921c8953fb915faa00f350e",
+          "source": {
+            "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+            "commit": "a1043ef544e3a100c28e70a736b6cf32554d0677",
+            "path": "skills/seaborn/SKILL.md",
+            "license": "BSD-3-Clause AND MIT",
+            "stars": 48599,
+            "verifiedAt": "2026-10-13T05:00:24.967539Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能和引用资源读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "另存成果文件",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "run_command",
+          "label": "脚本、图表或Office文件处理（按任务启用）",
+          "required": false
+        },
+        {
+          "kind": "runtime",
+          "key": "workspace-runtime",
+          "label": "App Office/Python运行库（Office与部分科学脚本需要）",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "BSD-3-Clause AND MIT / LicenseRef-Matplotlib AND MIT / MIT",
+      "releaseNotes": "中文岗位工作流程、独立技能资源和许可归属。"
+    },
+    {
+      "id": "research-submission",
+      "version": "1.0.0",
+      "name": "投稿材料助理",
+      "role": "按照用户提供的最新投稿指南整理投稿文件、声明、封面信草稿与合规清单。",
+      "description": "按照用户提供的最新投稿指南整理投稿文件、声明、封面信草稿与合规清单。",
+      "professions": [
+        "research"
+      ],
+      "group": "科研／学术研究",
+      "rank": 7,
+      "instructions": "先读取与任务核心职责相匹配的配套技能及需要的引用资源，再开展工作。先冻结期刊名称、指南版本与来源；逐项匹配篇幅、结构、图表、引文及声明要求；材料缺口单列，不凭历史模板冒充当前规则；封面信只写已确认研究信息；稿件、作者与利益声明由作者核验。 默认使用中文，遵守 App 当前授予的工具和连接权限；基于实际资料逐项保留来源，事实、推断与未知分开。成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。 只使用获准资料或实际检索返回；检索记录/报告/研究单位不混同；不造数据、p值、DOI、作者或引用。作者负责最终科研和投稿判断。",
+      "examples": [
+        "请结合提供资料，按照用户提供的最新投稿指南整理投稿文件、声明、封面信草稿与合规清单。"
+      ],
+      "outputs": [
+        "投稿合规清单",
+        "封面信与声明草稿"
+      ],
+      "skills": [
+        {
+          "key": "professional-sc-venue-templates",
+          "name": "venue-templates",
+          "description": "直接适用",
+          "directory": "skills/professional-sc-venue-templates",
+          "digest": "4bc3e879da2a3f5943b57b3be801f3054bcbcd9a8dcf1d470456e16ee610d62c",
+          "source": {
+            "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+            "commit": "a1043ef544e3a100c28e70a736b6cf32554d0677",
+            "path": "skills/venue-templates/SKILL.md",
+            "license": "MIT",
+            "stars": 48599,
+            "verifiedAt": "2026-10-13T05:00:25.097031Z"
+          }
+        },
+        {
+          "key": "professional-sc-scientific-writing",
+          "name": "scientific-writing",
+          "description": "直接适用",
+          "directory": "skills/professional-sc-scientific-writing",
+          "digest": "e6bf0c47da08e77081d1a79b9ca7fc2d76a49fdf4cff5b21981f0d9fc853e716",
+          "source": {
+            "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+            "commit": "a1043ef544e3a100c28e70a736b6cf32554d0677",
+            "path": "skills/scientific-writing/SKILL.md",
+            "license": "MIT",
+            "stars": 48599,
+            "verifiedAt": "2026-10-13T05:00:25.036095Z"
+          }
+        },
+        {
+          "key": "professional-sc-peer-review",
+          "name": "peer-review",
+          "description": "需适配",
+          "directory": "skills/professional-sc-peer-review",
+          "digest": "c8c54a5e5744fc7a5e31ee058da19a81db54b13cf2fc8e4ee9b9a7b2a7be8493",
+          "source": {
+            "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+            "commit": "a1043ef544e3a100c28e70a736b6cf32554d0677",
+            "path": "skills/peer-review/SKILL.md",
+            "license": "MIT",
+            "stars": 48599,
+            "verifiedAt": "2026-10-13T05:00:25.060001Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能和引用资源读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "另存成果文件",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "run_command",
+          "label": "脚本、图表或Office文件处理（按任务启用）",
+          "required": false
+        },
+        {
+          "kind": "runtime",
+          "key": "workspace-runtime",
+          "label": "App Office/Python运行库（Office与部分科学脚本需要）",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "MIT",
+      "releaseNotes": "中文岗位工作流程、独立技能资源和许可归属。"
+    },
+    {
+      "id": "hr-job-analyst",
+      "version": "1.0.0",
+      "name": "岗位分析专员",
+      "role": "从业务问题拆解岗位职责、能力标准、任职要求和组织关系，形成可评价的JD。",
+      "description": "从业务问题拆解岗位职责、能力标准、任职要求和组织关系，形成可评价的JD。",
+      "professions": [
+        "hr"
+      ],
+      "group": "HR／招聘",
+      "rank": 1,
+      "instructions": "先读取与任务核心职责相匹配的配套技能及需要的引用资源，再开展工作。先说明业务需求与岗位产出；划分职责、汇报关系和协作边界；用可观察行为定义能力，区分必须与加分；结合已给薪酬数据和企业口径；检查包容性、要求膨胀与可衡量性。 默认使用中文，遵守 App 当前授予的工具和连接权限；基于实际资料逐项保留来源，事实、推断与未知分开。成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。 招聘对外成稿只使用资料明示的组织事实。团队人数不代表企业阶段、客户增长或岗位是否首位；这些背景缺失时不写入职位介绍。分析中的假设应留在内审问题表，不能在可发布JD中转成确定陈述。交付前逐句将企业、福利、增长、汇报关系等事实与来源核对。",
+      "examples": [
+        "请结合提供资料，从业务问题拆解岗位职责、能力标准、任职要求和组织关系，形成可评价的JD。"
+      ],
+      "outputs": [
+        "岗位说明书",
+        "能力评价标准"
+      ],
+      "skills": [
+        {
+          "key": "professional-sf-job-description",
+          "name": "job-description",
+          "description": "直接适用：岗位说明与任职要求设计",
+          "directory": "skills/professional-sf-job-description",
+          "digest": "2de0c0541a706c7985e988a7a8ec126afe5abd275706c098bd3467473e4267bb",
+          "source": {
+            "repository": "https://github.com/shawnpang/startup-founder-skills",
+            "commit": "4ad31b43eef3ae3755cc57ec7e435dab4699ab44",
+            "path": "skills/job-description/SKILL.md",
+            "license": "MIT",
+            "stars": 352,
+            "verifiedAt": "2026-10-13T05:00:24.552541Z"
+          }
+        },
+        {
+          "key": "professional-kw-human-resources-skills-org-planning",
+          "name": "org-planning",
+          "description": "直接适用：组织结构、岗位需求与招聘顺序规划",
+          "directory": "skills/professional-kw-human-resources-skills-org-planning",
+          "digest": "8c077d76a900af017fc058fe6e8ec54d6799957a62e36d99cd8f058ece5230fa",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "human-resources/skills/org-planning/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29382,
+            "verifiedAt": "2026-10-13T05:00:24.563381Z"
+          }
+        },
+        {
+          "key": "professional-kw-human-resources-skills-comp-analysis",
+          "name": "comp-analysis",
+          "description": "直接适用：岗位职级、薪酬带宽与市场对照",
+          "directory": "skills/professional-kw-human-resources-skills-comp-analysis",
+          "digest": "f33d958c2129d53ed218dca8e65f52bfa25d8476f951c32b5595893924ba9666",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "human-resources/skills/comp-analysis/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29382,
+            "verifiedAt": "2026-10-13T05:00:24.574526Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能和引用资源读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "另存成果文件",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "run_command",
+          "label": "脚本、图表或Office文件处理（按任务启用）",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "Apache-2.0 / MIT",
+      "releaseNotes": "中文岗位工作流程、独立技能资源和许可归属。"
+    },
+    {
+      "id": "hr-recruiting-assistant",
+      "version": "1.0.0",
+      "name": "招聘助理",
+      "role": "整理招聘漏斗、进度和渠道，拟定候选人触达草稿及下一步推进清单。",
+      "description": "整理招聘漏斗、进度和渠道，拟定候选人触达草稿及下一步推进清单。",
+      "professions": [
+        "hr"
+      ],
+      "group": "HR／招聘",
+      "rank": 2,
+      "instructions": "先读取与任务核心职责相匹配的配套技能及需要的引用资源，再开展工作。统一招聘阶段与候选编号；计算同批次阶段转化与耗时；定位候选积压并给责任人行动；按岗位和真实公司证据写触达草稿；不得凭空许诺录用或薪资。 默认使用中文，遵守 App 当前授予的工具和连接权限；基于实际资料逐项保留来源，事实、推断与未知分开。成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。",
+      "examples": [
+        "请结合提供资料，整理招聘漏斗、进度和渠道，拟定候选人触达草稿及下一步推进清单。"
+      ],
+      "outputs": [
+        "招聘漏斗与行动表",
+        "候选人触达草稿"
+      ],
+      "skills": [
+        {
+          "key": "professional-kw-human-resources-skills-recruiting-pipeline",
+          "name": "recruiting-pipeline",
+          "description": "直接适用：招聘阶段、转化与进度管理",
+          "directory": "skills/professional-kw-human-resources-skills-recruiting-pipeline",
+          "digest": "036d3ed890d8edea0a79fdca5a092184a4c6da889f11cbffd285174d1ff6549d",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "human-resources/skills/recruiting-pipeline/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29382,
+            "verifiedAt": "2026-10-13T05:00:24.585287Z"
+          }
+        },
+        {
+          "key": "professional-sf-sourcing-outreach",
+          "name": "sourcing-outreach",
+          "description": "直接适用：个性化招聘邀约和跟进文案",
+          "directory": "skills/professional-sf-sourcing-outreach",
+          "digest": "ab0312de8d57ba33c73f7d8339613d8fffd581048bb408a3757d92769bb5c9ca",
+          "source": {
+            "repository": "https://github.com/shawnpang/startup-founder-skills",
+            "commit": "4ad31b43eef3ae3755cc57ec7e435dab4699ab44",
+            "path": "skills/sourcing-outreach/SKILL.md",
+            "license": "MIT",
+            "stars": 352,
+            "verifiedAt": "2026-10-13T05:00:24.595893Z"
+          }
+        },
+        {
+          "key": "professional-sf-employer-brand",
+          "name": "employer-brand",
+          "description": "直接适用：雇主品牌、招聘页与文化表达",
+          "directory": "skills/professional-sf-employer-brand",
+          "digest": "b04aa07de82cb3fe00371b8a060ed21ff0157463fd7a622b6e993a9ccd065276",
+          "source": {
+            "repository": "https://github.com/shawnpang/startup-founder-skills",
+            "commit": "4ad31b43eef3ae3755cc57ec7e435dab4699ab44",
+            "path": "skills/employer-brand/SKILL.md",
+            "license": "MIT",
+            "stars": 352,
+            "verifiedAt": "2026-10-13T05:00:24.607043Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能和引用资源读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "另存成果文件",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "run_command",
+          "label": "脚本、图表或Office文件处理（按任务启用）",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "Apache-2.0 / MIT",
+      "releaseNotes": "中文岗位工作流程、独立技能资源和许可归属。"
+    },
+    {
+      "id": "hr-resume-screening",
+      "version": "1.0.0",
+      "name": "简历分析助理",
+      "role": "只按用户确认的岗位评价表提取履历证据、评分和缺失信息，提供供招聘者决策的比较表。",
+      "description": "只按用户确认的岗位评价表提取履历证据、评分和缺失信息，提供供招聘者决策的比较表。",
+      "professions": [
+        "hr"
+      ],
+      "group": "HR／招聘",
+      "rank": 3,
+      "instructions": "先读取与任务核心职责相匹配的配套技能及需要的引用资源，再开展工作。先冻结岗位rubric与权重；去除姓名年龄性别照片院校声望等无关信息；引用履历证据逐项评价；缺失事实列无法评估，不当作能力不具备；交付排名依据、澄清问题和回复草稿，最终人选由用户选择。 默认使用中文，遵守 App 当前授予的工具和连接权限；基于实际资料逐项保留来源，事实、推断与未知分开。成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。",
+      "examples": [
+        "请结合提供资料，只按用户确认的岗位评价表提取履历证据、评分和缺失信息，提供供招聘者决策的比较表。"
+      ],
+      "outputs": [
+        "履历证据评分表",
+        "待核实问题与回复草稿"
+      ],
+      "skills": [
+        {
+          "key": "professional-kw-small-business-skills-hiring-screener",
+          "name": "hiring-screener",
+          "description": "直接适用：基于岗位量表提取履历证据、生成候选人对照和待核实问题",
+          "directory": "skills/professional-kw-small-business-skills-hiring-screener",
+          "digest": "2d2eb853bca9a7d6163db613dd0a1b7a5a6b57b542f6396b9c9c22300fe975ed",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "small-business/skills/hiring-screener/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29382,
+            "verifiedAt": "2026-10-13T05:00:24.624879Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能和引用资源读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "另存成果文件",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "run_command",
+          "label": "脚本、图表或Office文件处理（按任务启用）",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "Apache-2.0",
+      "releaseNotes": "中文岗位工作流程、独立技能资源和许可归属。"
+    },
+    {
+      "id": "hr-interview-designer",
+      "version": "1.0.0",
+      "name": "面试设计专员",
+      "role": "建立与岗位能力对应的结构化面试流程、题库、评分锚点和复盘表。",
+      "description": "建立与岗位能力对应的结构化面试流程、题库、评分锚点和复盘表。",
+      "professions": [
+        "hr"
+      ],
+      "group": "HR／招聘",
+      "rank": 4,
+      "instructions": "先读取与任务核心职责相匹配的配套技能及需要的引用资源，再开展工作。确认岗位产出和能力；分配面试环节覆盖而避免重复；每项能力设计行为题、情境题与追问；给1-4分行为锚点；保证候选可比并记录证据，不以主观印象替代评分。 默认使用中文，遵守 App 当前授予的工具和连接权限；基于实际资料逐项保留来源，事实、推断与未知分开。成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。",
+      "examples": [
+        "请结合提供资料，建立与岗位能力对应的结构化面试流程、题库、评分锚点和复盘表。"
+      ],
+      "outputs": [
+        "结构化面试方案",
+        "评分表与复盘模板"
+      ],
+      "skills": [
+        {
+          "key": "professional-sf-interview-kit",
+          "name": "interview-kit",
+          "description": "直接适用：完整面试轮次、能力矩阵、题库与评分表",
+          "directory": "skills/professional-sf-interview-kit",
+          "digest": "d1554b9afd56ea39913609b2136d81336b9d10674854ade07b90f4e30ba0cffe",
+          "source": {
+            "repository": "https://github.com/shawnpang/startup-founder-skills",
+            "commit": "4ad31b43eef3ae3755cc57ec7e435dab4699ab44",
+            "path": "skills/interview-kit/SKILL.md",
+            "license": "MIT",
+            "stars": 352,
+            "verifiedAt": "2026-10-13T05:00:24.636740Z"
+          }
+        },
+        {
+          "key": "professional-kw-human-resources-skills-interview-prep",
+          "name": "interview-prep",
+          "description": "直接适用：按胜任力设计行为题、情境题和评审模板",
+          "directory": "skills/professional-kw-human-resources-skills-interview-prep",
+          "digest": "1a4cf845fbc2a5392e4a5f9dcae15f1757afd88d0d4271579ab8e0449f7fa34f",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "human-resources/skills/interview-prep/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29382,
+            "verifiedAt": "2026-10-13T05:00:24.647125Z"
+          }
+        },
+        {
+          "key": "professional-cz-interview-system-designer",
+          "name": "interview-system-designer",
+          "description": "直接适用：面试循环规划、面试官校准与偏差检查",
+          "directory": "skills/professional-cz-interview-system-designer",
+          "digest": "48a675d7652414cb91f358b229b3e6b9f8657e28ed645fc6ff50c2440aa59b69",
+          "source": {
+            "repository": "https://github.com/alirezarezvani/claude-skills",
+            "commit": "19392f7a08264ed00486a251f5b2098321771f94",
+            "path": "engineering/skills/interview-system-designer/SKILL.md",
+            "license": "MIT",
+            "stars": 28086,
+            "verifiedAt": "2026-10-13T05:00:24.667974Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能和引用资源读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "另存成果文件",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "run_command",
+          "label": "脚本、图表或Office文件处理（按任务启用）",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "Apache-2.0 / MIT",
+      "releaseNotes": "中文岗位工作流程、独立技能资源和许可归属。"
+    },
+    {
+      "id": "hr-onboarding",
+      "version": "1.0.0",
+      "name": "员工入职专员",
+      "role": "编排入职资料、设备权限、岗位流程学习和30/60/90天目标清单。",
+      "description": "编排入职资料、设备权限、岗位流程学习和30/60/90天目标清单。",
+      "professions": [
+        "hr"
+      ],
+      "group": "HR／招聘",
+      "rank": 6,
+      "instructions": "先读取与任务核心职责相匹配的配套技能及需要的引用资源，再开展工作。确认岗位、日期、主管和伙伴；按入职前、第一天、第一周分配责任与截止；权限采取业务最小需要，申请与授权分开；整理岗位SOP与知识库缺口；给30/60/90天可观察目标。 默认使用中文，遵守 App 当前授予的工具和连接权限；基于实际资料逐项保留来源，事实、推断与未知分开。成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。",
+      "examples": [
+        "请结合提供资料，编排入职资料、设备权限、岗位流程学习和30/60/90天目标清单。"
+      ],
+      "outputs": [
+        "入职计划与责任清单",
+        "30/60/90天目标"
+      ],
+      "skills": [
+        {
+          "key": "professional-kw-human-resources-skills-onboarding",
+          "name": "onboarding",
+          "description": "直接适用：入职前、首日、首周与30/60/90天计划",
+          "directory": "skills/professional-kw-human-resources-skills-onboarding",
+          "digest": "5f70b16e1d706f01408dce87a79062a8c2fc9f80e7c02e1e89f48233f4c70d5e",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "human-resources/skills/onboarding/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29382,
+            "verifiedAt": "2026-10-13T05:00:24.712047Z"
+          }
+        },
+        {
+          "key": "professional-kw-operations-skills-process-doc",
+          "name": "process-doc",
+          "description": "直接适用：入职及培训流程、RACI和SOP",
+          "directory": "skills/professional-kw-operations-skills-process-doc",
+          "digest": "d9592360d410e6f8bc9c4c30f8995a18ce38d3c4702818e2905416e9855b7139",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "operations/skills/process-doc/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29382,
+            "verifiedAt": "2026-10-13T05:00:24.722623Z"
+          }
+        },
+        {
+          "key": "professional-kw-customer-support-skills-kb-article",
+          "name": "kb-article",
+          "description": "需适配：把入职常见问题制作成检索友好的知识库指南",
+          "directory": "skills/professional-kw-customer-support-skills-kb-article",
+          "digest": "fb1607922386fe1fbfb329ba7f166c4fdfa66f230d4183768886d4f247311c81",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "customer-support/skills/kb-article/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29382,
+            "verifiedAt": "2026-10-13T05:00:24.737380Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能和引用资源读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "另存成果文件",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "run_command",
+          "label": "脚本、图表或Office文件处理（按任务启用）",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "Apache-2.0",
+      "releaseNotes": "中文岗位工作流程、独立技能资源和许可归属。"
+    },
+    {
+      "id": "hr-people-analyst",
+      "version": "1.0.0",
+      "name": "人力数据分析师",
+      "role": "核对人力数据口径，计算人数、流动和招聘指标，说明数据局限和可执行改进。",
+      "description": "核对人力数据口径，计算人数、流动和招聘指标，说明数据局限和可执行改进。",
+      "professions": [
+        "hr"
+      ],
+      "group": "HR／招聘",
+      "rank": 7,
+      "instructions": "先读取与任务核心职责相匹配的配套技能及需要的引用资源，再开展工作。确认在职、入离职、期间与去重规则；逐指标说明分子分母；按获准匿名数据分组，避免小样本身份披露；检查重复与缺失；区分描述和因果，给数据质量与方法说明。 默认使用中文，遵守 App 当前授予的工具和连接权限；基于实际资料逐项保留来源，事实、推断与未知分开。成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。",
+      "examples": [
+        "请结合提供资料，核对人力数据口径，计算人数、流动和招聘指标，说明数据局限和可执行改进。"
+      ],
+      "outputs": [
+        "人力指标报告",
+        "数据质量与方法说明"
+      ],
+      "skills": [
+        {
+          "key": "professional-kw-human-resources-skills-people-report",
+          "name": "people-report",
+          "description": "直接适用：人力规模、流失、敬业度和组织健康报告",
+          "directory": "skills/professional-kw-human-resources-skills-people-report",
+          "digest": "51f02db450fdb05d6209baabe1aa67b683d1cf1f16cd7b0e4d198a82f8aeed04",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "human-resources/skills/people-report/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29382,
+            "verifiedAt": "2026-10-13T05:00:24.749887Z"
+          }
+        },
+        {
+          "key": "professional-kw-data-skills-statistical-analysis",
+          "name": "statistical-analysis",
+          "description": "直接适用：员工与招聘数据的统计分析、检验和不确定性解释",
+          "directory": "skills/professional-kw-data-skills-statistical-analysis",
+          "digest": "154e71eb680deac54442fd16210391d6462702484e5c66cb749f2cd196de11d1",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "data/skills/statistical-analysis/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29382,
+            "verifiedAt": "2026-10-13T05:00:24.762064Z"
+          }
+        },
+        {
+          "key": "professional-kw-data-skills-validate-data",
+          "name": "validate-data",
+          "description": "直接适用：人力分析的口径、分母、计算与偏差核验",
+          "directory": "skills/professional-kw-data-skills-validate-data",
+          "digest": "173a4fbf433603adf4522bdb86a378d2f7d58a9a4dcd230c52a6c4b7f9f1d84b",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "data/skills/validate-data/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29382,
+            "verifiedAt": "2026-10-13T05:00:24.772534Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能和引用资源读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "另存成果文件",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "run_command",
+          "label": "脚本、图表或Office文件处理（按任务启用）",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "Apache-2.0",
+      "releaseNotes": "中文岗位工作流程、独立技能资源和许可归属。"
+    },
+    {
+      "id": "content-spoken-copy",
+      "version": "1.0.0",
+      "name": "口播文案编辑",
+      "role": "将资料改成能自然口播的中文稿，控制时长，保留可核验事实并标明停顿。",
+      "description": "将资料改成能自然口播的中文稿，控制时长，保留可核验事实并标明停顿。",
+      "professions": [
+        "content"
+      ],
+      "group": "自媒体／内容创作",
+      "rank": 3,
+      "instructions": "先读取与任务核心职责相匹配的配套技能及需要的引用资源，再开展工作。提取核心观点与可支持的事实；用短句组织钩子、问题、方法和行动；按目标字数与实际朗读速率估计时长；做清晰度、语气、证据和具体性审校；交付整稿和改动说明。 默认使用中文，遵守 App 当前授予的工具和连接权限；基于实际资料逐项保留来源，事实、推断与未知分开。成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。",
+      "examples": [
+        "请结合提供资料，将资料改成能自然口播的中文稿，控制时长，保留可核验事实并标明停顿。"
+      ],
+      "outputs": [
+        "口播稿",
+        "审校说明"
+      ],
+      "skills": [
+        {
+          "key": "professional-mk-social",
+          "name": "social",
+          "description": "辅助：平台选题与内容日历",
+          "directory": "skills/professional-mk-social",
+          "digest": "18fb7ca76fcd907aeb8ef0270cf6ec51de785db64557e9dc661cd6c87621047f",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/social/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:00:24.264799Z"
+          }
+        },
+        {
+          "key": "professional-mk-copy-editing",
+          "name": "copy-editing",
+          "description": "辅助：逐轮审校清晰度、语气、依据和具体性",
+          "directory": "skills/professional-mk-copy-editing",
+          "digest": "c1de022a06b5954cd3b38358ccdc20882276742e5945a716cea3489e2bbdef9b",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/copy-editing/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:00:24.316445Z"
+          }
+        },
+        {
+          "key": "professional-kw-marketing-skills-content-creation",
+          "name": "content-creation",
+          "description": "辅助：把口播主题改成配套说明、发布文案及营销素材",
+          "directory": "skills/professional-kw-marketing-skills-content-creation",
+          "digest": "abfd9b3f5d3b72bbd72b74fcb1735f067a70159185fba444d339a0bd190252f4",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "marketing/skills/content-creation/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29382,
+            "verifiedAt": "2026-10-13T05:00:24.328095Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能和引用资源读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "另存成果文件",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "run_command",
+          "label": "脚本、图表或Office文件处理（按任务启用）",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "Apache-2.0 / MIT",
+      "releaseNotes": "中文岗位工作流程、独立技能资源和许可归属。"
+    },
+    {
+      "id": "content-article-editor",
+      "version": "1.0.0",
+      "name": "图文内容编辑",
+      "role": "根据素材制作中文图文文章结构、正文、配图说明和来源列表。",
+      "description": "根据素材制作中文图文文章结构、正文、配图说明和来源列表。",
+      "professions": [
+        "content"
+      ],
+      "group": "自媒体／内容创作",
+      "rank": 4,
+      "instructions": "先读取与任务核心职责相匹配的配套技能及需要的引用资源，再开展工作。确认渠道与受众；提取单一主张和事实依据；组织标题、导语、分节与配图；用品牌语气与事实检查审稿；交付可发布草稿、备选标题和版权素材说明。 默认使用中文，遵守 App 当前授予的工具和连接权限；基于实际资料逐项保留来源，事实、推断与未知分开。成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。",
+      "examples": [
+        "请结合提供资料，根据素材制作中文图文文章结构、正文、配图说明和来源列表。"
+      ],
+      "outputs": [
+        "图文文章草稿",
+        "配图与来源清单"
+      ],
+      "skills": [
+        {
+          "key": "professional-kw-marketing-skills-content-creation",
+          "name": "content-creation",
+          "description": "辅助：把口播主题改成配套说明、发布文案及营销素材",
+          "directory": "skills/professional-kw-marketing-skills-content-creation",
+          "digest": "abfd9b3f5d3b72bbd72b74fcb1735f067a70159185fba444d339a0bd190252f4",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "marketing/skills/content-creation/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29382,
+            "verifiedAt": "2026-10-13T05:00:24.328095Z"
+          }
+        },
+        {
+          "key": "professional-mk-social",
+          "name": "social",
+          "description": "辅助：平台选题与内容日历",
+          "directory": "skills/professional-mk-social",
+          "digest": "18fb7ca76fcd907aeb8ef0270cf6ec51de785db64557e9dc661cd6c87621047f",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/social/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:00:24.264799Z"
+          }
+        },
+        {
+          "key": "professional-mk-copy-editing",
+          "name": "copy-editing",
+          "description": "辅助：逐轮审校清晰度、语气、依据和具体性",
+          "directory": "skills/professional-mk-copy-editing",
+          "digest": "c1de022a06b5954cd3b38358ccdc20882276742e5945a716cea3489e2bbdef9b",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/copy-editing/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:00:24.316445Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能和引用资源读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "另存成果文件",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "run_command",
+          "label": "脚本、图表或Office文件处理（按任务启用）",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "Apache-2.0 / MIT",
+      "releaseNotes": "中文岗位工作流程、独立技能资源和许可归属。"
+    },
+    {
+      "id": "content-proofreader",
+      "version": "1.0.0",
+      "name": "内容审校",
+      "role": "审校表达、品牌风格、证据与声明，生成可追溯修改稿和待核验事实清单。",
+      "description": "审校表达、品牌风格、证据与声明，生成可追溯修改稿和待核验事实清单。",
+      "professions": [
+        "content"
+      ],
+      "group": "自媒体／内容创作",
+      "rank": 5,
+      "instructions": "先读取与任务核心职责相匹配的配套技能及需要的引用资源，再开展工作。按清晰度、语气、价值、证明、具体性、情绪、风险七轮审阅；逐项列原句、问题、建议与依据；区分已证实、资料不支持和待核查；输出保持原意的修订稿。 默认使用中文，遵守 App 当前授予的工具和连接权限；基于实际资料逐项保留来源，事实、推断与未知分开。成果另存并登记，发送、发布、审批或账务操作须有实际授权和已知结果。",
+      "examples": [
+        "请结合提供资料，审校表达、品牌风格、证据与声明，生成可追溯修改稿和待核验事实清单。"
+      ],
+      "outputs": [
+        "审校问题清单",
+        "修订稿"
+      ],
+      "skills": [
+        {
+          "key": "professional-mk-copy-editing",
+          "name": "copy-editing",
+          "description": "辅助：逐轮审校清晰度、语气、依据和具体性",
+          "directory": "skills/professional-mk-copy-editing",
+          "digest": "c1de022a06b5954cd3b38358ccdc20882276742e5945a716cea3489e2bbdef9b",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/copy-editing/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:00:24.316445Z"
+          }
+        },
+        {
+          "key": "professional-kw-marketing-skills-brand-review",
+          "name": "brand-review",
+          "description": "核心：按严重程度输出位置、问题和前后修改，检查未经证实的声明",
+          "directory": "skills/professional-kw-marketing-skills-brand-review",
+          "digest": "b97c86868fad782f628a3afbca7bdfc23f1ffdb1338bd019f7d425252c6981a6",
+          "source": {
+            "repository": "https://github.com/anthropics/knowledge-work-plugins",
+            "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+            "path": "marketing/skills/brand-review/SKILL.md",
+            "license": "Apache-2.0",
+            "stars": 29382,
+            "verifiedAt": "2026-10-13T05:00:24.338156Z"
+          }
+        },
+        {
+          "key": "professional-mk-seo-audit",
+          "name": "seo-audit",
+          "description": "辅助：面向可搜索图文的质量、来源、原创深度及标题检查",
+          "directory": "skills/professional-mk-seo-audit",
+          "digest": "4fe529e0135fc2b63ba8ec4f9a59d95ae5bb55b56824da6751d6ca0b6e15becb",
+          "source": {
+            "repository": "https://github.com/coreyhaines31/marketingskills",
+            "commit": "3b84db2e3dc5a91563cc0c5ab359c5b3f7d3c9cd",
+            "path": "skills/seo-audit/SKILL.md",
+            "license": "MIT",
+            "stars": 54409,
+            "verifiedAt": "2026-10-13T05:00:24.356721Z"
+          }
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "tool",
+          "key": "read_skill",
+          "label": "技能和引用资源读取",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "write_file",
+          "label": "另存成果文件",
+          "required": true
+        },
+        {
+          "kind": "tool",
+          "key": "run_command",
+          "label": "脚本、图表或Office文件处理（按任务启用）",
+          "required": false
+        }
+      ],
+      "platforms": [
+        "darwin",
+        "win32",
+        "linux"
+      ],
+      "license": "Apache-2.0 / MIT",
+      "releaseNotes": "中文岗位工作流程、独立技能资源和许可归属。"
     }
   ]
 }

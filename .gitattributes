@@ -1,2 +1,2 @@
 * text=auto eol=lf
-presets/skills/** -whitespace
+presets/skills/** -text -whitespace

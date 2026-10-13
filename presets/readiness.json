@@ -215,6 +215,42 @@
       "scenario": "迭代容量与依赖"
     }
   },
+  "finance-data-assistant": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "57243a25760f99c9670d6bca82be14d9bcfd9462025ddb9afa749865ec17d6b5",
+    "skillDigests": {
+      "professional-fs-clean-data-xls": "7d653ecdcf9de8d7aec0e4ff5b5b2cca26763c5fc98c67b23f8078021ea1d1cd",
+      "professional-fs-audit-xls": "b2769e51fbbcd03faa1231cb3a3075e9a0f687ba394bc6098ce290cbd1e1e808",
+      "professional-kw-finance-skills-reconciliation": "838f0a07d4ba964c024ce426b803b498c5f164c66704f47444643fefb1f458e8"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "财务资料助理代表性模拟资料任务"
+    }
+  },
+  "finance-reconciliation": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "a78c0f6f2986f7dffcb31283f7d81a558441b6ffbcf0f6d0d0048b1f1045a685",
+    "skillDigests": {
+      "professional-kw-finance-skills-reconciliation": "838f0a07d4ba964c024ce426b803b498c5f164c66704f47444643fefb1f458e8",
+      "professional-fs-audit-xls": "b2769e51fbbcd03faa1231cb3a3075e9a0f687ba394bc6098ce290cbd1e1e808",
+      "professional-fs-clean-data-xls": "7d653ecdcf9de8d7aec0e4ff5b5b2cca26763c5fc98c67b23f8078021ea1d1cd"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "对账助理代表性模拟资料任务"
+    }
+  },
   "finance-budget-analyst": {
     "version": "1.0.0",
     "contentReview": "passed",
@@ -269,6 +305,24 @@
       "scenario": "现金流分析师代表性模拟资料任务"
     }
   },
+  "finance-business-analyst": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "0617f0cdc4b2ae16978a4b955d6fd6877c734365e9fcec78e214cebd2bc71ca6",
+    "skillDigests": {
+      "professional-fs-unit-economics": "a5913c77cfe1465ee949c8478aa1ac522ca90d94568c49dab74213e102d087f2",
+      "professional-kw-finance-skills-financial-statements": "4055c3b5a4de7705ccebb58ee67b9a02c85712828d53fb232dad802e91347408",
+      "professional-fs-audit-xls": "b2769e51fbbcd03faa1231cb3a3075e9a0f687ba394bc6098ce290cbd1e1e808"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "经营分析师代表性模拟资料任务"
+    }
+  },
   "finance-reporting": {
     "version": "1.0.0",
     "contentReview": "passed",
@@ -321,6 +375,24 @@
       "provider": "qoder",
       "model": "qmodel_38max",
       "scenario": "品牌定位"
+    }
+  },
+  "marketing-ad-copywriter": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "cd9cce8fa4eacf7bd660cc62ed685510f8b444a47fcb167fc59d630acebccab9",
+    "skillDigests": {
+      "business-ad-creative": "51b176d14f9f3aceb102f3ee9807000dc189c290b92b0eafd699adc49667c3da",
+      "business-copywriting": "cd7b9fd5750da52a344355a966036811b5f48f7620d05ef1932271cbfc1e7ca0",
+      "business-copy-editing": "618d1bfd5c64c4bc0c8bdaeadf4b17faa80500e07bb7ea0e293baad9c9e3b3df"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "广告文案变体"
     }
   },
   "marketing-event-planner": {
@@ -521,6 +593,24 @@
       "scenario": "提案叙事"
     }
   },
+  "commerce-product-selection": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "175d1f9bf2102bed5b7ca170c3d663e4451389375fd6cdc25a022bf5295ccb1a",
+    "skillDigests": {
+      "business-sealeap-jinwu-amazon-product-selection-scorecard": "8d2b0773eaccecaac58c54503c89adbd83078c94fcedea25fa42b315ff1bbf60",
+      "business-sealeap-qiongqi-amazon-ai-product-gap-research": "d27ea9052d755ab6c04cfe25d49bfa1b46290962e816e1fa241c787fbd0c5a27",
+      "business-sealeap-fenghuang-amazon-product-exclusion-review-mining": "e6de2eccb09d4d8cafdc19f009289255b709a636f021edb526f64d841dea6c2f"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "模拟Amazon候选初筛"
+    }
+  },
   "commerce-merchandise-planner": {
     "version": "1.0.0",
     "contentReview": "passed",
@@ -611,6 +701,24 @@
       "scenario": "评价主题"
     }
   },
+  "commerce-support-knowledge": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "8a7153080217716a546ed8f198ddd49ccecba517681a0c021ce83af65f9d7030",
+    "skillDigests": {
+      "business-kb-article": "f11de2797e1b91cbcf3d4eb670646cddbc06018843d03a54d5e01a66ae962063",
+      "business-draft-response": "37f4b26cb3ec631ae42b3f73b2b4a4127e88354d4611cb91f3407d8c56823ec4",
+      "business-customer-research": "0f120c3de5f0e8d448014d0ea6965f0b6cab378ca11214bc3771d21d033bdbf8"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "已确认退货政策"
+    }
+  },
   "design-design-researcher": {
     "version": "1.0.0",
     "contentReview": "passed",
@@ -627,6 +735,78 @@
       "provider": "qoder",
       "model": "qmodel_38max",
       "scenario": "设计可用性研究"
+    }
+  },
+  "design-creative-planner": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "06220a77cf5fd655971dcfb67d1eef02dc3b46efef8375470e8109d0c3b5c3ad",
+    "skillDigests": {
+      "business-banner-design": "eab864436b7e4c177a3476cd1c1f2cc85d6cfc743957e342a231c4d7ce097fef",
+      "business-brand": "a717103b994fa034dab783b3de014cbe0a7af6af6264fdb2080b7b46eb31ea89",
+      "business-design-system": "f154078837dd1f565a34837ede9fe66e96ab2bd1fcfb6d9746d135a942868316"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "品牌Banner方向"
+    }
+  },
+  "design-brand-designer": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "7990884291928d40fee1809feed6b458c80c57b3b3bbbc223ca408d7d93f617f",
+    "skillDigests": {
+      "business-brand": "a717103b994fa034dab783b3de014cbe0a7af6af6264fdb2080b7b46eb31ea89",
+      "business-banner-design": "eab864436b7e4c177a3476cd1c1f2cc85d6cfc743957e342a231c4d7ce097fef",
+      "business-design-system": "f154078837dd1f565a34837ede9fe66e96ab2bd1fcfb6d9746d135a942868316"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "品牌视觉与令牌"
+    }
+  },
+  "design-interaction-designer": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "4efc4f8660bfb0107795660f42e9f5739cc5f573322ec34d459bf4d6ac6e3b2f",
+    "skillDigests": {
+      "business-user-research": "130bfd7e21119f862943fa99a032c38f2684398ff26c6736e5096f0f97bfaa11",
+      "business-ux-copy": "8e930ea46d55036be34913cb5b7d33c97ddee45c25a5afa36e1594a84a21cdd9",
+      "business-design-handoff": "1cea84682efe4bb3c6f70b57a4607b2aa00c22d5e007b08d8e66d1cae6d3e7a0"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "删除确认交互"
+    }
+  },
+  "design-ui-reviewer": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "5da813caf519dc1d187600d67f83f10931e649270eed377d7734309632053f9c",
+    "skillDigests": {
+      "business-design-critique": "82e0681f026458198e55d6fe09b3f8b4a1fac9420040d4e46d12be9ada8b0374",
+      "business-ui-ux-pro-max": "c0f22355dd53dfbe2c10ab175dca5c73a1419d792d6f4064e1426e08fe301db1",
+      "business-ux-copy": "8e930ea46d55036be34913cb5b7d33c97ddee45c25a5afa36e1594a84a21cdd9"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "文字描述UI评审"
     }
   },
   "design-design-system-specialist": {
@@ -879,6 +1059,24 @@
       "scenario": "科研图表专员代表性模拟资料任务"
     }
   },
+  "research-writing-editor": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "605c6e2687e1f6cc4a916a917498477f2af7a5856482c70724cbd7ca90efd69a",
+    "skillDigests": {
+      "professional-sc-scientific-writing": "e6bf0c47da08e77081d1a79b9ca7fc2d76a49fdf4cff5b21981f0d9fc853e716",
+      "professional-sc-citation-management": "7e31e1a2d67638d690ebd2ceb210b27fbf8f19157d04c6a7122d6ad77a0f2273",
+      "professional-sc-peer-review": "c8c54a5e5744fc7a5e31ee058da19a81db54b13cf2fc8e4ee9b9a7b2a7be8493"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "学术写作编辑代表性模拟资料任务"
+    }
+  },
   "research-submission": {
     "version": "1.0.0",
     "contentReview": "passed",
@@ -967,6 +1165,24 @@
       "scenario": "面试设计专员代表性模拟资料任务"
     }
   },
+  "hr-learning-development": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "b90f506b621767715e67b5ed143c92cb81b16c95b5922ae057bfb3c346a2bbb6",
+    "skillDigests": {
+      "professional-ed-competency-framework-translator": "079fa98684f05160e703f675f99d915f8cf502c9cfb29f16aaa0f8eb38656dcf",
+      "professional-ed-professional-development-session-designer": "e4cb6b99ac56cfb3df1aa6caf7f6328d37d51f43009b3859e0416b7c77247b72",
+      "professional-ed-reflective-practice-prompt-generator": "2dbe88ead416ce9a301500b2fecdf77265c0d0c3f7cec10c2165eb23f068288a"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "培训发展专员代表性模拟资料任务"
+    }
+  },
   "hr-onboarding": {
     "version": "1.0.0",
     "contentReview": "passed",
@@ -1001,6 +1217,42 @@
       "provider": "qoder",
       "model": "qmodel_38max",
       "scenario": "人力数据分析师代表性模拟资料任务"
+    }
+  },
+  "content-topics": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "339d6d8606e5e487698bf07c71153a313cc335911f68f26a563ac5d73356f7c4",
+    "skillDigests": {
+      "professional-mk-content-strategy": "53e59ba6dd90df9c58fc3ed961a2f748086c1047fc0f23938040d57b28c94b79",
+      "professional-mk-customer-research": "0a32a27416a2d2720567251b50a1b4636d08d4c989786cc1c31a8c680fe7db33",
+      "professional-mk-social": "18fb7ca76fcd907aeb8ef0270cf6ec51de785db64557e9dc661cd6c87621047f"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "内容选题策划代表性模拟资料任务"
+    }
+  },
+  "content-video-director": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "7f9d1a68ccda5b7848b8c741d5b45a4842f3db390bc406ee5bfebf6d4eefbf14",
+    "skillDigests": {
+      "professional-mk-social": "18fb7ca76fcd907aeb8ef0270cf6ec51de785db64557e9dc661cd6c87621047f",
+      "professional-mk-video": "a71cc21cb5226bd1d9da036990e1a59279673080d81e8a761b432b209a9210c1",
+      "professional-mk-ad-creative": "a1d7b08caf47afda76e6cb1e79cee186e76c48f5d763d7ba8aee752a4641e4fb"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "短视频编导代表性模拟资料任务"
     }
   },
   "content-spoken-copy": {
@@ -1055,6 +1307,456 @@
       "provider": "qoder",
       "model": "qmodel_38max",
       "scenario": "内容审校代表性模拟资料任务"
+    }
+  },
+  "content-account-analyst": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "40d30916b50bc7192b6bbfd059c5e387f766b9643670d78cd8dd41d1acb235e8",
+    "skillDigests": {
+      "professional-kw-marketing-skills-performance-report": "0b19eebe5e7226611ad74fe1428a5cabd83bb412eb6932fef654ebc9cdbc048a",
+      "professional-mk-social": "18fb7ca76fcd907aeb8ef0270cf6ec51de785db64557e9dc661cd6c87621047f",
+      "professional-mk-ab-testing": "ea8951f4cdb2b7c5142d1d3fd0a572f7605bdc68b58deeff793721130a51b592"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "账号运营分析师代表性模拟资料任务"
+    }
+  },
+  "content-distribution": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "e2e6c3e862af905996abfcd3b81e97b0cc6851189f9f62ea6e82170c5037f9e5",
+    "skillDigests": {
+      "professional-mk-social": "18fb7ca76fcd907aeb8ef0270cf6ec51de785db64557e9dc661cd6c87621047f",
+      "professional-mk-content-strategy": "53e59ba6dd90df9c58fc3ed961a2f748086c1047fc0f23938040d57b28c94b79",
+      "professional-mk-emails": "ce45ec2ec7a60c2f996fd00d220b7b3e0056b20f96e4e6ac84ef9203dc95764d"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "内容分发编辑代表性模拟资料任务"
+    }
+  },
+  "legal-materials": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "840f922cf3d974b99982a3407409ed29fd9b71c40c5272000177a0f5c6b9d3d4",
+    "skillDigests": {
+      "chronology": "376cc044ccba713d8ab17ff7263a5201c552fdf4d018a3e9eb2952c58ed8f219",
+      "tabular-review": "3e5b5b1704374f153522e80ebcdc4183b5552d3354324f45166dbad6bbd88185",
+      "matter-briefing": "755e20933430237abd7a481dd2a26f433bc6fa0c3c175097813e378591de1fe9"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "版本与重复材料编目"
+    }
+  },
+  "legal-research": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "aae3bf8fa34a4ce385ee307cbccc053cfdcc3223cc7bf6ffbe8f2d70d5d26ce3",
+    "skillDigests": {
+      "learning-research-start": "66bd584740c5811de7900ef04cd69c3f5750e7faac29a531181ccd504c3df2e9",
+      "learning-brief": "47186cd3fccd1f6f34d7ec174b179c6b04cb275c5ace614e7abce488cc5d4086",
+      "learning-source-credibility-evaluation-protocol": "4826c615914c9d7d788aa499dcc9295d9e1e4b8677389f28d846e976c2245a0b"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qfmodel",
+      "scenario": "指定模拟法源库检索"
+    }
+  },
+  "legal-contract-draft": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "0e0cd38021d5bcdec40be9c1dea67fad02671d2a95ff1635f574b06bb1474bf6",
+    "skillDigests": {
+      "learning-draft": "ff884279dff56f8f27d90539e959107e4911f863dcf7fbfb31f42f9695d956ce",
+      "learning-amendment-history": "59bd8020c8415c4dbac78008b933f65ef6bfc7e38e688fd27d562c8d2338b88a",
+      "tabular-review": "3e5b5b1704374f153522e80ebcdc4183b5552d3354324f45166dbad6bbd88185"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "按批准条件起草保密合同"
+    }
+  },
+  "legal-contract-review": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "7f39d03f0d6ecd4332728572c5057269ca09db6adde69dff0e74508079955f21",
+    "skillDigests": {
+      "learning-review-contract": "cd2200d890f99b41853f899d9b1d5c4659e813a593ee993161dd145e31c1fd3a",
+      "learning-amendment-history": "59bd8020c8415c4dbac78008b933f65ef6bfc7e38e688fd27d562c8d2338b88a",
+      "learning-nda-review": "d4385ccddf93019368066ae756756b3da11069b476d07f4436e04260f9f5b76a"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qfmodel",
+      "scenario": "保密合同底线审阅"
+    }
+  },
+  "legal-document-draft": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "27186b9baefe2eaa3e67aea259d936d689986f79c3858f1d1418dc06a9d2d075",
+    "skillDigests": {
+      "learning-brief-section-drafter": "8698955b81b92eb8ed3c0d4abf52d8a0d406b09d5bbbb9c277c59423b0c7d128",
+      "learning-draft": "ff884279dff56f8f27d90539e959107e4911f863dcf7fbfb31f42f9695d956ce",
+      "chronology": "376cc044ccba713d8ab17ff7263a5201c552fdf4d018a3e9eb2952c58ed8f219"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "指定模拟模板事实段起草"
+    }
+  },
+  "legal-diligence": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "ce180de71c617c8e6a54c477f47a4b31725766f89d61eeb063319a31fed2f8d5",
+    "skillDigests": {
+      "tabular-review": "3e5b5b1704374f153522e80ebcdc4183b5552d3354324f45166dbad6bbd88185",
+      "learning-diligence-issue-extraction": "dfc8f1634cfaf42408770236ab5b85f5a00429c32fead3ceabbd0d283f7bb8fe",
+      "learning-material-contract-schedule": "6289390b7885a92a31c9116bd3252d3aafb5cb2fda0f157b6792165935ee178a"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "重要合同与尽调缺口"
+    }
+  },
+  "legal-hearing-prep": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "1768a18f428678feaac5a503e54677eff83fd5ed952e82aff29bbfc3c100fdb9",
+    "skillDigests": {
+      "learning-claim-chart": "5236080df3870af06b5a952b9156bfd7cfdbfad293676e9bbdd3333e897acd01",
+      "learning-deposition-prep": "a4c52c1e9cbb70810e6ca6b33df7fb53a8ff0940869f94f34df5cf6566f7f040",
+      "chronology": "376cc044ccba713d8ab17ff7263a5201c552fdf4d018a3e9eb2952c58ed8f219"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "争点证据与询问准备"
+    }
+  },
+  "legal-client-communication": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "1451bbb7e9958570db063d8f9a24486571e7819fd37b041063c7e19621d98944",
+    "skillDigests": {
+      "learning-client-letter": "390db82a5646a8fc5dbf34cb0896bbcd0806db8e40905d815da62a6e4ca9b852",
+      "matter-briefing": "755e20933430237abd7a481dd2a26f433bc6fa0c3c175097813e378591de1fe9",
+      "learning-stakeholder-summary": "7519b9e6b25f3fd552afceeecb0436d31b6bab95442a1087f2e0032c02274c6e"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "客户进展沟通草稿"
+    }
+  },
+  "education-course-designer": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "0e9be8588a30c3c4c8b9c6a8beb14956eaeb671ba2adf44ca38bb733391a0a52",
+    "skillDigests": {
+      "learning-backwards-design-unit-planner": "8d378c1b66ca3b885795d23fef3d8f6937d5cfdc70643c56f833176f757d3dfe",
+      "learning-scope-and-sequence-designer": "8cd92bdb77d5752528106aeaff16e8a3369bb86cb3716c8f67457948d12321c6",
+      "learning-competency-unpacker": "641fded00b7047ec02e9c014dc617ab5ae29e2d44acdce5eb68de58c5c975527"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "两课时目标证据对齐"
+    }
+  },
+  "education-lesson-prep": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "dda923a85c635098ca93157772d1995d77c700e5ffdf61a1f0689afa275c2b8f",
+    "skillDigests": {
+      "learning-explicit-instruction-sequence-builder": "5bb7d7bca84245b68e06a76ec197a634cdd84000afd0090d0c7ef87e4ea61c17",
+      "learning-lesson-opening-designer": "c8a79399a9129fa9746769c2a5101f62e9f65c24dcee4d622d0c0f9a74668a06",
+      "learning-differentiation-adapter": "fd118c18ec578389aa8cbfae24adb3c216f13557cb1f390475446422b617e6e7"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "45分钟显性教学备课"
+    }
+  },
+  "education-content-research": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "77df79bd30b213e2ea4119220ab8c75ef2158dce836cd6ab4f34f3b0d22675a4",
+    "skillDigests": {
+      "learning-pedagogical-content-knowledge-developer": "aa62aa7849f89bacf94bcc0d916badaa4826a671710c6473aadf32e660701d47",
+      "learning-source-credibility-evaluation-protocol": "4826c615914c9d7d788aa499dcc9295d9e1e4b8677389f28d846e976c2245a0b",
+      "learning-knowledge-synthesis": "12c180a8df32d0f628ab4271d0499082ca4ac025d0147c0fbe4869caa782d140"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "主题资料与误区综合"
+    }
+  },
+  "education-slide-producer": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "fb0e4501ccc98ba2bf27a8f66223e5645686e2edf4c261d031b8c3e55306b593",
+    "skillDigests": {
+      "learning-frontend-slides": "0c0017c49d8b2f4382708350d5bed8b3783db4ed9bb93d159f75082cba054e76",
+      "learning-dual-coding-designer": "eef0b994478602a1da19e8688ef996405c568908f7ffa70d1492d3d47470f2d4",
+      "learning-cognitive-load-analyser": "abaac92802d415c18ac30efa7e29d3dff6b4733376a9124a69b8373dfd6615c3"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "本地HTML教学课件"
+    }
+  },
+  "education-assessment-designer": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "d8f20b4b552378287fd7724064b1a42ad37d10aca2421b216afc8211e2864c83",
+    "skillDigests": {
+      "retrieval-practice-generator": "86466f5442e2af821aeb66bffbadf4f8d0d7b13b6aeb6e2e267e7d235342a583",
+      "learning-criterion-referenced-rubric-generator": "83967d4ccece7819a981a17bdb1bb6ea0faf12e328e21a6f67aef082890ea4f3",
+      "learning-assessment-validity-checker": "803eabbe8d05407ca18eeeecd994ff51385bd3d202c7325fb21b1f85f0d45c88"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "目标对齐测评与量规"
+    }
+  },
+  "education-feedback-analyst": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "190fc0e78a77fe9f425274d68acc2650d9f157e1afc5273de61f62bd043f1c10",
+    "skillDigests": {
+      "learning-gap-analysis-from-student-work": "cfe512dd95bed0c6da45d28862fc72785f94e369fe63332ff69cc701d8d3c91b",
+      "learning-feedback-quality-analyser": "05ce0de70572106dd68d14be7b83a0ed23e63aac438a0fee8f9d8dce45a011af",
+      "learning-learning-analytics-interpretation-guide": "2de44505aeda7803761ff6beed4cbe05d83cf02f92d89325dfd4121131969a13"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "学生作品与学习数据反馈"
+    }
+  },
+  "education-training-delivery": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "f507024cf7602cb9c18f3a0e7b3d61230781644c10e4ebe6b7331e2d79deb1e7",
+    "skillDigests": {
+      "learning-professional-development-session-designer": "00a1dbc44dbe4fa6d900f13d06f4966a28cfba4af6f6e4e1cfeffccc2748ce35",
+      "learning-process-doc": "04ee6c73cb31238bb0b3bbb23d4bde4239cc240938b416b1d902f9ebb6045342",
+      "learning-frontend-slides": "0c0017c49d8b2f4382708350d5bed8b3783db4ed9bb93d159f75082cba054e76"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "60分钟培训交付"
+    }
+  },
+  "student-study-planner": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "0af862e9a727c08b16e936a1debdc2925eea9d03243f5a0c6d5c2aa72e81c339",
+    "skillDigests": {
+      "learning-study-strategy-selector": "a5a109730cc355d3676902fd2ecb4b60203e08556126f397b6cbf54e8a329181",
+      "learning-srl-session-wrapper": "699777d8d5bf117f03c95134de6133f9137bea64aa95980129ef0f478c0b11c9",
+      "learning-weekly-agency-review": "d813b5efe2048509ee695ab8ee7864ec75660bb72e781afb9f38cfa29fb499d1"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "有限容量一周学习计划"
+    }
+  },
+  "student-note-organizer": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "a774d6390bb43523cce276da8e670da0b956db90e752f4d85015f972376491c8",
+    "skillDigests": {
+      "learning-obsidian-markdown": "c71fb999ae2f2084654e972556ce2737eeeb16cb540d90fcfd33f2aaf48122d3",
+      "learning-json-canvas": "e8e6dfe1823dcbb3419fd6e821c2e266b0083f496b73daa3c1c7226646da11da",
+      "learning-dual-coding-designer": "eef0b994478602a1da19e8688ef996405c568908f7ffa70d1492d3d47470f2d4"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "课堂材料笔记与画布"
+    }
+  },
+  "student-literature-reader": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "0e2eb124dc8f169be617e09c1d3301b9aa04961ff219277be7b24166bc42c8e1",
+    "skillDigests": {
+      "learning-literature-review": "7ef5c013a2ea4a5e008a2b182043d6310843c58b8174555ac5c9f375621814be",
+      "learning-scientific-critical-thinking": "b8764f4a96d862e8149ad8106f2e4aaf13d7e852263bea347e88d10ece6c815a",
+      "learning-citation-management": "cb616c43c4d55253a5fb5a4f076c4ae2dda17882397a4fec425df827ac34e61e"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "摘要文献阅读与重复研究识别"
+    }
+  },
+  "student-thesis-advisor": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "687f1abd7d0a8d2adf39635005c4c6e67114ecb50e89b55e702a8246bbfcfcc4",
+    "skillDigests": {
+      "learning-hypothesis-generation": "843d76cbac029897e230e935df47526cff408aaf4e8c2335d48ce765dfb8b919",
+      "learning-scientific-writing": "c754ae69f7f2cbd9e798da12095c23c23e2d9135d5a7de67022cf39bb04fbeec",
+      "learning-citation-management": "cb616c43c4d55253a5fb5a4f076c4ae2dda17882397a4fec425df827ac34e61e"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qmodel_38max",
+      "scenario": "本科研究设计与写作辅导"
+    }
+  },
+  "student-experiment-analyst": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "958f68ba8e2831bc5ed9fb344e0c37fee8c7e00037f3ae3882e279c4028f2e2d",
+    "skillDigests": {
+      "learning-exploratory-data-analysis": "44e464ce0d7325ca9a4b5f859fcf716b83110bbca81b8855e8ea9565a4ec8b59",
+      "learning-statistical-analysis": "fed20f1ad2fcb55f34ff94e55f23cc0398000845852f71954d9f7d44ad9601c8",
+      "learning-scientific-critical-thinking": "b8764f4a96d862e8149ad8106f2e4aaf13d7e852263bea347e88d10ece6c815a"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qfmodel",
+      "scenario": "含缺失的配对前后测数据"
+    }
+  },
+  "student-project-coordinator": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "e1c77af23738480134e67d65ee2e86cadcc3efc8e3cde43b49a30101c41b4f88",
+    "skillDigests": {
+      "learning-sprint-plan": "746a6ce53850c9dafd424065f7b2499e34d16a0f4b4933786aed88b0819b3f9b",
+      "learning-stakeholder-map": "21dd6688d94d7320605277ee1606af890b6f34175edc24df91cf2ff07e3467a1",
+      "learning-pre-mortem": "9f845604fda2fa819803d18c6ba3c1a296f40158b31c3f660b10f1f24fa47b4c"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qfmodel",
+      "scenario": "学生项目容量分工与风险"
+    }
+  },
+  "student-competition-pitch": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "4e42332db7d0393e394476e8b39271987649fcbf3a4dba609ce9d71efb5c2dcf",
+    "skillDigests": {
+      "learning-business-model": "a1871ab76a2d0502933fbd1292c6787175ff9e137c8e656ae7cd6fdd5d775f26",
+      "learning-market-sizing": "5ac2831c20288f3489082471ec1f70d8212028378479fb16b16ce975bdcf013b",
+      "learning-frontend-slides": "0c0017c49d8b2f4382708350d5bed8b3783db4ed9bb93d159f75082cba054e76"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qfmodel",
+      "scenario": "校园项目商业假设与路演"
+    }
+  },
+  "student-interview-coach": {
+    "version": "1.0.0",
+    "contentReview": "passed",
+    "runtimeAcceptance": "passed",
+    "presetDigest": "2db8f638eaa8aedb85897e1c5577e253c67f29b153fb245333e28ab34996e154",
+    "skillDigests": {
+      "learning-bq-skill": "59b4f9576317347f0728445bb0fe809f99410f63dfb6af5bf1150a02cbf8e6f7",
+      "learning-interview-prep-generator": "75e154dbb87a1351b3c4f91df7c2bdac5e6123d6d34907d59d33b2ac8e5f8cb8",
+      "learning-job-description-skill": "644a97f4ec0a2c742627a07ea10ddb42ce2b4821711fd03b24e042afd6fd453e"
+    },
+    "scope": {
+      "platform": "darwin",
+      "architecture": "arm64",
+      "provider": "qoder",
+      "model": "qfmodel",
+      "scenario": "真实经历JD匹配与面试练习"
     }
   }
 }
